@@ -8,20 +8,42 @@
 
 /* Begin PBXBuildFile section */
 		44D517E5211185E100ED8477 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D517E4211185E100ED8477 /* AppDelegate.swift */; };
-		44D517E7211185E100ED8477 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D517E6211185E100ED8477 /* ViewController.swift */; };
-		44D517EA211185E100ED8477 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44D517E8211185E100ED8477 /* Main.storyboard */; };
+		44D517EA211185E100ED8477 /* Entrance.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44D517E8211185E100ED8477 /* Entrance.storyboard */; };
 		44D517EC211185E300ED8477 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 44D517EB211185E300ED8477 /* Assets.xcassets */; };
 		44D517EF211185E300ED8477 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44D517ED211185E300ED8477 /* LaunchScreen.storyboard */; };
+		44EC428A211196170054584C /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EC4289211196170054584C /* LaunchViewController.swift */; };
+		44EC428C211196210054584C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EC428B211196210054584C /* LoginViewController.swift */; };
+		44EC42902111DF2C0054584C /* UIView+Shadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EC428F2111DF2C0054584C /* UIView+Shadow.swift */; };
+		44EC42922112AF180054584C /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44EC42912112AF180054584C /* Home.storyboard */; };
+		44EC42972112B0F60054584C /* MainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EC42952112B0F60054584C /* MainCell.swift */; };
+		44EC42982112B0F60054584C /* MainCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 44EC42962112B0F60054584C /* MainCell.xib */; };
+		44EC429A2112B9B90054584C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EC42992112B9B90054584C /* HomeViewController.swift */; };
+		44EC429D21131BF90054584C /* MeHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EC429C21131BF90054584C /* MeHeaderView.swift */; };
+		44EC429F21131C0C0054584C /* MeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EC429E21131C0C0054584C /* MeViewController.swift */; };
+		44EC42A121131C1A0054584C /* Me.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44EC42A021131C1A0054584C /* Me.storyboard */; };
+		85B5A7CBC4D6157C42C61B25 /* libPods-infnote.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BA5BFCA2760C74CE35E2A446 /* libPods-infnote.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2C2CF4077FA2A36AB2BE111D /* Pods-infnote.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-infnote.release.xcconfig"; path = "Pods/Target Support Files/Pods-infnote/Pods-infnote.release.xcconfig"; sourceTree = "<group>"; };
 		44D517E1211185E100ED8477 /* infnote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = infnote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		44D517E4211185E100ED8477 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		44D517E6211185E100ED8477 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		44D517E9211185E100ED8477 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		44D517E9211185E100ED8477 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Entrance.storyboard; sourceTree = "<group>"; };
 		44D517EB211185E300ED8477 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		44D517EE211185E300ED8477 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		44D517F0211185E300ED8477 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		44EC4289211196170054584C /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
+		44EC428B211196210054584C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		44EC428F2111DF2C0054584C /* UIView+Shadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Shadow.swift"; sourceTree = "<group>"; };
+		44EC42912112AF180054584C /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
+		44EC42952112B0F60054584C /* MainCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCell.swift; sourceTree = "<group>"; };
+		44EC42962112B0F60054584C /* MainCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainCell.xib; sourceTree = "<group>"; };
+		44EC42992112B9B90054584C /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		44EC429C21131BF90054584C /* MeHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeHeaderView.swift; sourceTree = "<group>"; };
+		44EC429E21131C0C0054584C /* MeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeViewController.swift; sourceTree = "<group>"; };
+		44EC42A021131C1A0054584C /* Me.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Me.storyboard; sourceTree = "<group>"; };
+		7446F1B1BF617A51F2456C3F /* Pods-infnote.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-infnote.debug.xcconfig"; path = "Pods/Target Support Files/Pods-infnote/Pods-infnote.debug.xcconfig"; sourceTree = "<group>"; };
+		BA5BFCA2760C74CE35E2A446 /* libPods-infnote.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-infnote.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +51,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				85B5A7CBC4D6157C42C61B25 /* libPods-infnote.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		126156CFAADD30A6BBEA70B2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7446F1B1BF617A51F2456C3F /* Pods-infnote.debug.xcconfig */,
+				2C2CF4077FA2A36AB2BE111D /* Pods-infnote.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		44D517D8211185E100ED8477 = {
 			isa = PBXGroup;
 			children = (
 				44D517E3211185E100ED8477 /* infnote */,
 				44D517E2211185E100ED8477 /* Products */,
+				126156CFAADD30A6BBEA70B2 /* Pods */,
+				550BADC4A5198F721E9860DC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +88,95 @@
 		44D517E3211185E100ED8477 /* infnote */ = {
 			isa = PBXGroup;
 			children = (
-				44D517E4211185E100ED8477 /* AppDelegate.swift */,
-				44D517E6211185E100ED8477 /* ViewController.swift */,
-				44D517E8211185E100ED8477 /* Main.storyboard */,
-				44D517EB211185E300ED8477 /* Assets.xcassets */,
-				44D517ED211185E300ED8477 /* LaunchScreen.storyboard */,
-				44D517F0211185E300ED8477 /* Info.plist */,
+				44EC4288211187240054584C /* Controllers */,
+				44EC4287211187140054584C /* Views */,
+				44EC428E2111DF0E0054584C /* Extensions */,
+				44EC4286211186CA0054584C /* Resources */,
 			);
 			path = infnote;
+			sourceTree = "<group>";
+		};
+		44EC4286211186CA0054584C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				44D517EB211185E300ED8477 /* Assets.xcassets */,
+				44D517F0211185E300ED8477 /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		44EC4287211187140054584C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				44EC429B21131BC40054584C /* Me */,
+				44EC42932112B02A0054584C /* Home */,
+				44EC428D2111D3EA0054584C /* Entrance */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		44EC4288211187240054584C /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				44D517E4211185E100ED8477 /* AppDelegate.swift */,
+				44EC4289211196170054584C /* LaunchViewController.swift */,
+				44EC428B211196210054584C /* LoginViewController.swift */,
+				44EC42992112B9B90054584C /* HomeViewController.swift */,
+				44EC429E21131C0C0054584C /* MeViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		44EC428D2111D3EA0054584C /* Entrance */ = {
+			isa = PBXGroup;
+			children = (
+				44D517E8211185E100ED8477 /* Entrance.storyboard */,
+				44D517ED211185E300ED8477 /* LaunchScreen.storyboard */,
+			);
+			path = Entrance;
+			sourceTree = "<group>";
+		};
+		44EC428E2111DF0E0054584C /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				44EC428F2111DF2C0054584C /* UIView+Shadow.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		44EC42932112B02A0054584C /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				44EC42942112B0B50054584C /* MainCell */,
+				44EC42912112AF180054584C /* Home.storyboard */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		44EC42942112B0B50054584C /* MainCell */ = {
+			isa = PBXGroup;
+			children = (
+				44EC42952112B0F60054584C /* MainCell.swift */,
+				44EC42962112B0F60054584C /* MainCell.xib */,
+			);
+			path = MainCell;
+			sourceTree = "<group>";
+		};
+		44EC429B21131BC40054584C /* Me */ = {
+			isa = PBXGroup;
+			children = (
+				44EC429C21131BF90054584C /* MeHeaderView.swift */,
+				44EC42A021131C1A0054584C /* Me.storyboard */,
+			);
+			path = Me;
+			sourceTree = "<group>";
+		};
+		550BADC4A5198F721E9860DC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BA5BFCA2760C74CE35E2A446 /* libPods-infnote.a */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +186,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 44D517F3211185E300ED8477 /* Build configuration list for PBXNativeTarget "infnote" */;
 			buildPhases = (
+				07ECAE60ACD673633B99E311 /* [CP] Check Pods Manifest.lock */,
 				44D517DD211185E100ED8477 /* Sources */,
 				44D517DE211185E100ED8477 /* Frameworks */,
 				44D517DF211185E100ED8477 /* Resources */,
+				C0B15C09123454B00CA15DD6 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -124,31 +241,85 @@
 			files = (
 				44D517EF211185E300ED8477 /* LaunchScreen.storyboard in Resources */,
 				44D517EC211185E300ED8477 /* Assets.xcassets in Resources */,
-				44D517EA211185E100ED8477 /* Main.storyboard in Resources */,
+				44EC42A121131C1A0054584C /* Me.storyboard in Resources */,
+				44D517EA211185E100ED8477 /* Entrance.storyboard in Resources */,
+				44EC42922112AF180054584C /* Home.storyboard in Resources */,
+				44EC42982112B0F60054584C /* MainCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		07ECAE60ACD673633B99E311 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-infnote-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C0B15C09123454B00CA15DD6 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-infnote/Pods-infnote-resources.sh",
+				"${PODS_ROOT}/CRRefresh/CRRefresh/CRRefresh/Animators/NormalAnimator/NormalFooter.bundle",
+				"${PODS_ROOT}/CRRefresh/CRRefresh/CRRefresh/Animators/NormalAnimator/NormalHeader.bundle",
+				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
+				"${PODS_ROOT}/SVProgressHUD/SVProgressHUD/SVProgressHUD.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/NormalFooter.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/NormalHeader.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MJRefresh.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SVProgressHUD.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-infnote/Pods-infnote-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		44D517DD211185E100ED8477 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				44D517E7211185E100ED8477 /* ViewController.swift in Sources */,
+				44EC42902111DF2C0054584C /* UIView+Shadow.swift in Sources */,
+				44EC428C211196210054584C /* LoginViewController.swift in Sources */,
+				44EC429F21131C0C0054584C /* MeViewController.swift in Sources */,
 				44D517E5211185E100ED8477 /* AppDelegate.swift in Sources */,
+				44EC428A211196170054584C /* LaunchViewController.swift in Sources */,
+				44EC429D21131BF90054584C /* MeHeaderView.swift in Sources */,
+				44EC42972112B0F60054584C /* MainCell.swift in Sources */,
+				44EC429A2112B9B90054584C /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		44D517E8211185E100ED8477 /* Main.storyboard */ = {
+		44D517E8211185E100ED8477 /* Entrance.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				44D517E9211185E100ED8477 /* Base */,
 			);
-			name = Main.storyboard;
+			name = Entrance.storyboard;
 			sourceTree = "<group>";
 		};
 		44D517ED211185E300ED8477 /* LaunchScreen.storyboard */ = {
@@ -213,7 +384,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -267,7 +438,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -278,37 +449,41 @@
 		};
 		44D517F4211185E300ED8477 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7446F1B1BF617A51F2456C3F /* Pods-infnote.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7HDAS685HR;
-				INFOPLIST_FILE = infnote/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/infnote/Resources/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.infnote.app.infnote;
+				PRODUCT_BUNDLE_IDENTIFIER = com.infnote.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		44D517F5211185E300ED8477 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2C2CF4077FA2A36AB2BE111D /* Pods-infnote.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7HDAS685HR;
-				INFOPLIST_FILE = infnote/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/infnote/Resources/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.infnote.app.infnote;
+				PRODUCT_BUNDLE_IDENTIFIER = com.infnote.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

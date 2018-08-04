@@ -1,35 +1,36 @@
 //
-//  LaunchViewController.swift
+//  SignUpViewController.swift
 //  infnote
 //
-//  Created by Vergil Choi on 2018/8/1.
-//  Copyright © 2018 Vergil Choi. All rights reserved.
+//  Created by Vergil Choi on 2018/8/4.
+//  Copyright © 2018年 Vergil Choi. All rights reserved.
 //
 
 import UIKit
 
-class LaunchViewController: UIViewController {
+class SignUpViewController: UIViewController {
 
+    @IBOutlet weak var nicknameView: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        self.navigationController?.setNavigationBarHidden(false, animated: false)
+        
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        self.navigationController?.setNavigationBarHidden(true, animated: false)
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        nicknameView.shadow = true
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func skipButtonTouched(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
-    }
-    
+
     /*
     // MARK: - Navigation
 

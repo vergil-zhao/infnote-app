@@ -7,4 +7,5 @@ target 'infnote' do
     pod 'SVProgressHUD'
     pod 'CRRefresh'
     pod 'MJRefresh'
+    pod 'UITableView+FDTemplateLayoutCell'
 end

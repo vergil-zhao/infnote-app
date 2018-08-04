@@ -35,11 +35,11 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="FIk-6R-PKE" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="7zq-6g-F3t"/>
-                            <constraint firstItem="sJ3-f4-1JL" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="9f6-r0-JYK"/>
+                            <constraint firstItem="sJ3-f4-1JL" firstAttribute="trailing" secondItem="Ze5-6b-2t3" secondAttribute="trailing" id="9f6-r0-JYK"/>
                             <constraint firstItem="sJ3-f4-1JL" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="EgY-cE-Mml"/>
-                            <constraint firstItem="sJ3-f4-1JL" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="Oqm-zc-VlY"/>
+                            <constraint firstItem="sJ3-f4-1JL" firstAttribute="bottom" secondItem="Ze5-6b-2t3" secondAttribute="bottom" id="Oqm-zc-VlY"/>
                             <constraint firstItem="gcd-kk-Q8a" firstAttribute="top" secondItem="FIk-6R-PKE" secondAttribute="bottom" constant="8" id="Y9O-Or-Nio"/>
-                            <constraint firstItem="sJ3-f4-1JL" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="atj-rA-wcF"/>
+                            <constraint firstItem="sJ3-f4-1JL" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="atj-rA-wcF"/>
                             <constraint firstItem="gcd-kk-Q8a" firstAttribute="centerX" secondItem="FIk-6R-PKE" secondAttribute="centerX" id="h19-zZ-hXP"/>
                             <constraint firstItem="FIk-6R-PKE" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" multiplier="0.5" id="xHY-Fu-sVW"/>
                         </constraints>

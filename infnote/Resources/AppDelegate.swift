@@ -3,7 +3,7 @@
 //  infnote
 //
 //  Created by Vergil Choi on 2018/8/1.
-//  Copyright © 2018年 Vergil Choi. All rights reserved.
+//  Copyright © 2018 Vergil Choi. All rights reserved.
 //
 
 import UIKit

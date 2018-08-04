@@ -16,11 +16,14 @@
 		44EC42902111DF2C0054584C /* UIView+Shadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EC428F2111DF2C0054584C /* UIView+Shadow.swift */; };
 		44EC42922112AF180054584C /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44EC42912112AF180054584C /* Home.storyboard */; };
 		44EC42972112B0F60054584C /* MainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EC42952112B0F60054584C /* MainCell.swift */; };
-		44EC42982112B0F60054584C /* MainCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 44EC42962112B0F60054584C /* MainCell.xib */; };
 		44EC429A2112B9B90054584C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EC42992112B9B90054584C /* HomeViewController.swift */; };
 		44EC429D21131BF90054584C /* MeHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EC429C21131BF90054584C /* MeHeaderView.swift */; };
 		44EC429F21131C0C0054584C /* MeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EC429E21131C0C0054584C /* MeViewController.swift */; };
 		44EC42A121131C1A0054584C /* Me.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44EC42A021131C1A0054584C /* Me.storyboard */; };
+		44EC42A3211345820054584C /* Consts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EC42A2211345820054584C /* Consts.swift */; };
+		44EC42A6211422BA0054584C /* ImageStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EC42A5211422BA0054584C /* ImageStackView.swift */; };
+		44EC42A92115AB480054584C /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EC42A82115AB480054584C /* SignUpViewController.swift */; };
+		44EC42AB2115ABF60054584C /* PrivateKeyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EC42AA2115ABF60054584C /* PrivateKeyViewController.swift */; };
 		85B5A7CBC4D6157C42C61B25 /* libPods-infnote.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BA5BFCA2760C74CE35E2A446 /* libPods-infnote.a */; };
 /* End PBXBuildFile section */
 
@@ -37,11 +40,15 @@
 		44EC428F2111DF2C0054584C /* UIView+Shadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Shadow.swift"; sourceTree = "<group>"; };
 		44EC42912112AF180054584C /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		44EC42952112B0F60054584C /* MainCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCell.swift; sourceTree = "<group>"; };
-		44EC42962112B0F60054584C /* MainCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainCell.xib; sourceTree = "<group>"; };
 		44EC42992112B9B90054584C /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		44EC429C21131BF90054584C /* MeHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeHeaderView.swift; sourceTree = "<group>"; };
 		44EC429E21131C0C0054584C /* MeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeViewController.swift; sourceTree = "<group>"; };
 		44EC42A021131C1A0054584C /* Me.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Me.storyboard; sourceTree = "<group>"; };
+		44EC42A2211345820054584C /* Consts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Consts.swift; sourceTree = "<group>"; };
+		44EC42A5211422BA0054584C /* ImageStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageStackView.swift; sourceTree = "<group>"; };
+		44EC42A72114839A0054584C /* Bridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Bridge.h; sourceTree = "<group>"; };
+		44EC42A82115AB480054584C /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		44EC42AA2115ABF60054584C /* PrivateKeyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivateKeyViewController.swift; sourceTree = "<group>"; };
 		7446F1B1BF617A51F2456C3F /* Pods-infnote.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-infnote.debug.xcconfig"; path = "Pods/Target Support Files/Pods-infnote/Pods-infnote.debug.xcconfig"; sourceTree = "<group>"; };
 		BA5BFCA2760C74CE35E2A446 /* libPods-infnote.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-infnote.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -101,6 +108,9 @@
 			children = (
 				44D517EB211185E300ED8477 /* Assets.xcassets */,
 				44D517F0211185E300ED8477 /* Info.plist */,
+				44EC42A2211345820054584C /* Consts.swift */,
+				44D517E4211185E100ED8477 /* AppDelegate.swift */,
+				44EC42A72114839A0054584C /* Bridge.h */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -108,6 +118,7 @@
 		44EC4287211187140054584C /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				44EC42A4211422A20054584C /* Misc */,
 				44EC429B21131BC40054584C /* Me */,
 				44EC42932112B02A0054584C /* Home */,
 				44EC428D2111D3EA0054584C /* Entrance */,
@@ -118,9 +129,10 @@
 		44EC4288211187240054584C /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				44D517E4211185E100ED8477 /* AppDelegate.swift */,
 				44EC4289211196170054584C /* LaunchViewController.swift */,
 				44EC428B211196210054584C /* LoginViewController.swift */,
+				44EC42A82115AB480054584C /* SignUpViewController.swift */,
+				44EC42AA2115ABF60054584C /* PrivateKeyViewController.swift */,
 				44EC42992112B9B90054584C /* HomeViewController.swift */,
 				44EC429E21131C0C0054584C /* MeViewController.swift */,
 			);
@@ -157,7 +169,6 @@
 			isa = PBXGroup;
 			children = (
 				44EC42952112B0F60054584C /* MainCell.swift */,
-				44EC42962112B0F60054584C /* MainCell.xib */,
 			);
 			path = MainCell;
 			sourceTree = "<group>";
@@ -169,6 +180,14 @@
 				44EC42A021131C1A0054584C /* Me.storyboard */,
 			);
 			path = Me;
+			sourceTree = "<group>";
+		};
+		44EC42A4211422A20054584C /* Misc */ = {
+			isa = PBXGroup;
+			children = (
+				44EC42A5211422BA0054584C /* ImageStackView.swift */,
+			);
+			path = Misc;
 			sourceTree = "<group>";
 		};
 		550BADC4A5198F721E9860DC /* Frameworks */ = {
@@ -244,7 +263,6 @@
 				44EC42A121131C1A0054584C /* Me.storyboard in Resources */,
 				44D517EA211185E100ED8477 /* Entrance.storyboard in Resources */,
 				44EC42922112AF180054584C /* Home.storyboard in Resources */,
-				44EC42982112B0F60054584C /* MainCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -300,6 +318,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				44EC42AB2115ABF60054584C /* PrivateKeyViewController.swift in Sources */,
+				44EC42A92115AB480054584C /* SignUpViewController.swift in Sources */,
 				44EC42902111DF2C0054584C /* UIView+Shadow.swift in Sources */,
 				44EC428C211196210054584C /* LoginViewController.swift in Sources */,
 				44EC429F21131C0C0054584C /* MeViewController.swift in Sources */,
@@ -307,7 +327,9 @@
 				44EC428A211196170054584C /* LaunchViewController.swift in Sources */,
 				44EC429D21131BF90054584C /* MeHeaderView.swift in Sources */,
 				44EC42972112B0F60054584C /* MainCell.swift in Sources */,
+				44EC42A3211345820054584C /* Consts.swift in Sources */,
 				44EC429A2112B9B90054584C /* HomeViewController.swift in Sources */,
+				44EC42A6211422BA0054584C /* ImageStackView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -462,6 +484,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.infnote.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/infnote/Resources/Bridge.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -482,6 +505,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.infnote.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/infnote/Resources/Bridge.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

@@ -41,5 +41,9 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSCameraUsageDescription</key>
+	<string>禁用相机将无法发表图片以及读取二维码</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>禁用图库将无法发表图片以及读取二维码</string>
 </dict>
 </plist>

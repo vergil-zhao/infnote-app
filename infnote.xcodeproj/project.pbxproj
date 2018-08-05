@@ -24,6 +24,7 @@
 		44EC42A6211422BA0054584C /* ImageStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EC42A5211422BA0054584C /* ImageStackView.swift */; };
 		44EC42A92115AB480054584C /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EC42A82115AB480054584C /* SignUpViewController.swift */; };
 		44EC42AB2115ABF60054584C /* PrivateKeyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EC42AA2115ABF60054584C /* PrivateKeyViewController.swift */; };
+		44EC42AE2115DE880054584C /* QRCodeScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EC42AD2115DE880054584C /* QRCodeScannerViewController.swift */; };
 		85B5A7CBC4D6157C42C61B25 /* libPods-infnote.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BA5BFCA2760C74CE35E2A446 /* libPods-infnote.a */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +50,7 @@
 		44EC42A72114839A0054584C /* Bridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Bridge.h; sourceTree = "<group>"; };
 		44EC42A82115AB480054584C /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		44EC42AA2115ABF60054584C /* PrivateKeyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivateKeyViewController.swift; sourceTree = "<group>"; };
+		44EC42AD2115DE880054584C /* QRCodeScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeScannerViewController.swift; sourceTree = "<group>"; };
 		7446F1B1BF617A51F2456C3F /* Pods-infnote.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-infnote.debug.xcconfig"; path = "Pods/Target Support Files/Pods-infnote/Pods-infnote.debug.xcconfig"; sourceTree = "<group>"; };
 		BA5BFCA2760C74CE35E2A446 /* libPods-infnote.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-infnote.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -129,10 +131,7 @@
 		44EC4288211187240054584C /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				44EC4289211196170054584C /* LaunchViewController.swift */,
-				44EC428B211196210054584C /* LoginViewController.swift */,
-				44EC42A82115AB480054584C /* SignUpViewController.swift */,
-				44EC42AA2115ABF60054584C /* PrivateKeyViewController.swift */,
+				44EC42AC2115DD7F0054584C /* Entrance */,
 				44EC42992112B9B90054584C /* HomeViewController.swift */,
 				44EC429E21131C0C0054584C /* MeViewController.swift */,
 			);
@@ -188,6 +187,18 @@
 				44EC42A5211422BA0054584C /* ImageStackView.swift */,
 			);
 			path = Misc;
+			sourceTree = "<group>";
+		};
+		44EC42AC2115DD7F0054584C /* Entrance */ = {
+			isa = PBXGroup;
+			children = (
+				44EC4289211196170054584C /* LaunchViewController.swift */,
+				44EC428B211196210054584C /* LoginViewController.swift */,
+				44EC42A82115AB480054584C /* SignUpViewController.swift */,
+				44EC42AA2115ABF60054584C /* PrivateKeyViewController.swift */,
+				44EC42AD2115DE880054584C /* QRCodeScannerViewController.swift */,
+			);
+			path = Entrance;
 			sourceTree = "<group>";
 		};
 		550BADC4A5198F721E9860DC /* Frameworks */ = {
@@ -296,6 +307,7 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-infnote/Pods-infnote-resources.sh",
 				"${PODS_ROOT}/CRRefresh/CRRefresh/CRRefresh/Animators/NormalAnimator/NormalFooter.bundle",
 				"${PODS_ROOT}/CRRefresh/CRRefresh/CRRefresh/Animators/NormalAnimator/NormalHeader.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/ImagePicker/ImagePicker.bundle",
 				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
 				"${PODS_ROOT}/SVProgressHUD/SVProgressHUD/SVProgressHUD.bundle",
 			);
@@ -303,6 +315,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/NormalFooter.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/NormalHeader.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ImagePicker.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MJRefresh.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SVProgressHUD.bundle",
 			);
@@ -320,6 +333,7 @@
 			files = (
 				44EC42AB2115ABF60054584C /* PrivateKeyViewController.swift in Sources */,
 				44EC42A92115AB480054584C /* SignUpViewController.swift in Sources */,
+				44EC42AE2115DE880054584C /* QRCodeScannerViewController.swift in Sources */,
 				44EC42902111DF2C0054584C /* UIView+Shadow.swift in Sources */,
 				44EC428C211196210054584C /* LoginViewController.swift in Sources */,
 				44EC429F21131C0C0054584C /* MeViewController.swift in Sources */,

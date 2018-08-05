@@ -8,4 +8,5 @@ target 'infnote' do
     pod 'CRRefresh'
     pod 'MJRefresh'
     pod 'UITableView+FDTemplateLayoutCell'
+    pod 'ImagePicker'
 end

@@ -431,7 +431,7 @@
         <!--秘钥-->
         <scene sceneID="gOL-aD-dua">
             <objects>
-                <viewController title="秘钥" id="OKw-0g-Kjq" customClass="PrivateKeyViewController" customModule="infnote" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="infnote.PrivateKeyViewController" title="秘钥" hidesBottomBarWhenPushed="YES" id="OKw-0g-Kjq" customClass="PrivateKeyViewController" customModule="infnote" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hAh-46-Rgl">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

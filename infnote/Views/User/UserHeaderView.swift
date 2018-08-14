@@ -9,7 +9,7 @@
 import UIKit
 import SnapKit
 
-class MeHeaderView: UIView {
+class UserHeaderView: UIView {
     
     let backgroundImageView = UIImageView()
     let avatarView          = UIImageView()
@@ -23,7 +23,7 @@ class MeHeaderView: UIView {
     let bottomLine          = UIView()
     
     func prepareViews() {
-        self.frame.size.height = 180 + UIScreen.main.bounds.height * 0.3
+        self.frame.size.height = 180 + UIScreen.main.bounds.height * 0.35
         self.frame.size.width = UIScreen.main.bounds.width
         self.backgroundColor = .white
         
@@ -45,7 +45,7 @@ class MeHeaderView: UIView {
             make.top.equalToSuperview()
             make.left.equalToSuperview()
             make.right.equalToSuperview()
-            make.height.equalTo(UIScreen.main.bounds.height * 0.3)
+            make.height.equalTo(UIScreen.main.bounds.height * 0.35)
         })
         
         avatarView.image = #imageLiteral(resourceName: "default-avatar")
@@ -53,7 +53,7 @@ class MeHeaderView: UIView {
         avatarView.layer.masksToBounds = true
         avatarView.snp.makeConstraints { make in
             make.centerY.equalTo(backgroundImageView.snp.bottom)
-            make.left.equalToSuperview().offset(ViewConst.margin)
+            make.left.equalToSuperview().offset(ViewConst.horizontalMargin)
             make.width.equalTo(80)
             make.height.equalTo(80)
         }
@@ -63,7 +63,7 @@ class MeHeaderView: UIView {
         nicknameLabel.snp.makeConstraints { make in
             make.left.equalTo(avatarView.snp.right).offset(10)
             make.top.equalTo(backgroundImageView.snp.bottom).offset(10)
-            make.right.equalToSuperview().offset(-ViewConst.margin)
+            make.right.equalToSuperview().offset(-ViewConst.horizontalMargin)
         }
         
         bioLabel.text = "Be superior to your former self. Be superior to your former self. Be superior to your former self. Be superior to your former self. Be superior to your former self. Be superior to your former self. Be superior to your former self."
@@ -73,21 +73,21 @@ class MeHeaderView: UIView {
         bioLabel.snp.makeConstraints { make in
             make.left.equalTo(nicknameLabel.snp.left)
             make.top.equalTo(nicknameLabel.snp.bottom).offset(ViewConst.lineSpace)
-            make.right.equalToSuperview().offset(-ViewConst.margin)
+            make.right.equalToSuperview().offset(-ViewConst.horizontalMargin)
         }
         
         postLabel.text = "发表的文章"
         postLabel.font = UIFont(name: DEFAULT_FONT_REGULAR, size: 14)
         postLabel.textColor = .darkGray
         postLabel.snp.makeConstraints { make in
-            make.left.equalToSuperview().offset(ViewConst.margin)
-            make.bottom.equalToSuperview().offset(-ViewConst.margin / 2)
+            make.left.equalToSuperview().offset(ViewConst.horizontalMargin)
+            make.bottom.equalToSuperview().offset(-ViewConst.verticalMargin)
         }
         
         postCountLabel.text = "12"
         postCountLabel.font = UIFont(name: DEFAULT_FONT_DEMI_BOLD, size: 14)
         postCountLabel.snp.makeConstraints { make in
-            make.left.equalToSuperview().offset(ViewConst.margin)
+            make.left.equalToSuperview().offset(ViewConst.horizontalMargin)
             make.bottom.equalTo(postLabel.snp.top)
         }
         
@@ -96,7 +96,7 @@ class MeHeaderView: UIView {
         likeLabel.textColor = .darkGray
         likeLabel.snp.makeConstraints { make in
             make.left.equalTo(postLabel.snp.right).offset(50)
-            make.bottom.equalToSuperview().offset(-ViewConst.margin / 2)
+            make.bottom.equalToSuperview().offset(-ViewConst.verticalMargin)
         }
         
         likeCountLabel.text = "200"
@@ -112,8 +112,8 @@ class MeHeaderView: UIView {
         editButton.backgroundColor = MAIN_COLOR
         editButton.layer.cornerRadius = 5
         editButton.snp.makeConstraints { make in
-            make.right.equalToSuperview().offset(-ViewConst.margin)
-            make.bottom.equalToSuperview().offset(-ViewConst.margin / 2)
+            make.right.equalToSuperview().offset(-ViewConst.horizontalMargin)
+            make.bottom.equalToSuperview().offset(-ViewConst.verticalMargin)
             make.width.equalTo(80)
             make.height.equalTo(40)
         }
@@ -121,8 +121,8 @@ class MeHeaderView: UIView {
         bottomLine.backgroundColor = UIColor(white: 0.85, alpha: 1)
         bottomLine.snp.makeConstraints { make in
             make.bottom.equalToSuperview()
-            make.left.equalToSuperview().offset(ViewConst.margin)
-            make.right.equalToSuperview().offset(-ViewConst.margin)
+            make.left.equalToSuperview().offset(ViewConst.horizontalMargin)
+            make.right.equalToSuperview().offset(-ViewConst.horizontalMargin)
             make.height.equalTo(0.5)
         }
     }

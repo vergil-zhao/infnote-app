@@ -1,5 +1,6 @@
 platform :ios, '10.0'
 inhibit_all_warnings!
+use_frameworks!
 
 target 'infnote' do
     pod 'Alamofire'
@@ -7,6 +8,10 @@ target 'infnote' do
     pod 'SVProgressHUD'
     pod 'CRRefresh'
     pod 'MJRefresh'
-    pod 'UITableView+FDTemplateLayoutCell'
+#    pod 'UITableView+FDTemplateLayoutCell'
     pod 'ImagePicker'
+    pod 'Down'
+    pod 'QRCode'
+    pod 'XLPagerTabStrip'
+    pod 'IQKeyboardManagerSwift'
 end

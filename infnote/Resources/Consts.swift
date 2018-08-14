@@ -19,6 +19,17 @@ let MAIN_COLOR = #colorLiteral(red: 0.368627451, green: 0.431372549, blue: 0.933
 
 
 struct ViewConst {
-    static let margin = 25.0
-    static let lineSpace = 5.0
+    static let verticalMargin = CGFloat(10.0)
+    static let horizontalMargin = CGFloat(15.0)
+    static let lineSpace = CGFloat(8.0)
+    static var safeAreaHeight: CGFloat {
+        var insetHeight = CGFloat(20)
+        if #available(iOS 11.0, *) {
+            insetHeight = (UIApplication.shared.keyWindow?.safeAreaInsets.top)!
+        }
+        if insetHeight < 20 {
+            insetHeight = 20
+        }
+        return insetHeight
+    }
 }

@@ -7,21 +7,22 @@
 //
 
 import UIKit
+import XLPagerTabStrip
 
-class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-
+class NoteFlowViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, IndicatorInfoProvider {
+    
     @IBOutlet weak var tableView: UITableView!
     
     var data = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.present(UIStoryboard.init(name: "Entrance", bundle: Bundle.main).instantiateViewController(withIdentifier: NSStringFromClass(LaunchViewController.self)), animated: false)
-
+        //        self.present(UIStoryboard.init(name: "Entrance", bundle: Bundle.main).instantiateViewController(withIdentifier: NSStringFromClass(LaunchViewController.self)), animated: false)
+        
         tableView.register(MainCell.self, forCellReuseIdentifier: "cell")
         tableView.estimatedRowHeight = 365
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -39,17 +40,22 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        tableView.deselectRow(at: indexPath, animated: true)
+        self.navigationController?.pushViewController(storyboard!.instantiateViewController(withIdentifier: NSStringFromClass(NoteViewController.self)), animated: true)
     }
-
+    
+    func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
+        return IndicatorInfo(title: "话题")
+    }
+    
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }

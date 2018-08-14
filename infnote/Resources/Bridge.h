@@ -9,6 +9,6 @@
 #ifndef Bridge_h
 #define Bridge_h
 
-#import "UITableView+FDTemplateLayoutCell.h"
+
 
 #endif /* Bridge_h */

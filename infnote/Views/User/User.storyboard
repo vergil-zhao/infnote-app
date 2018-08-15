@@ -244,7 +244,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="公钥" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vdf-PR-sz4">
-                                                    <rect key="frame" x="15" y="11" width="34" height="24"/>
+                                                    <rect key="frame" x="170.5" y="11" width="34" height="24"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="24" id="6nF-A0-ui6"/>
                                                     </constraints>
@@ -253,10 +253,10 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lOE-FB-1Gz">
-                                                    <rect key="frame" x="15" y="40" width="345" height="179"/>
+                                                    <rect key="frame" x="15" y="40" width="345" height="167"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1A6csP8jrpyruyW4a9tX9Nonv4R8AviB1y" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hC6-Pn-y0Q">
-                                                    <rect key="frame" x="15" y="227" width="345" height="14"/>
+                                                    <rect key="frame" x="15" y="215" width="345" height="14"/>
                                                     <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="12"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -270,6 +270,7 @@
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="40" id="dXx-rG-Ct2"/>
                                                             </constraints>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                             <state key="normal" title="复制密钥">
                                                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             </state>
@@ -289,6 +290,7 @@
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="40" id="nzH-99-7aK"/>
                                                             </constraints>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                             <state key="normal" title="保存二维码到图库">
                                                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             </state>
@@ -309,6 +311,7 @@
                                                 </stackView>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="vdf-PR-sz4" firstAttribute="centerX" secondItem="WQj-j8-0M1" secondAttribute="centerX" id="JJ3-3O-kik"/>
                                                 <constraint firstItem="lOE-FB-1Gz" firstAttribute="top" secondItem="vdf-PR-sz4" secondAttribute="bottom" constant="5" id="KtU-tI-cwO"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="hC6-Pn-y0Q" secondAttribute="trailing" id="NGK-fR-w8y"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="xa3-Ez-YLC" secondAttribute="trailing" id="OWI-SE-4zo"/>
@@ -318,9 +321,8 @@
                                                 <constraint firstItem="vdf-PR-sz4" firstAttribute="top" secondItem="WQj-j8-0M1" secondAttribute="topMargin" id="Xho-Uj-yrr"/>
                                                 <constraint firstItem="hC6-Pn-y0Q" firstAttribute="top" secondItem="lOE-FB-1Gz" secondAttribute="bottom" constant="8" id="euB-D0-z3e"/>
                                                 <constraint firstItem="lOE-FB-1Gz" firstAttribute="trailing" secondItem="WQj-j8-0M1" secondAttribute="trailingMargin" id="n1o-Bb-cEj"/>
-                                                <constraint firstItem="xa3-Ez-YLC" firstAttribute="top" secondItem="hC6-Pn-y0Q" secondAttribute="bottom" constant="8" id="oed-yj-zbS"/>
+                                                <constraint firstItem="xa3-Ez-YLC" firstAttribute="top" secondItem="hC6-Pn-y0Q" secondAttribute="bottom" constant="20" id="oed-yj-zbS"/>
                                                 <constraint firstItem="lOE-FB-1Gz" firstAttribute="leading" secondItem="WQj-j8-0M1" secondAttribute="leadingMargin" id="q6r-Ac-TSS"/>
-                                                <constraint firstItem="vdf-PR-sz4" firstAttribute="leading" secondItem="WQj-j8-0M1" secondAttribute="leadingMargin" id="rvB-ec-c7s"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>

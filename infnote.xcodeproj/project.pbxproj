@@ -22,7 +22,7 @@
 		44D517EF211185E300ED8477 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44D517ED211185E300ED8477 /* LaunchScreen.storyboard */; };
 		44EC428A211196170054584C /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EC4289211196170054584C /* LaunchViewController.swift */; };
 		44EC428C211196210054584C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EC428B211196210054584C /* LoginViewController.swift */; };
-		44EC42902111DF2C0054584C /* UIView+Shadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EC428F2111DF2C0054584C /* UIView+Shadow.swift */; };
+		44EC42902111DF2C0054584C /* UIView+Tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EC428F2111DF2C0054584C /* UIView+Tools.swift */; };
 		44EC42922112AF180054584C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44EC42912112AF180054584C /* Main.storyboard */; };
 		44EC42972112B0F60054584C /* MainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EC42952112B0F60054584C /* MainCell.swift */; };
 		44EC429A2112B9B90054584C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EC42992112B9B90054584C /* HomeViewController.swift */; };
@@ -56,7 +56,7 @@
 		44D517F0211185E300ED8477 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		44EC4289211196170054584C /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
 		44EC428B211196210054584C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		44EC428F2111DF2C0054584C /* UIView+Shadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Shadow.swift"; sourceTree = "<group>"; };
+		44EC428F2111DF2C0054584C /* UIView+Tools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Tools.swift"; sourceTree = "<group>"; };
 		44EC42912112AF180054584C /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		44EC42952112B0F60054584C /* MainCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCell.swift; sourceTree = "<group>"; };
 		44EC42992112B9B90054584C /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -184,7 +184,7 @@
 		44EC428E2111DF0E0054584C /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				44EC428F2111DF2C0054584C /* UIView+Shadow.swift */,
+				44EC428F2111DF2C0054584C /* UIView+Tools.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -374,7 +374,7 @@
 				44561650211AFD37002BE1B7 /* NoteViewController.swift in Sources */,
 				44EC42AE2115DE880054584C /* QRCodeScannerViewController.swift in Sources */,
 				44561656211D885B002BE1B7 /* DiscoveryViewController.swift in Sources */,
-				44EC42902111DF2C0054584C /* UIView+Shadow.swift in Sources */,
+				44EC42902111DF2C0054584C /* UIView+Tools.swift in Sources */,
 				44561652211B1B9E002BE1B7 /* CommentCell.swift in Sources */,
 				44EC428C211196210054584C /* LoginViewController.swift in Sources */,
 				44EC429F21131C0C0054584C /* UserViewController.swift in Sources */,

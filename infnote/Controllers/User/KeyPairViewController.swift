@@ -19,11 +19,6 @@ class KeyPairViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         tableView.rowHeight = UIScreen.main.bounds.height / 2
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
     @IBAction func copyButtonTouched(_ sender: Any) {
         
@@ -43,17 +38,6 @@ class KeyPairViewController: UIViewController, UITableViewDelegate, UITableViewD
         return cell
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
 
 class KeyPairCell: UITableViewCell {

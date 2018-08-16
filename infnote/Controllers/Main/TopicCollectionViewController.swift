@@ -17,7 +17,6 @@ class TopicCollectionViewController: UIViewController, UICollectionViewDelegate,
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Do any additional setup after loading the view.
         let layout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsets(top: 0, left: ViewConst.horizontalMargin, bottom: 20, right: ViewConst.horizontalMargin)
         layout.itemSize = CGSize(width: UIScreen.main.bounds.width / 3 - 20, height: 150)
@@ -25,11 +24,6 @@ class TopicCollectionViewController: UIViewController, UICollectionViewDelegate,
         layout.minimumLineSpacing = 20
         layout.headerReferenceSize = CGSize(width: 50, height: 50)
         collectionView.collectionViewLayout = layout
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -53,16 +47,6 @@ class TopicCollectionViewController: UIViewController, UICollectionViewDelegate,
     func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
         return IndicatorInfo(title: "话题")
     }
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
     
 }
 

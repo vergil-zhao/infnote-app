@@ -41,11 +41,6 @@ class NewNoteViewController: UIViewController, UITableViewDelegate, UITableViewD
         }
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
     @IBAction func cancelButtonTouched(_ sender: Any) {
         self.navigationController?.dismiss(animated: true)
     }

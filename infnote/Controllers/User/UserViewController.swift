@@ -19,17 +19,16 @@ class UserViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.setNavigationBarHidden(true, animated: false)
         
         tableView.contentInset = UIEdgeInsets.zero
         tableView.register(MainCell.self, forCellReuseIdentifier: "cell")
         tableView.estimatedRowHeight = 365
         
-        let view = UserHeaderView()
-        view.prepareViews()
-        tableView.tableHeaderView = view
-        
         prepareViews()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
     }
 
     override func didReceiveMemoryWarning() {
@@ -42,7 +41,11 @@ class UserViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     @objc func backButtonTouched() {
-        self.navigationController?.popViewController(animated: true)
+        navigationController?.popViewController(animated: true)
+    }
+    
+    @objc func editButtonTouched() {
+        navigationController?.pushViewController(storyboard!.instantiateViewController(withIdentifier: NSStringFromClass(ProfileEditViewController.self)), animated: true)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -52,10 +55,17 @@ class UserViewController: UIViewController, UITableViewDelegate, UITableViewData
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! MainCell
         cell.prepareViews()
+        
         return cell
     }
     
     func prepareViews() {
+        
+        let view = UserHeaderView()
+        view.prepareViews()
+        view.editButton.addTarget(self, action: #selector(editButtonTouched), for: .touchUpInside)
+        tableView.tableHeaderView = view
+        
         self.view.addSubview(topbar)
         
         tableView.contentInset = UIEdgeInsets(top: -ViewConst.safeAreaHeight, left: 0, bottom: 0, right: 0)

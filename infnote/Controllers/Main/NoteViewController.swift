@@ -37,6 +37,11 @@ class NoteViewController: UIViewController, UITableViewDelegate, UITableViewData
         tableView.register(MainCell.self, forCellReuseIdentifier: "note")
         tableView.register(CommentCell.self, forCellReuseIdentifier: "comment")
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: true)
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

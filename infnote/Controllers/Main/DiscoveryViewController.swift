@@ -11,8 +11,6 @@ import XLPagerTabStrip
 
 class DiscoveryViewController: ButtonBarPagerTabStripViewController {
     
-    
-    
     override func viewDidLoad() {
         settings.style.buttonBarItemFont = UIFont(name: DEFAULT_FONT_DEMI_BOLD, size: 16)!
         settings.style.buttonBarBackgroundColor = .white
@@ -25,14 +23,8 @@ class DiscoveryViewController: ButtonBarPagerTabStripViewController {
         super.viewDidLoad()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        navigationController?.setNavigationBarHidden(true, animated: false)
-    }
-    
     override func viewControllers(for pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {
         return [storyboard!.instantiateViewController(withIdentifier: NSStringFromClass(TopicCollectionViewController.self)), storyboard!.instantiateViewController(withIdentifier: NSStringFromClass(TopicCollectionViewController.self))]
     }
-    
     
 }

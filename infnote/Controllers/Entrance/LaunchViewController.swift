@@ -22,7 +22,7 @@ class LaunchViewController: UIViewController {
     }
     
     @IBAction func skipButtonTouched(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
+        AppDelegate.switchToMainStoryboard()
     }
     
 }

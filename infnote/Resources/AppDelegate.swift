@@ -15,7 +15,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        if let _ = Key.loadDefaultKey() {
+            switchToMainStoryboard()
+        }
+        else {
+            switchToEntranceStoryboard()
+        }
         
         return true
     }
@@ -41,7 +47,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
+    
+    class func switchToMainStoryboard() {
+        let appDelegate = UIApplication.shared.delegate as? AppDelegate
+        appDelegate?.switchToMainStoryboard()
+    }
+    
+    class func switchToEntranceStoryboard() {
+        let appDelegate = UIApplication.shared.delegate as? AppDelegate
+        appDelegate?.switchToEntranceStoryboard()
+    }
+    
+    func switchToEntranceStoryboard() {
+        switchRootStoryboard(name: "Entrance")
+    }
 
+    func switchToMainStoryboard() {
+        switchRootStoryboard(name: "Main")
+    }
+    
+    func switchRootStoryboard(name: String) {
+        window?.rootViewController = UIStoryboard(name: name, bundle: Bundle.main).instantiateInitialViewController()
+    }
 
 }
 

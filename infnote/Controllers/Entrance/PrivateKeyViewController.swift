@@ -7,14 +7,23 @@
 //
 
 import UIKit
+import QRCode
 
 class PrivateKeyViewController: UIViewController {
 
     @IBOutlet weak var iCloudView: UIView!
+    @IBOutlet weak var privateKeyQRCodeView: UIImageView!
+    @IBOutlet weak var privateKeyLabel: UILabel!
+    @IBOutlet weak var userIDLabel: UILabel!
+    
+    let key = try! Key()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.setNavigationBarHidden(false, animated: false)
+        
+        privateKeyLabel.text = key.privateKey.base58
+        userIDLabel.text = key.publicKey.data.sha256.base58
     }
     
     override func viewDidLayoutSubviews() {
@@ -28,6 +37,15 @@ class PrivateKeyViewController: UIViewController {
         gradientLayer.locations = [0.0, 1.0]
         iCloudView.layer.insertSublayer(gradientLayer, at: 0)
         iCloudView.layer.masksToBounds = true
+        
+        var code = QRCode(key.privateKey.base58)!
+        let width = privateKeyQRCodeView.bounds.width > privateKeyQRCodeView.bounds.height ? privateKeyQRCodeView.bounds.height : privateKeyQRCodeView.bounds.width
+        code.size = CGSize(width: width, height: width)
+        privateKeyQRCodeView.image = code.image
     }
     
+    @IBAction func doneButtonTouched(_ sender: Any) {
+        try! key.save()
+        AppDelegate.switchToMainStoryboard()
+    }
 }

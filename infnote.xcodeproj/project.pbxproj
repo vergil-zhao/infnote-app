@@ -19,6 +19,8 @@
 		44561652211B1B9E002BE1B7 /* CommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44561651211B1B9E002BE1B7 /* CommentCell.swift */; };
 		44561654211C3075002BE1B7 /* KeyPairViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44561653211C3075002BE1B7 /* KeyPairViewController.swift */; };
 		44561656211D885B002BE1B7 /* DiscoveryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44561655211D885B002BE1B7 /* DiscoveryViewController.swift */; };
+		44703795212BB2C70040ADFC /* Encoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44703794212BB2C70040ADFC /* Encoding.swift */; };
+		44703798213017E70040ADFC /* Key.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44703797213017E70040ADFC /* Key.swift */; };
 		44D517E5211185E100ED8477 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D517E4211185E100ED8477 /* AppDelegate.swift */; };
 		44D517EA211185E100ED8477 /* Entrance.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44D517E8211185E100ED8477 /* Entrance.storyboard */; };
 		44D517EC211185E300ED8477 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 44D517EB211185E300ED8477 /* Assets.xcassets */; };
@@ -54,6 +56,8 @@
 		44561651211B1B9E002BE1B7 /* CommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentCell.swift; sourceTree = "<group>"; };
 		44561653211C3075002BE1B7 /* KeyPairViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyPairViewController.swift; sourceTree = "<group>"; };
 		44561655211D885B002BE1B7 /* DiscoveryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryViewController.swift; sourceTree = "<group>"; };
+		44703794212BB2C70040ADFC /* Encoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Encoding.swift; sourceTree = "<group>"; };
+		44703797213017E70040ADFC /* Key.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Key.swift; sourceTree = "<group>"; };
 		44D517E1211185E100ED8477 /* infnote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = infnote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		44D517E4211185E100ED8477 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		44D517E9211185E100ED8477 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Entrance.storyboard; sourceTree = "<group>"; };
@@ -127,6 +131,22 @@
 			path = Main;
 			sourceTree = "<group>";
 		};
+		44703793212BB29A0040ADFC /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				44703794212BB2C70040ADFC /* Encoding.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		44703796213017C50040ADFC /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				44703797213017E70040ADFC /* Key.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		44D517D8211185E100ED8477 = {
 			isa = PBXGroup;
 			children = (
@@ -148,8 +168,10 @@
 		44D517E3211185E100ED8477 /* infnote */ = {
 			isa = PBXGroup;
 			children = (
+				44703796213017C50040ADFC /* Models */,
 				44EC4288211187240054584C /* Controllers */,
 				44EC4287211187140054584C /* Views */,
+				44703793212BB29A0040ADFC /* Utilities */,
 				44EC428E2111DF0E0054584C /* Extensions */,
 				44EC4286211186CA0054584C /* Resources */,
 			);
@@ -389,6 +411,7 @@
 				4434257721268DBC00A5F738 /* UserNotificationViewController.swift in Sources */,
 				44EC42AB2115ABF60054584C /* PrivateKeyViewController.swift in Sources */,
 				44EC42A92115AB480054584C /* SignUpViewController.swift in Sources */,
+				44703795212BB2C70040ADFC /* Encoding.swift in Sources */,
 				44561650211AFD37002BE1B7 /* NoteViewController.swift in Sources */,
 				44EC42AE2115DE880054584C /* QRCodeScannerViewController.swift in Sources */,
 				44561656211D885B002BE1B7 /* DiscoveryViewController.swift in Sources */,
@@ -407,6 +430,7 @@
 				4434257521255FE500A5F738 /* MeViewController.swift in Sources */,
 				44EC429A2112B9B90054584C /* HomeViewController.swift in Sources */,
 				443F68F72122F0E100ADF657 /* NewNoteViewController.swift in Sources */,
+				44703798213017E70040ADFC /* Key.swift in Sources */,
 				443425732125592D00A5F738 /* ProfileEditViewController.swift in Sources */,
 				443F68F5211F00C100ADF657 /* DiscoveryContainerViewController.swift in Sources */,
 				44EC42A6211422BA0054584C /* ImageStackView.swift in Sources */,

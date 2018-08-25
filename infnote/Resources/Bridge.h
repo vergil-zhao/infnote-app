@@ -9,6 +9,6 @@
 #ifndef Bridge_h
 #define Bridge_h
 
-
+#import <CommonCrypto/CommonHMAC.h>
 
 #endif /* Bridge_h */

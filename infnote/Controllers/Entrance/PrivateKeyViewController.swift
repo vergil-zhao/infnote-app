@@ -16,14 +16,27 @@ class PrivateKeyViewController: UIViewController {
     @IBOutlet weak var privateKeyLabel: UILabel!
     @IBOutlet weak var userIDLabel: UILabel!
     
-    let key = try! Key()
+    let key = try! Key(privateKey: "7x8tbToeR2XVfn35T89bXXmxyXiJN9h6BbSnhKoYg1GcuQ4cM75ewmMpzZXr1ttMcUz4u9Wd6AjUwMcEdPfZDr3qwGY68tAuEBnXJgSCT4tv4HqPCeaiGkQW6Zr8HNioDwVJ")
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.setNavigationBarHidden(false, animated: false)
         
         privateKeyLabel.text = key.privateKey.base58
-        userIDLabel.text = key.publicKey.data.sha256.base58
+        userIDLabel.text = key.publicKey.base58
+        
+        let dict = [
+            "id": "vergil",
+            "nickname": "Vergil",
+            "gender": 1,
+            "email": "gameboy0824@126.com",
+            "bio": "Be Cool"
+            ] as [String : Any]
+        let data = try! JSONSerialization.data(withJSONObject: dict, options: .sortedKeys)
+        let signatureData = try! key.sign(data: data)
+        print(String(data: data, encoding: .utf8)!)
+        print(key.publicKey.base58)
+        print(signatureData.base58)
     }
     
     override func viewDidLayoutSubviews() {

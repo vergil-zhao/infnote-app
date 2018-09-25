@@ -26,10 +26,10 @@ extension Data {
     }
     
     public init?(base58: String) {
-        if let data = Base58.decode(base58) {
-            self = data
+        guard let data = Base58.decode(base58) else {
+            return nil
         }
-        return nil
+        self = data
     }
     
     public var base58: String {

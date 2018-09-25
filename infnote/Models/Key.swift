@@ -10,6 +10,7 @@ import UIKit
 
 class Key {
     static let defaultTag = "com.infnote.keys.default"
+    static let keySizeInBits = 256
     
     enum ImportError: Error {
         case cannotExtractPublicKey
@@ -22,7 +23,7 @@ class Key {
         case signFailed(Error)
         case generateKeyFailed(Error)
     }
-    
+
     let publicKey: SecKey
     let privateKey: SecKey
     
@@ -32,7 +33,7 @@ class Key {
             kSecClass as String: kSecClassKey,
             kSecAttrApplicationTag as String: defaultTag,
             kSecAttrKeyType as String: kSecAttrKeyTypeECSECPrimeRandom,
-            kSecAttrKeySizeInBits as String: 256,
+            kSecAttrKeySizeInBits as String: self.keySizeInBits,
             kSecReturnRef as String: true
             ] as CFDictionary, &item)
         guard status == errSecSuccess else {
@@ -46,7 +47,7 @@ class Key {
             kSecClass as String: kSecClassKey,
             kSecAttrApplicationTag as String: Key.defaultTag,
             kSecAttrKeyType as String: kSecAttrKeyTypeECSECPrimeRandom,
-            kSecAttrKeySizeInBits as String: 256,
+            kSecAttrKeySizeInBits as String: self.keySizeInBits,
             kSecReturnRef as String: true,
             kSecMatchLimit as String: kSecMatchLimitAll
         ]
@@ -57,7 +58,7 @@ class Key {
         let query: [String: Any] = [
             kSecAttrKeyType as String: kSecAttrKeyTypeECSECPrimeRandom,
             kSecAttrKeyClass as String: kSecAttrKeyClassPublic,
-            kSecAttrKeySizeInBits as String: 256
+            kSecAttrKeySizeInBits as String: self.keySizeInBits
         ]
         var error: Unmanaged<CFError>?
         guard let key = SecKeyCreateWithData(
@@ -76,10 +77,10 @@ class Key {
     init() throws {
         let attributes: [String: Any] =
             [kSecAttrKeyType as String:            kSecAttrKeyTypeECSECPrimeRandom,
-             kSecAttrKeySizeInBits as String:      256,
+             kSecAttrKeySizeInBits as String:      Key.keySizeInBits,
              kSecPrivateKeyAttrs as String:
                 [kSecAttrIsPermanent as String:    true,
-                 kSecAttrEffectiveKeySize as String: 256]
+                 kSecAttrEffectiveKeySize as String: Key.keySizeInBits]
         ]
         
         var error: Unmanaged<CFError>?
@@ -91,11 +92,15 @@ class Key {
         self.publicKey = SecKeyCopyPublicKey(privateKey)!
     }
     
+    convenience init(privateKey: String) throws {
+        try self.init(privateKey: Data(base58: privateKey)!)
+    }
+    
     convenience init(privateKey: Data) throws {
         let query: [String: Any] = [
             kSecAttrKeyType as String: kSecAttrKeyTypeECSECPrimeRandom,
             kSecAttrKeyClass as String: kSecAttrKeyClassPrivate,
-            kSecAttrKeySizeInBits as String: 256
+            kSecAttrKeySizeInBits as String: Key.keySizeInBits
         ]
         var error: Unmanaged<CFError>?
         guard let key = SecKeyCreateWithData(
@@ -172,7 +177,4 @@ extension SecKey {
         return true
     }
 }
-
-
-
 

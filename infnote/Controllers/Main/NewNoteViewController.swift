@@ -39,6 +39,19 @@ class NewNoteViewController: UIViewController, UITableViewDelegate, UITableViewD
                 }, completion: nil)
             }
         }
+        
+        let note = [
+            "user_id": "vergil",
+            "content": "Some description of blockchain",
+            "date_submitted": Int(Date().timeIntervalSince1970),
+            "reply_to": "3DHjJB7shUyu8x8xVrNcEdjoA6wQJA1hVxojJ3rk7iQJ"
+            ] as [String : Any]
+        let key = try! Key(privateKey: "7x8tbToeR2XVfn35T89bXXmxyXiJN9h6BbSnhKoYg1GcuQ4cM75ewmMpzZXr1ttMcUz4u9Wd6AjUwMcEdPfZDr3qwGY68tAuEBnXJgSCT4tv4HqPCeaiGkQW6Zr8HNioDwVJ")
+        let signature = try! key.sign(data: JSONSerialization.data(withJSONObject: note, options: .sortedKeys))
+        print(key.publicKey.base58)
+        print(key.privateKey.base58)
+        print(signature.base58)
+        print(note)
     }
 
     @IBAction func cancelButtonTouched(_ sender: Any) {

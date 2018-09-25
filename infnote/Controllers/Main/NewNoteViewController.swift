@@ -17,23 +17,23 @@ class NewNoteViewController: UIViewController, UITableViewDelegate, UITableViewD
 
         let action = { (notification: Notification) in
             if let info = notification.userInfo {
-                let frame = info[UIKeyboardFrameEndUserInfoKey] as! CGRect
-                let curve = info[UIKeyboardAnimationCurveUserInfoKey] as! NSNumber
-                let time = info[UIKeyboardAnimationDurationUserInfoKey] as! NSNumber
+                let frame = info[UIResponder.keyboardFrameEndUserInfoKey] as! CGRect
+                let curve = info[UIResponder.keyboardAnimationCurveUserInfoKey] as! NSNumber
+                let time = info[UIResponder.keyboardAnimationDurationUserInfoKey] as! NSNumber
                 
-                UIView.animate(withDuration: time.doubleValue, delay: 0, options: UIViewAnimationOptions(rawValue: curve.uintValue), animations: {
+                UIView.animate(withDuration: time.doubleValue, delay: 0, options: UIView.AnimationOptions(rawValue: curve.uintValue), animations: {
                     self.bottomConstraint.constant = -frame.height
                     self.view.layoutIfNeeded()
                 }, completion: nil)
             }
         }
-        NotificationCenter.default.addObserver(forName: NSNotification.Name.UIKeyboardWillChangeFrame, object: nil, queue: OperationQueue.main, using: action)
-        NotificationCenter.default.addObserver(forName: NSNotification.Name.UIKeyboardWillHide, object: nil, queue: OperationQueue.main) { notification in
+        NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillChangeFrameNotification, object: nil, queue: OperationQueue.main, using: action)
+        NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillHideNotification, object: nil, queue: OperationQueue.main) { notification in
             if let info = notification.userInfo {
-                let curve = info[UIKeyboardAnimationCurveUserInfoKey] as! NSNumber
-                let time = info[UIKeyboardAnimationDurationUserInfoKey] as! NSNumber
+                let curve = info[UIResponder.keyboardAnimationCurveUserInfoKey] as! NSNumber
+                let time = info[UIResponder.keyboardAnimationDurationUserInfoKey] as! NSNumber
                 
-                UIView.animate(withDuration: time.doubleValue, delay: 0, options: UIViewAnimationOptions(rawValue: curve.uintValue), animations: {
+                UIView.animate(withDuration: time.doubleValue, delay: 0, options: UIView.AnimationOptions(rawValue: curve.uintValue), animations: {
                     self.bottomConstraint.constant = 0
                     self.view.layoutIfNeeded()
                 }, completion: nil)

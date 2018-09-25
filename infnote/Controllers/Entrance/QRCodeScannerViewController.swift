@@ -47,7 +47,7 @@ class QRCodeScannerViewController: UIViewController {
         
         let corpLayer = CAShapeLayer()
         corpLayer.frame = foregroundView.bounds
-        corpLayer.fillRule = kCAFillRuleEvenOdd
+        corpLayer.fillRule = CAShapeLayerFillRule.evenOdd
         corpLayer.path = path
         corpLayer.fillColor = UIColor.black.cgColor
         

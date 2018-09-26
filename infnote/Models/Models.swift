@@ -56,6 +56,7 @@ class User: Mappable, CustomStringConvertible {
         if let userID = UserDefaults.standard.object(forKey: "infnote.current.user_id") as? String {
             Networking.shared.fetchUser(id: userID, complete: { user in
                 User.current = user
+                User.current?.key = Key.loadDefaultKey()
             }, failed: nil)
         }
     }

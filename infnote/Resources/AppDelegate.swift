@@ -17,16 +17,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        if let key = Key.loadDefaultKey() {
+        if let _ = Key.loadDefaultKey() {
             switchToMainStoryboard()
             User.load()
-            User.current?.key = key
         }
         else {
             switchToEntranceStoryboard()
         }
         
         SVProgressHUD.setMinimumDismissTimeInterval(3.0)
+        SVProgressHUD.setDefaultStyle(.dark)
         
         return true
     }

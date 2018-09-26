@@ -15,6 +15,7 @@ class NewNoteViewController: UIViewController, UITableViewDelegate, UITableViewD
     @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var tableView: UITableView!
     
+    @IBOutlet weak var titleTextField: UITextField!
     var textView: UITextView!
     
     override func viewDidLoad() {
@@ -64,12 +65,30 @@ class NewNoteViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     
     @IBAction func sendButtonTouched(_ sender: Any) {
-        if textView.textColor != UIColor.lightGray {
-            
-        }
-        else {
+        guard textView.textColor != UIColor.lightGray else {
             SVProgressHUD.showError(withStatus: "请输入内容")
+            return
         }
+        guard let title = titleTextField.text, !title.isEmpty else {
+            SVProgressHUD.showError(withStatus: "请输入标题")
+            return
+        }
+        
+        var data = [
+            "title": title,
+            "content": textView.text,
+            "date_submitted": Int(Date().timeIntervalSince1970),
+            "user_id": User.current!.id
+        ] as [String: Any]
+        let signature = try! User.current!.key!.sign(data: JSONSerialization.data(withJSONObject: data, options: .sortedKeys))
+        data["signature"] = signature.base58
+        print(data)
+        Networking.shared.create(note: data, complete: { note in
+            SVProgressHUD.showInfo(withStatus: "发布成功")
+            self.dismiss(animated: true)
+        }, failed: { error in
+            SVProgressHUD.showError(withStatus: "发布失败")
+        })
     }
     
     @IBAction func cancelButtonTouched(_ sender: Any) {

@@ -256,6 +256,7 @@
                     <connections>
                         <outlet property="bottomConstraint" destination="wpP-k1-26b" id="PPb-qz-aL3"/>
                         <outlet property="tableView" destination="nnF-GJ-3VQ" id="eDk-Yf-JmC"/>
+                        <outlet property="titleTextField" destination="QS2-Ac-c5q" id="BS7-vo-6mD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hNy-3B-LWM" userLabel="First Responder" sceneMemberID="firstResponder"/>

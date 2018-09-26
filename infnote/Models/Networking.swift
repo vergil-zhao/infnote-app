@@ -26,6 +26,7 @@ class Networking {
             }
             else {
                 failed?(response.error!)
+                print(response.data!.utf8!)
             }
         }
     }
@@ -37,6 +38,7 @@ class Networking {
             }
             else {
                 failed?(response.error!)
+                print(response.data!.utf8!)
             }
         }
     }
@@ -66,7 +68,7 @@ class Networking {
     }
     
     func create(user: User, complete: @escaping (User) -> Void, failed: @escaping (Error) -> Void) {
-        request(HOST + "/user/create/", method: .post, parameters: user.toJSON(), encoding: JSONEncoding.default).validate(statusCode: 200..<300).responseObject { (response: DataResponse<User>) in
+        request(HOST + "/user/create/", method: .post, parameters: user.toJSON(), encoding: JSONEncoding.default).validate().responseObject { (response: DataResponse<User>) in
             if let user = response.value {
                 complete(user)
             } else {
@@ -76,10 +78,14 @@ class Networking {
         }
     }
     
-    func create(note: Note) {
-        request(HOST + "/post/", method: .post, parameters: note.toJSON(), encoding: JSONEncoding.default).responseObject { (response: DataResponse<Note>) in
-            if let note = response.result.value {
-                print(note)
+    func create(note: [String: Any], complete: @escaping (Note) -> Void, failed: ((Error) -> Void)?) {
+        request(HOST + "/post/", method: .post, parameters: note, encoding: JSONEncoding.default).validate().responseObject { (response: DataResponse<Note>) in
+            if let note = response.value {
+                complete(note)
+            }
+            else {
+                failed?(response.error!)
+                print(response.data!.utf8!)
             }
         }
     }

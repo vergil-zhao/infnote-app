@@ -19,6 +19,8 @@
 		44561652211B1B9E002BE1B7 /* CommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44561651211B1B9E002BE1B7 /* CommentCell.swift */; };
 		44561654211C3075002BE1B7 /* KeyPairViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44561653211C3075002BE1B7 /* KeyPairViewController.swift */; };
 		44561656211D885B002BE1B7 /* DiscoveryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44561655211D885B002BE1B7 /* DiscoveryViewController.swift */; };
+		44636972215B533F00373FB8 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44636971215B533F00373FB8 /* Networking.swift */; };
+		44636974215B568A00373FB8 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44636973215B568A00373FB8 /* Models.swift */; };
 		44703795212BB2C70040ADFC /* Encoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44703794212BB2C70040ADFC /* Encoding.swift */; };
 		44703798213017E70040ADFC /* Key.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44703797213017E70040ADFC /* Key.swift */; };
 		44D517E5211185E100ED8477 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D517E4211185E100ED8477 /* AppDelegate.swift */; };
@@ -56,6 +58,8 @@
 		44561651211B1B9E002BE1B7 /* CommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentCell.swift; sourceTree = "<group>"; };
 		44561653211C3075002BE1B7 /* KeyPairViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyPairViewController.swift; sourceTree = "<group>"; };
 		44561655211D885B002BE1B7 /* DiscoveryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryViewController.swift; sourceTree = "<group>"; };
+		44636971215B533F00373FB8 /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
+		44636973215B568A00373FB8 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		44703794212BB2C70040ADFC /* Encoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Encoding.swift; sourceTree = "<group>"; };
 		44703797213017E70040ADFC /* Key.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Key.swift; sourceTree = "<group>"; };
 		44D517E1211185E100ED8477 /* infnote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = infnote.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -143,6 +147,8 @@
 			isa = PBXGroup;
 			children = (
 				44703797213017E70040ADFC /* Key.swift */,
+				44636971215B533F00373FB8 /* Networking.swift */,
+				44636973215B568A00373FB8 /* Models.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -373,11 +379,13 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-infnote/Pods-infnote-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireObjectMapper/AlamofireObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/CRRefresh/CRRefresh.framework",
 				"${BUILT_PRODUCTS_DIR}/Down/Down.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/ImagePicker/ImagePicker.framework",
 				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
+				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/QRCode/QRCode.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
@@ -386,11 +394,13 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CRRefresh.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Down.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ImagePicker.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/QRCode.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
@@ -434,7 +444,9 @@
 				44703798213017E70040ADFC /* Key.swift in Sources */,
 				443425732125592D00A5F738 /* ProfileEditViewController.swift in Sources */,
 				443F68F5211F00C100ADF657 /* DiscoveryContainerViewController.swift in Sources */,
+				44636974215B568A00373FB8 /* Models.swift in Sources */,
 				44EC42A6211422BA0054584C /* ImageStackView.swift in Sources */,
+				44636972215B533F00373FB8 /* Networking.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

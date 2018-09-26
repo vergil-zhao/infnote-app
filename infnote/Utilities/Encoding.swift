@@ -47,6 +47,10 @@ extension Data {
         }
         return Data(bytes: hash)
     }
+    
+    public var utf8: String? {
+        return String(data: self, encoding: .utf8)
+    }
 }
 
 private protocol Encoding {

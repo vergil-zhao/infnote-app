@@ -24,6 +24,8 @@
 	<string>禁用相机将无法发表图片以及读取二维码</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>禁用图库将无法发表图片以及读取二维码</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>禁用图库写入将无法保存二维码</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>

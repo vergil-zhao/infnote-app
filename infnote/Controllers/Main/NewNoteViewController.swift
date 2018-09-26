@@ -8,10 +8,15 @@
 
 import UIKit
 import IQKeyboardManagerSwift
+import SVProgressHUD
 
 class NewNoteViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
+    @IBOutlet weak var tableView: UITableView!
+    
+    var textView: UITextView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -40,6 +45,7 @@ class NewNoteViewController: UIViewController, UITableViewDelegate, UITableViewD
             }
         }
         
+        /* Test signature procedure
         let note = [
             "user_id": "vergil",
             "content": "Some description of blockchain",
@@ -52,25 +58,33 @@ class NewNoteViewController: UIViewController, UITableViewDelegate, UITableViewD
         print(key.privateKey.base58)
         print(signature.base58)
         print(note)
+         */
     }
-
+    
+    
+    
+    @IBAction func sendButtonTouched(_ sender: Any) {
+        if textView.textColor != UIColor.lightGray {
+            
+        }
+        else {
+            SVProgressHUD.showError(withStatus: "请输入内容")
+        }
+    }
+    
     @IBAction func cancelButtonTouched(_ sender: Any) {
         self.navigationController?.dismiss(animated: true)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if indexPath.row == 0 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "text", for: indexPath) as! NewNoteTextCell
-            cell.prepareViews(tableView)
-            return cell
-        }
-        else {
-            return tableView.dequeueReusableCell(withIdentifier: "topic", for: indexPath)
-        }
+        let cell = tableView.dequeueReusableCell(withIdentifier: "content", for: indexPath) as! NewNoteTextCell
+        cell.prepareViews(tableView)
+        textView = cell.textView
+        return cell
     }
 
 }
@@ -84,6 +98,7 @@ class NewNoteTextCell: UITableViewCell, UITextViewDelegate {
     func prepareViews(_ tableView: UITableView) {
         self.tableView = tableView
         textView.delegate = self
+        textView.textColor = .lightGray
     }
     
     func textViewDidChange(_ textView: UITextView) {
@@ -93,6 +108,20 @@ class NewNoteTextCell: UITableViewCell, UITextViewDelegate {
         tableView.beginUpdates()
         tableView.endUpdates()
         UIView.setAnimationsEnabled(true)
+    }
+    
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if textView.textColor == UIColor.lightGray {
+            textView.text = nil
+            textView.textColor = .black
+        }
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if textView.text.isEmpty {
+            textView.text = "发表自己的想法"
+            textView.textColor = .lightGray
+        }
     }
 }
 

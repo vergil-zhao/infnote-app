@@ -33,7 +33,7 @@ class Key {
             kSecClass as String: kSecClassKey,
             kSecAttrApplicationTag as String: defaultTag,
             kSecAttrKeyType as String: kSecAttrKeyTypeECSECPrimeRandom,
-            kSecAttrKeySizeInBits as String: self.keySizeInBits,
+            kSecAttrKeySizeInBits as String: keySizeInBits,
             kSecReturnRef as String: true
             ] as CFDictionary, &item)
         guard status == errSecSuccess else {
@@ -45,11 +45,9 @@ class Key {
     class func clean() {
         let attributes: [String: Any] = [
             kSecClass as String: kSecClassKey,
-            kSecAttrApplicationTag as String: Key.defaultTag,
+            kSecAttrApplicationTag as String: defaultTag,
             kSecAttrKeyType as String: kSecAttrKeyTypeECSECPrimeRandom,
-            kSecAttrKeySizeInBits as String: self.keySizeInBits,
-            kSecReturnRef as String: true,
-            kSecMatchLimit as String: kSecMatchLimitAll
+            kSecAttrKeySizeInBits as String: keySizeInBits
         ]
         SecItemDelete(attributes as CFDictionary)
     }

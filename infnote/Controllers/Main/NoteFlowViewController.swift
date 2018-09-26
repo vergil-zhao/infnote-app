@@ -30,7 +30,7 @@ class NoteFlowViewController: UIViewController, UITableViewDataSource, UITableVi
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! MainCell
         cell.prepareViews()
-        cell.contentLabel.numberOfLines = data[indexPath.row]
+//        cell.contentLabel.numberOfLines = data[indexPath.row]
         return cell
     }
     

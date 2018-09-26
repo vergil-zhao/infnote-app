@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -23,10 +22,13 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login-icon" translatesAutoresizingMaskIntoConstraints="NO" id="FIk-6R-PKE">
-                                <rect key="frame" x="89" y="116" width="196" height="102"/>
+                                <rect key="frame" x="94" y="118" width="187.5" height="97.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="FIk-6R-PKE" secondAttribute="height" multiplier="98:51" id="DGC-iE-iD2"/>
+                                </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="INFNOTE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gcd-kk-Q8a">
-                                <rect key="frame" x="116" y="226" width="143" height="39"/>
+                                <rect key="frame" x="116" y="223.5" width="143" height="39"/>
                                 <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="30"/>
                                 <color key="textColor" red="0.36862745099999999" green="0.43137254899999999" blue="0.93333333330000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -37,6 +39,7 @@
                             <constraint firstItem="FIk-6R-PKE" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="7zq-6g-F3t"/>
                             <constraint firstItem="sJ3-f4-1JL" firstAttribute="trailing" secondItem="Ze5-6b-2t3" secondAttribute="trailing" id="9f6-r0-JYK"/>
                             <constraint firstItem="sJ3-f4-1JL" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="EgY-cE-Mml"/>
+                            <constraint firstItem="FIk-6R-PKE" firstAttribute="width" secondItem="sJ3-f4-1JL" secondAttribute="width" multiplier="1:2" id="HbG-6x-drj"/>
                             <constraint firstItem="sJ3-f4-1JL" firstAttribute="bottom" secondItem="Ze5-6b-2t3" secondAttribute="bottom" id="Oqm-zc-VlY"/>
                             <constraint firstItem="gcd-kk-Q8a" firstAttribute="top" secondItem="FIk-6R-PKE" secondAttribute="bottom" constant="8" id="Y9O-Or-Nio"/>
                             <constraint firstItem="sJ3-f4-1JL" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="atj-rA-wcF"/>
@@ -53,6 +56,6 @@
     </scenes>
     <resources>
         <image name="launch-background" width="375" height="667"/>
-        <image name="login-icon" width="196" height="102"/>
+        <image name="login-icon" width="588" height="306"/>
     </resources>
 </document>

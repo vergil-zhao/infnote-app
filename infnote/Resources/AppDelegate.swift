@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,12 +17,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        if let _ = Key.loadDefaultKey() {
+        if let key = Key.loadDefaultKey() {
             switchToMainStoryboard()
+            User.load()
+            User.current?.key = key
         }
         else {
             switchToEntranceStoryboard()
         }
+        
+        SVProgressHUD.setMinimumDismissTimeInterval(3.0)
         
         return true
     }

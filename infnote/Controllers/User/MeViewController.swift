@@ -10,6 +10,9 @@ import UIKit
 
 class MeViewController: UITableViewController {
 
+    @IBOutlet weak var nicknameLabel: UILabel!
+    @IBOutlet weak var idLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -17,6 +20,9 @@ class MeViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(false, animated: true)
+        
+        nicknameLabel.text = User.current?.nickname ?? "INFNOTE"
+        idLabel.text = "@\(User.current?.id ?? "infnote")"
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

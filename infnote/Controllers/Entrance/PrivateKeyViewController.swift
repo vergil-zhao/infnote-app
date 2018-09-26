@@ -8,23 +8,29 @@
 
 import UIKit
 import QRCode
+import SVProgressHUD
 
 class PrivateKeyViewController: UIViewController {
 
     @IBOutlet weak var iCloudView: UIView!
     @IBOutlet weak var privateKeyQRCodeView: UIImageView!
     @IBOutlet weak var privateKeyLabel: UILabel!
-    @IBOutlet weak var userIDLabel: UILabel!
+    @IBOutlet weak var publicKeyLabel: UILabel!
     
-    let key = try! Key(privateKey: "7x8tbToeR2XVfn35T89bXXmxyXiJN9h6BbSnhKoYg1GcuQ4cM75ewmMpzZXr1ttMcUz4u9Wd6AjUwMcEdPfZDr3qwGY68tAuEBnXJgSCT4tv4HqPCeaiGkQW6Zr8HNioDwVJ")
+    var id: String!
+    var nickname: String!
+    var bio: String?
+    
+    let key = try! Key()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.setNavigationBarHidden(false, animated: false)
         
         privateKeyLabel.text = key.privateKey.base58
-        userIDLabel.text = key.publicKey.base58
+        publicKeyLabel.text = key.publicKey.base58
         
+        /* Test signature procedure
         let dict = [
             "id": "vergil",
             "nickname": "Vergil",
@@ -37,6 +43,7 @@ class PrivateKeyViewController: UIViewController {
         print(String(data: data, encoding: .utf8)!)
         print(key.publicKey.base58)
         print(signatureData.base58)
+         */
     }
     
     override func viewDidLayoutSubviews() {
@@ -57,8 +64,50 @@ class PrivateKeyViewController: UIViewController {
         privateKeyQRCodeView.image = code.image
     }
     
+    @IBAction func saveButtonTouched(_ sender: Any) {
+        UIImageWriteToSavedPhotosAlbum(privateKeyQRCodeView.image!, self, #selector(image(_:didFinishSavingWithError:contextInfo:)), nil)
+    }
+    
+    @IBAction func privateKeyLabelTouched(_ sender: Any) {
+        UIPasteboard.general.string = key.privateKey.base58
+        SVProgressHUD.showInfo(withStatus: "已复制到剪贴板")
+    }
+    
+    @IBAction func publicKeyLabelTouched(_ sender: Any) {
+        UIPasteboard.general.string = key.publicKey.base58
+        SVProgressHUD.showInfo(withStatus: "已复制到剪贴板")
+    }
+    
+    @objc func image(_ image: UIImage, didFinishSavingWithError error: NSError?, contextInfo: UnsafeRawPointer) {
+        if let _ = error {
+            SVProgressHUD.showError(withStatus: "保存失败")
+        } else {
+            SVProgressHUD.showInfo(withStatus: "已保存至手机相册")
+        }
+    }
+    
     @IBAction func doneButtonTouched(_ sender: Any) {
-        try! key.save()
-        AppDelegate.switchToMainStoryboard()
+        var info = [
+            "id": id!,
+            "nickname": nickname!
+        ]
+        if let bio = self.bio {
+            info["bio"] = bio
+        }
+        let data = try! JSONSerialization.data(withJSONObject: info, options: .sortedKeys)
+        let signatureData = try! key.sign(data: data)
+        let user = User(JSON: info)!
+        user.signature = signatureData.base58
+        user.publicKey = key.publicKey.base58
+        user.key = key
+        
+        SVProgressHUD.show()
+        Networking.shared.create(user: user, complete: { user in
+            SVProgressHUD.dismiss()
+            user.save()
+            AppDelegate.switchToMainStoryboard()
+        }, failed: { error in
+            SVProgressHUD.showError(withStatus: "注册用户失败")
+        })
     }
 }

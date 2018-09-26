@@ -14,4 +14,5 @@ target 'infnote' do
     pod 'QRCode'
     pod 'XLPagerTabStrip'
     pod 'IQKeyboardManagerSwift'
+    pod 'AlamofireObjectMapper'
 end

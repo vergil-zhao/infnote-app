@@ -8,12 +8,28 @@
 
 import UIKit
 import ImagePicker
+import QRCode
+import SVProgressHUD
 
 class LoginViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     @IBOutlet weak var imageSKView: UIView!
     @IBOutlet weak var textSKView: UIView!
     @IBOutlet weak var iCloudView: UIView!
+    @IBOutlet weak var skImageView: UIImageView!
+    
+    var key: Key? {
+        didSet {
+            guard key != nil else {
+                return
+            }
+            var code = QRCode(key!.privateKey.base58)!
+            let width = skImageView.bounds.width > skImageView.bounds.height ? skImageView.bounds.height : skImageView.bounds.width
+            code.size = CGSize(width: width, height: width)
+            skImageView.image = code.image
+            skImageView.isHidden = false
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,7 +70,9 @@ class LoginViewController: UIViewController, UIImagePickerControllerDelegate, UI
     
     @IBAction func pasteTouched(_ sender: UITapGestureRecognizer) {
         if UIPasteboard.general.hasStrings {
-            
+            if let key = try? Key(privateKey: UIPasteboard.general.string!) {
+                self.key = key
+            }
         }
         else {
             let alert = UIAlertController(title: "提示", message: "剪贴板中无内容，请复制后再次尝试", preferredStyle: .alert)
@@ -64,9 +82,36 @@ class LoginViewController: UIViewController, UIImagePickerControllerDelegate, UI
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        // Local variable inserted by Swift 4.2 migrator.
-//        let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
+        if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            let image = CIImage(image: image)!
+            let context = CIContext(options: nil)
+            let detector = CIDetector(ofType: CIDetectorTypeQRCode, context: context, options: [CIDetectorAccuracy: CIDetectorAccuracyHigh])
+            let features = detector?.features(in: image)
+            if let feature = features?.first as? CIQRCodeFeature {
+                if let key = try? Key(privateKey: feature.messageString!) {
+                    self.key = key
+                }
+            }
+        }
+        
         picker.dismiss(animated: true)
+    }
+    
+    @IBAction func loginButtonTouched(_ sender: Any) {
+        if let key = self.key {
+            SVProgressHUD.show()
+            Networking.shared.fetchUser(publicKey: key.publicKey.base58, complete: { user in
+                SVProgressHUD.dismiss()
+                user.key = key
+                user.save()
+                AppDelegate.switchToMainStoryboard()
+            }, failed: { _ in
+                SVProgressHUD.showError(withStatus: "登录失败")
+            })
+        }
+        else {
+            SVProgressHUD.showError(withStatus: "登录需要先导入私钥")
+        }
     }
     
     

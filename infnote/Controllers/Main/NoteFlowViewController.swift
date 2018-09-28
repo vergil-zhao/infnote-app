@@ -13,7 +13,7 @@ class NoteFlowViewController: UIViewController, UITableViewDataSource, UITableVi
     
     @IBOutlet weak var tableView: UITableView!
     
-    var data = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+    var notes: [Note] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,13 +24,12 @@ class NoteFlowViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return notes.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! MainCell
-        cell.prepareViews()
-//        cell.contentLabel.numberOfLines = data[indexPath.row]
+        cell.prepareViews(note: notes[indexPath.row])
         return cell
     }
     

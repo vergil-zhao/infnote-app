@@ -29,7 +29,8 @@ class ContentCell: NoteViewCell {
 class NoteViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var tableView: UITableView!
-    
+    var note: Note?
+    var comments: [Note] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -1,4 +1,4 @@
-platform :ios, '10.0'
+platform :ios, '11.0'
 inhibit_all_warnings!
 use_frameworks!
 
@@ -15,4 +15,5 @@ target 'infnote' do
     pod 'XLPagerTabStrip'
     pod 'IQKeyboardManagerSwift'
     pod 'AlamofireObjectMapper'
+    pod 'InfnoteChain', :path => '../InfnoteChain/'
 end

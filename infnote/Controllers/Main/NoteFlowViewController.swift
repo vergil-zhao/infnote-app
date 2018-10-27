@@ -21,6 +21,10 @@ class NoteFlowViewController: UIViewController, UITableViewDataSource, UITableVi
         
         tableView.register(MainCell.self, forCellReuseIdentifier: "cell")
         tableView.estimatedRowHeight = 365
+        
+        Networking.shared.fetchNoteList(page: 1) { notes in
+            
+        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

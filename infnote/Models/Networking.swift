@@ -43,26 +43,26 @@ class Networking {
         }
     }
     
-    func fetchNote(id: String) {
+    func fetchNote(id: String, complete: ((Note) -> Void)?) {
         request(HOST + "/post/\(id)/").responseObject { (response: DataResponse<Note>) in
             if let note = response.result.value {
-                print(note)
+                complete?(note)
             }
         }
     }
     
-    func fetchNoteList(page: Int) {
+    func fetchNoteList(page: Int, complete: (([Note]) -> Void)?) {
         request(HOST + "/post/list/").responseObject { (response: DataResponse<NoteListResponse>) in
             if let list = response.result.value {
-                print(list.notes)
+                complete?(list.notes)
             }
         }
     }
     
-    func fetchReplyList(noteID: String) {
+    func fetchReplyList(noteID: String, complete: (([Note]) -> Void)?) {
         request(HOST + "/post/\(noteID)/replies/").responseObject { (response: DataResponse<NoteListResponse>) in
             if let list = response.result.value {
-                print(list.notes)
+                complete?(list.notes)
             }
         }
     }

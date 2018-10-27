@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		443138AA21845947000C7742 /* AddChainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443138A221845946000C7742 /* AddChainViewController.swift */; };
+		443138AB21845947000C7742 /* AddPeerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443138A321845946000C7742 /* AddPeerViewController.swift */; };
+		443138AC21845947000C7742 /* ChainsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443138A421845946000C7742 /* ChainsViewController.swift */; };
+		443138AD21845947000C7742 /* PeersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443138A521845946000C7742 /* PeersViewController.swift */; };
+		443138AE21845947000C7742 /* BlocksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443138A621845946000C7742 /* BlocksViewController.swift */; };
+		443138AF21845947000C7742 /* NewBlockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443138A721845946000C7742 /* NewBlockViewController.swift */; };
+		443138B021845947000C7742 /* BlockDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443138A821845947000C7742 /* BlockDetailViewController.swift */; };
+		443138B121845947000C7742 /* NewChainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443138A921845947000C7742 /* NewChainViewController.swift */; };
+		443138B32184597C000C7742 /* Developer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 443138B22184597C000C7742 /* Developer.storyboard */; };
 		443425732125592D00A5F738 /* ProfileEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443425722125592D00A5F738 /* ProfileEditViewController.swift */; };
 		4434257521255FE500A5F738 /* MeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4434257421255FE500A5F738 /* MeViewController.swift */; };
 		4434257721268DBC00A5F738 /* UserNotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4434257621268DBC00A5F738 /* UserNotificationViewController.swift */; };
@@ -46,6 +55,15 @@
 
 /* Begin PBXFileReference section */
 		2C2CF4077FA2A36AB2BE111D /* Pods-infnote.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-infnote.release.xcconfig"; path = "Pods/Target Support Files/Pods-infnote/Pods-infnote.release.xcconfig"; sourceTree = "<group>"; };
+		443138A221845946000C7742 /* AddChainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddChainViewController.swift; sourceTree = "<group>"; };
+		443138A321845946000C7742 /* AddPeerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPeerViewController.swift; sourceTree = "<group>"; };
+		443138A421845946000C7742 /* ChainsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChainsViewController.swift; sourceTree = "<group>"; };
+		443138A521845946000C7742 /* PeersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeersViewController.swift; sourceTree = "<group>"; };
+		443138A621845946000C7742 /* BlocksViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlocksViewController.swift; sourceTree = "<group>"; };
+		443138A721845946000C7742 /* NewBlockViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewBlockViewController.swift; sourceTree = "<group>"; };
+		443138A821845947000C7742 /* BlockDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlockDetailViewController.swift; sourceTree = "<group>"; };
+		443138A921845947000C7742 /* NewChainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewChainViewController.swift; sourceTree = "<group>"; };
+		443138B22184597C000C7742 /* Developer.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Developer.storyboard; sourceTree = "<group>"; };
 		443425722125592D00A5F738 /* ProfileEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditViewController.swift; sourceTree = "<group>"; };
 		4434257421255FE500A5F738 /* MeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeViewController.swift; sourceTree = "<group>"; };
 		4434257621268DBC00A5F738 /* UserNotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNotificationViewController.swift; sourceTree = "<group>"; };
@@ -106,6 +124,22 @@
 				2C2CF4077FA2A36AB2BE111D /* Pods-infnote.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		443138A121845927000C7742 /* Developer */ = {
+			isa = PBXGroup;
+			children = (
+				443138A221845946000C7742 /* AddChainViewController.swift */,
+				443138A321845946000C7742 /* AddPeerViewController.swift */,
+				443138A821845947000C7742 /* BlockDetailViewController.swift */,
+				443138A621845946000C7742 /* BlocksViewController.swift */,
+				443138A421845946000C7742 /* ChainsViewController.swift */,
+				443138A721845946000C7742 /* NewBlockViewController.swift */,
+				443138A921845947000C7742 /* NewChainViewController.swift */,
+				443138A521845946000C7742 /* PeersViewController.swift */,
+				443138B22184597C000C7742 /* Developer.storyboard */,
+			);
+			path = Developer;
 			sourceTree = "<group>";
 		};
 		443425712125590900A5F738 /* User */ = {
@@ -174,6 +208,7 @@
 		44D517E3211185E100ED8477 /* infnote */ = {
 			isa = PBXGroup;
 			children = (
+				443138A121845927000C7742 /* Developer */,
 				44703796213017C50040ADFC /* Models */,
 				44EC4288211187240054584C /* Controllers */,
 				44EC4287211187140054584C /* Views */,
@@ -345,6 +380,7 @@
 				44D517EF211185E300ED8477 /* LaunchScreen.storyboard in Resources */,
 				44D517EC211185E300ED8477 /* Assets.xcassets in Resources */,
 				44EC42A121131C1A0054584C /* User.storyboard in Resources */,
+				443138B32184597C000C7742 /* Developer.storyboard in Resources */,
 				44D517EA211185E100ED8477 /* Entrance.storyboard in Resources */,
 				44EC42922112AF180054584C /* Main.storyboard in Resources */,
 			);
@@ -384,11 +420,15 @@
 				"${BUILT_PRODUCTS_DIR}/Down/Down.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/ImagePicker/ImagePicker.framework",
+				"${BUILT_PRODUCTS_DIR}/InfnoteChain/InfnoteChain.framework",
 				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/QRCode/QRCode.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+				"${BUILT_PRODUCTS_DIR}/Starscream/Starscream.framework",
 				"${BUILT_PRODUCTS_DIR}/XLPagerTabStrip/XLPagerTabStrip.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -399,11 +439,15 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Down.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ImagePicker.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/InfnoteChain.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/QRCode.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Starscream.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/XLPagerTabStrip.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -424,24 +468,32 @@
 				44EC42A92115AB480054584C /* SignUpViewController.swift in Sources */,
 				44703795212BB2C70040ADFC /* Encoding.swift in Sources */,
 				44561650211AFD37002BE1B7 /* NoteViewController.swift in Sources */,
+				443138AA21845947000C7742 /* AddChainViewController.swift in Sources */,
+				443138AF21845947000C7742 /* NewBlockViewController.swift in Sources */,
 				44EC42AE2115DE880054584C /* QRCodeScannerViewController.swift in Sources */,
 				44561656211D885B002BE1B7 /* DiscoveryViewController.swift in Sources */,
 				44EC42902111DF2C0054584C /* UIView+Tools.swift in Sources */,
+				443138AC21845947000C7742 /* ChainsViewController.swift in Sources */,
 				44561652211B1B9E002BE1B7 /* CommentCell.swift in Sources */,
 				44EC428C211196210054584C /* LoginViewController.swift in Sources */,
 				44EC429F21131C0C0054584C /* UserViewController.swift in Sources */,
 				443F68F1211DA3FD00ADF657 /* FollowingViewController.swift in Sources */,
 				44D517E5211185E100ED8477 /* AppDelegate.swift in Sources */,
 				44EC428A211196170054584C /* LaunchViewController.swift in Sources */,
+				443138B121845947000C7742 /* NewChainViewController.swift in Sources */,
 				44561654211C3075002BE1B7 /* KeyPairViewController.swift in Sources */,
+				443138B021845947000C7742 /* BlockDetailViewController.swift in Sources */,
 				44EC429D21131BF90054584C /* UserHeaderView.swift in Sources */,
 				44EC42972112B0F60054584C /* MainCell.swift in Sources */,
 				443F68EF211D9D1D00ADF657 /* TopicCollectionViewController.swift in Sources */,
 				44EC42A3211345820054584C /* Consts.swift in Sources */,
+				443138AE21845947000C7742 /* BlocksViewController.swift in Sources */,
 				4434257521255FE500A5F738 /* MeViewController.swift in Sources */,
 				44EC429A2112B9B90054584C /* HomeViewController.swift in Sources */,
+				443138AD21845947000C7742 /* PeersViewController.swift in Sources */,
 				443F68F72122F0E100ADF657 /* NewNoteViewController.swift in Sources */,
 				44703798213017E70040ADFC /* Key.swift in Sources */,
+				443138AB21845947000C7742 /* AddPeerViewController.swift in Sources */,
 				443425732125592D00A5F738 /* ProfileEditViewController.swift in Sources */,
 				443F68F5211F00C100ADF657 /* DiscoveryContainerViewController.swift in Sources */,
 				44636974215B568A00373FB8 /* Models.swift in Sources */,

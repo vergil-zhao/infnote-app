@@ -64,7 +64,7 @@ class NoteViewController: UIViewController, UITableViewDelegate, UITableViewData
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "note", for: indexPath) as! MainCell
-            cell.prepareViews()
+            cell.prepareViews(note: note!)
             cell.contentLabel.numberOfLines = 0
             return cell
         } else {

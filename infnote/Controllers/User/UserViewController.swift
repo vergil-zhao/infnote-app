@@ -49,7 +49,7 @@ class UserViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! MainCell
-        cell.prepareViews()
+//        cell.prepareViews(note: <#T##Note#>)
         
         return cell
     }

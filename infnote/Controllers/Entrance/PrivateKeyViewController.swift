@@ -9,6 +9,7 @@
 import UIKit
 import QRCode
 import SVProgressHUD
+import InfnoteChain
 
 class PrivateKeyViewController: UIViewController {
 
@@ -27,7 +28,7 @@ class PrivateKeyViewController: UIViewController {
         super.viewDidLoad()
         self.navigationController?.setNavigationBarHidden(false, animated: false)
         
-        privateKeyLabel.text = key.privateKey.base58
+        privateKeyLabel.text = key.privateKey!.base58
         publicKeyLabel.text = key.publicKey.base58
         
         /* Test signature procedure
@@ -58,7 +59,7 @@ class PrivateKeyViewController: UIViewController {
         iCloudView.layer.insertSublayer(gradientLayer, at: 0)
         iCloudView.layer.masksToBounds = true
         
-        var code = QRCode(key.privateKey.base58)!
+        var code = QRCode(key.privateKey!.base58)!
         let width = privateKeyQRCodeView.bounds.width > privateKeyQRCodeView.bounds.height ? privateKeyQRCodeView.bounds.height : privateKeyQRCodeView.bounds.width
         code.size = CGSize(width: width, height: width)
         privateKeyQRCodeView.image = code.image
@@ -69,7 +70,7 @@ class PrivateKeyViewController: UIViewController {
     }
     
     @IBAction func privateKeyLabelTouched(_ sender: Any) {
-        UIPasteboard.general.string = key.privateKey.base58
+        UIPasteboard.general.string = key.privateKey!.base58
         SVProgressHUD.showInfo(withStatus: "已复制到剪贴板")
     }
     

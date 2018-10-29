@@ -8,6 +8,13 @@
 
 import Foundation
 import ObjectMapper
+import InfnoteChain
+
+class Model {
+    static let DateToInt = TransformOf<Date, Int>(
+        fromJSON: { $0 == nil ? nil : Date(timeIntervalSince1970: TimeInterval($0!)) },
+        toJSON: { $0 == nil ? nil : Int($0!.timeIntervalSince1970) })
+}
 
 class User: Mappable, CustomStringConvertible {
     static var current: User?
@@ -39,11 +46,11 @@ class User: Mappable, CustomStringConvertible {
         signature   <- map["signature"]
         topics      <- map["topics"]
         replies     <- map["replies"]
-        dateCreated <- (map["date_created"], DateTransform())
+        dateCreated <- (map["date_created"], Model.DateToInt)
     }
     
     var description: String {
-        return "\(id!) - \(nickname!) - \(dateCreated!)"
+        return flatModel(dict: toJSON())
     }
     
     func save() {
@@ -78,6 +85,10 @@ class Note: Mappable, CustomStringConvertible {
     var isConfirmed: Bool!
     var blockHeight: Int?
     
+    var date: Date {
+        return dateConfirmed ?? dateSubmitted
+    }
+    
     
     required init?(map: Map) {}
     
@@ -88,16 +99,33 @@ class Note: Mappable, CustomStringConvertible {
         user            <- map["user"]
         title           <- map["title"]
         content         <- map["content"]
-        dateSubmitted   <- map["date_submitted"]
         replyTo         <- map["reply_to"]
         signature       <- map["signature"]
-        payloadID       <- map["payload_id"]
-        dateConfirmed   <- map["date_confirmed"]
         isConfirmed     <- map["is_confirmed"]
         blockHeight     <- map["block_height"]
+        dateSubmitted   <- (map["date_submitted"], Model.DateToInt)
+        dateConfirmed   <- (map["date_confirmed"], Model.DateToInt)
     }
     
     var description: String {
-        return "\(user!.id!): \(title ?? id!)"
+        return flatModel(dict: toJSON())
+    }
+}
+
+func flatModel(dict: [String: Any], indent: Int = 0) -> String {
+    let maxWidth = dict.reduce(0) { result, item in
+        return max(result, item.key.count)
+    }
+    return dict.reduce("") { result, item in
+        var content = item.value
+        if let value = item.value as? [String: Any] {
+            content = flatModel(dict: value, indent: indent + 4)
+        }
+        if let value = item.value as? String, value.count > 200 {
+            content = value[..<String.Index(encodedOffset: 200)]
+        }
+        let spaces = String(repeating: " ", count: maxWidth - item.key.count)
+        let indent = String(repeating: " ", count: indent)
+        return result + "\n\(indent)[\(item.key)\(spaces)] \(content)"
     }
 }

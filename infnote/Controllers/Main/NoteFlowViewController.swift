@@ -23,7 +23,8 @@ class NoteFlowViewController: UIViewController, UITableViewDataSource, UITableVi
         tableView.estimatedRowHeight = 365
         
         Networking.shared.fetchNoteList(page: 1) { notes in
-            
+            self.notes = notes
+            self.tableView.reloadData()
         }
     }
     
@@ -39,7 +40,9 @@ class NoteFlowViewController: UIViewController, UITableViewDataSource, UITableVi
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        self.navigationController?.pushViewController(storyboard!.instantiateViewController(withIdentifier: NSStringFromClass(NoteViewController.self)), animated: true)
+        let controller = storyboard!.instantiateViewController(withIdentifier: NSStringFromClass(NoteViewController.self)) as! NoteViewController
+        controller.note = notes[indexPath.row]
+        self.navigationController?.pushViewController(controller, animated: true)
     }
     
     func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {

@@ -88,21 +88,21 @@ class MainCell: UITableViewCell {
             make.top.equalTo(titleLabel.snp.bottom).offset(ViewConst.lineSpace)
         }
         
-        imageStackView.backgroundColor = MAIN_COLOR
-        imageStackView.snp.remakeConstraints { make in
-            make.left.equalToSuperview().offset(ViewConst.horizontalMargin)
-            make.right.equalToSuperview().offset(-ViewConst.horizontalMargin)
-            make.top.equalTo(contentLabel.snp.bottom).offset(ViewConst.verticalMargin)
-            make.height.equalTo(imageStackView.calculatedHeigh)
-        }
+//        imageStackView.backgroundColor = MAIN_COLOR
+//        imageStackView.snp.remakeConstraints { make in
+//            make.left.equalToSuperview().offset(ViewConst.horizontalMargin)
+//            make.right.equalToSuperview().offset(-ViewConst.horizontalMargin)
+//            make.top.equalTo(contentLabel.snp.bottom).offset(ViewConst.verticalMargin)
+//            make.height.equalTo(imageStackView.calculatedHeigh)
+//        }
         
-        timeLabel.text = DateFormatter(withFormat: "MM-DD", locale: "zh-cn").string(from: note.dateSubmitted)
+        timeLabel.text = note.date.formatted
         timeLabel.font = UIFont(name: DEFAULT_FONT_REGULAR, size: 14)
         timeLabel.textColor = .darkGray
         timeLabel.snp.remakeConstraints { make in
             make.left.equalToSuperview().offset(ViewConst.horizontalMargin)
             make.bottom.equalToSuperview().offset(-ViewConst.verticalMargin)
-            make.top.equalTo(imageStackView.snp.bottom).offset(ViewConst.verticalMargin)
+            make.top.equalTo(contentLabel.snp.bottom).offset(ViewConst.verticalMargin)
         }
         
         commentLabel.text = "\(note.replies!) 条评论"
@@ -111,7 +111,7 @@ class MainCell: UITableViewCell {
         commentLabel.snp.remakeConstraints { make in
             make.right.equalToSuperview().offset(-ViewConst.horizontalMargin)
             make.bottom.equalToSuperview().offset(-ViewConst.verticalMargin)
-            make.top.equalTo(imageStackView.snp.bottom).offset(ViewConst.verticalMargin)
+//            make.top.equalTo(timeLabel.snp.bottom).offset(ViewConst.verticalMargin)
         }
     }
 

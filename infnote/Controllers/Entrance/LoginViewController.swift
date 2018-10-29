@@ -10,6 +10,7 @@ import UIKit
 import ImagePicker
 import QRCode
 import SVProgressHUD
+import InfnoteChain
 
 class LoginViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
@@ -23,7 +24,7 @@ class LoginViewController: UIViewController, UIImagePickerControllerDelegate, UI
             guard key != nil else {
                 return
             }
-            var code = QRCode(key!.privateKey.base58)!
+            var code = QRCode(key!.privateKey!.base58)!
             let width = skImageView.bounds.width > skImageView.bounds.height ? skImageView.bounds.height : skImageView.bounds.width
             code.size = CGSize(width: width, height: width)
             skImageView.image = code.image

@@ -16,6 +16,7 @@
 		443138B021845947000C7742 /* BlockDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443138A821845947000C7742 /* BlockDetailViewController.swift */; };
 		443138B121845947000C7742 /* NewChainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443138A921845947000C7742 /* NewChainViewController.swift */; };
 		443138B32184597C000C7742 /* Developer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 443138B22184597C000C7742 /* Developer.storyboard */; };
+		443138B521849337000C7742 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443138B421849337000C7742 /* Extensions.swift */; };
 		443425732125592D00A5F738 /* ProfileEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443425722125592D00A5F738 /* ProfileEditViewController.swift */; };
 		4434257521255FE500A5F738 /* MeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4434257421255FE500A5F738 /* MeViewController.swift */; };
 		4434257721268DBC00A5F738 /* UserNotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4434257621268DBC00A5F738 /* UserNotificationViewController.swift */; };
@@ -30,8 +31,6 @@
 		44561656211D885B002BE1B7 /* DiscoveryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44561655211D885B002BE1B7 /* DiscoveryViewController.swift */; };
 		44636972215B533F00373FB8 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44636971215B533F00373FB8 /* Networking.swift */; };
 		44636974215B568A00373FB8 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44636973215B568A00373FB8 /* Models.swift */; };
-		44703795212BB2C70040ADFC /* Encoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44703794212BB2C70040ADFC /* Encoding.swift */; };
-		44703798213017E70040ADFC /* Key.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44703797213017E70040ADFC /* Key.swift */; };
 		44D517E5211185E100ED8477 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D517E4211185E100ED8477 /* AppDelegate.swift */; };
 		44D517EA211185E100ED8477 /* Entrance.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44D517E8211185E100ED8477 /* Entrance.storyboard */; };
 		44D517EC211185E300ED8477 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 44D517EB211185E300ED8477 /* Assets.xcassets */; };
@@ -64,6 +63,7 @@
 		443138A821845947000C7742 /* BlockDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlockDetailViewController.swift; sourceTree = "<group>"; };
 		443138A921845947000C7742 /* NewChainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewChainViewController.swift; sourceTree = "<group>"; };
 		443138B22184597C000C7742 /* Developer.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Developer.storyboard; sourceTree = "<group>"; };
+		443138B421849337000C7742 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		443425722125592D00A5F738 /* ProfileEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditViewController.swift; sourceTree = "<group>"; };
 		4434257421255FE500A5F738 /* MeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeViewController.swift; sourceTree = "<group>"; };
 		4434257621268DBC00A5F738 /* UserNotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNotificationViewController.swift; sourceTree = "<group>"; };
@@ -78,8 +78,6 @@
 		44561655211D885B002BE1B7 /* DiscoveryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryViewController.swift; sourceTree = "<group>"; };
 		44636971215B533F00373FB8 /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
 		44636973215B568A00373FB8 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
-		44703794212BB2C70040ADFC /* Encoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Encoding.swift; sourceTree = "<group>"; };
-		44703797213017E70040ADFC /* Key.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Key.swift; sourceTree = "<group>"; };
 		44D517E1211185E100ED8477 /* infnote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = infnote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		44D517E4211185E100ED8477 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		44D517E9211185E100ED8477 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Entrance.storyboard; sourceTree = "<group>"; };
@@ -172,7 +170,7 @@
 		44703793212BB29A0040ADFC /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				44703794212BB2C70040ADFC /* Encoding.swift */,
+				443138B421849337000C7742 /* Extensions.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -180,7 +178,6 @@
 		44703796213017C50040ADFC /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				44703797213017E70040ADFC /* Key.swift */,
 				44636971215B533F00373FB8 /* Networking.swift */,
 				44636973215B568A00373FB8 /* Models.swift */,
 			);
@@ -210,8 +207,8 @@
 			children = (
 				443138A121845927000C7742 /* Developer */,
 				44703796213017C50040ADFC /* Models */,
-				44EC4288211187240054584C /* Controllers */,
 				44EC4287211187140054584C /* Views */,
+				44EC4288211187240054584C /* Controllers */,
 				44703793212BB29A0040ADFC /* Utilities */,
 				44EC428E2111DF0E0054584C /* Extensions */,
 				44EC4286211186CA0054584C /* Resources */,
@@ -466,7 +463,6 @@
 				4434257721268DBC00A5F738 /* UserNotificationViewController.swift in Sources */,
 				44EC42AB2115ABF60054584C /* PrivateKeyViewController.swift in Sources */,
 				44EC42A92115AB480054584C /* SignUpViewController.swift in Sources */,
-				44703795212BB2C70040ADFC /* Encoding.swift in Sources */,
 				44561650211AFD37002BE1B7 /* NoteViewController.swift in Sources */,
 				443138AA21845947000C7742 /* AddChainViewController.swift in Sources */,
 				443138AF21845947000C7742 /* NewBlockViewController.swift in Sources */,
@@ -477,6 +473,7 @@
 				44561652211B1B9E002BE1B7 /* CommentCell.swift in Sources */,
 				44EC428C211196210054584C /* LoginViewController.swift in Sources */,
 				44EC429F21131C0C0054584C /* UserViewController.swift in Sources */,
+				443138B521849337000C7742 /* Extensions.swift in Sources */,
 				443F68F1211DA3FD00ADF657 /* FollowingViewController.swift in Sources */,
 				44D517E5211185E100ED8477 /* AppDelegate.swift in Sources */,
 				44EC428A211196170054584C /* LaunchViewController.swift in Sources */,
@@ -492,7 +489,6 @@
 				44EC429A2112B9B90054584C /* HomeViewController.swift in Sources */,
 				443138AD21845947000C7742 /* PeersViewController.swift in Sources */,
 				443F68F72122F0E100ADF657 /* NewNoteViewController.swift in Sources */,
-				44703798213017E70040ADFC /* Key.swift in Sources */,
 				443138AB21845947000C7742 /* AddPeerViewController.swift in Sources */,
 				443425732125592D00A5F738 /* ProfileEditViewController.swift in Sources */,
 				443F68F5211F00C100ADF657 /* DiscoveryContainerViewController.swift in Sources */,

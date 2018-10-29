@@ -8,6 +8,7 @@
 
 import UIKit
 import QRCode
+import InfnoteChain
 
 class KeyPairViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
@@ -36,7 +37,7 @@ class KeyPairViewController: UIViewController, UITableViewDelegate, UITableViewD
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! KeyPairCell
         if indexPath.row == 0 {
-            cell.prepareViews(title: "私钥", key: key!.privateKey.base58)
+            cell.prepareViews(title: "私钥", key: key!.privateKey!.base58)
         }
         else if indexPath.row == 1 {
             cell.prepareViews(title: "公钥", key: key!.publicKey.base58)

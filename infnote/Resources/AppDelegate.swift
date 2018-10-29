@@ -8,6 +8,7 @@
 
 import UIKit
 import SVProgressHUD
+import InfnoteChain
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

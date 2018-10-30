@@ -41,10 +41,11 @@ class ChainsViewController: UITableViewController {
         present(alert, animated: true)
     }
     
-    @IBAction func debugButtonTouched(_ sender: Any) {
-        let alert = UIAlertController(title: "Realm is located at", message: manager.storageFileURL.absoluteString, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
-        present(alert, animated: true)
+    @IBAction func dismissButtonTouched(_ sender: Any) {
+//        let alert = UIAlertController(title: "Realm is located at", message: manager.storageFileURL.absoluteString, preferredStyle: .alert)
+//        alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+//        present(alert, animated: true)
+        tabBarController?.dismiss(animated: true)
     }
     
     // MARK: - Table view data source

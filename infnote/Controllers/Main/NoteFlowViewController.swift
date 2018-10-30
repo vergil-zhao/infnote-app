@@ -8,11 +8,13 @@
 
 import UIKit
 import XLPagerTabStrip
+import CRRefresh
 
 class NoteFlowViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, IndicatorInfoProvider {
     
     @IBOutlet weak var tableView: UITableView!
     
+    var page = 1
     var notes: [Note] = []
     
     override func viewDidLoad() {
@@ -21,11 +23,29 @@ class NoteFlowViewController: UIViewController, UITableViewDataSource, UITableVi
         
         tableView.register(MainCell.self, forCellReuseIdentifier: "cell")
         tableView.estimatedRowHeight = 365
-        
-        Networking.shared.fetchNoteList(page: 1) { notes in
-            self.notes = notes
-            self.tableView.reloadData()
+        tableView.tableFooterView = UIView()
+        tableView.cr.addHeadRefresh { [unowned self] in
+            self.tableView.cr.resetNoMore()
+            self.page = 1
+            Networking.shared.fetchNoteList(page: 1) { notes in
+                self.notes = notes
+                self.tableView.reloadData()
+                self.tableView.cr.endHeaderRefresh()
+            }
         }
+        tableView.cr.addFootRefresh {
+            self.page += 1
+            Networking.shared.fetchNoteList(page: self.page) { [unowned self] notes in
+                self.tableView.cr.endLoadingMore()
+                if notes.count <= 0 {
+                    self.tableView.cr.noticeNoMoreData()
+                    return
+                }
+                self.notes.append(contentsOf: notes)
+                self.tableView.reloadData()
+            }
+        }
+        tableView.cr.beginHeaderRefresh()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

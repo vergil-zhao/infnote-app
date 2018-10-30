@@ -12,13 +12,13 @@
         <!--InfnoteChain-->
         <scene sceneID="FB3-q6-uFx">
             <objects>
-                <tableViewController title="InfnoteChain" id="Zhb-tX-oec" customClass="ChainsViewController" customModule="InfnoteChain_Example" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="InfnoteChain" id="Zhb-tX-oec" customClass="ChainsViewController" customModule="infnote" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="yrA-pO-HgB">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="cell" id="wnf-lh-c8y" customClass="ChainCell" customModule="InfnoteChain_Example" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="cell" id="wnf-lh-c8y" customClass="ChainCell" customModule="infnote" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="wnf-lh-c8y" id="RVZ-Zh-EuO">
@@ -63,9 +63,9 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="InfnoteChain" id="LZw-PM-Rpc">
                         <barButtonItem key="backBarButtonItem" title="Back" id="Otd-3t-Otp"/>
-                        <barButtonItem key="leftBarButtonItem" title="Debug" id="JdH-TT-9bN">
+                        <barButtonItem key="leftBarButtonItem" title="Dismiss" id="JdH-TT-9bN">
                             <connections>
-                                <action selector="debugButtonTouched:" destination="Zhb-tX-oec" id="Nct-or-uvy"/>
+                                <action selector="dismissButtonTouched:" destination="Zhb-tX-oec" id="2T8-cX-Mew"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="cxD-7u-Wna">
@@ -82,7 +82,7 @@
         <!--Peers-->
         <scene sceneID="gEb-ae-OIg">
             <objects>
-                <tableViewController title="Peers" id="4kF-T9-sJC" customClass="PeersViewController" customModule="InfnoteChain_Example" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="Peers" id="4kF-T9-sJC" customClass="PeersViewController" customModule="infnote" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="fhR-jV-798">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -150,7 +150,7 @@
         <!--Blocks View Controller-->
         <scene sceneID="yaY-XK-rKP">
             <objects>
-                <tableViewController id="bOb-ty-nMR" customClass="BlocksViewController" customModule="InfnoteChain_Example" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="bOb-ty-nMR" customClass="BlocksViewController" customModule="infnote" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="kKr-dQ-RPd">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -204,7 +204,7 @@
         <!--Create Block-->
         <scene sceneID="bLC-pK-8kX">
             <objects>
-                <tableViewController id="cKL-62-yzf" customClass="NewBlockViewController" customModule="InfnoteChain_Example" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="cKL-62-yzf" customClass="NewBlockViewController" customModule="infnote" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="1l6-OB-7zU">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -212,7 +212,7 @@
                         <sections>
                             <tableViewSection headerTitle="JSON" id="TPh-vF-rII">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="g3P-9p-7Ej" customClass="CommonInfoCell" customModule="InfnoteChain_Example" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="g3P-9p-7Ej" customClass="CommonInfoCell" customModule="infnote" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="55.333333333333343" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="g3P-9p-7Ej" id="iem-Cb-zaQ">
@@ -303,13 +303,13 @@
         <!--Block Detail-->
         <scene sceneID="1OV-dy-WIV">
             <objects>
-                <tableViewController storyboardIdentifier="BlockDetail" id="DGT-Uw-v9X" customClass="BlockDetailViewController" customModule="InfnoteChain_Example" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="BlockDetail" id="DGT-Uw-v9X" customClass="BlockDetailViewController" customModule="infnote" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="h8I-LK-04I">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="sUb-si-sI8" customClass="CommonInfoCell" customModule="InfnoteChain_Example" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="sUb-si-sI8" customClass="CommonInfoCell" customModule="infnote" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="55.333333333333343" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="sUb-si-sI8" id="mLy-u1-1qh">
@@ -360,7 +360,7 @@
         <!--Add Chain-->
         <scene sceneID="tmz-6f-QIx">
             <objects>
-                <tableViewController storyboardIdentifier="add_chain" id="7RN-o0-9Ku" customClass="AddChainViewController" customModule="InfnoteChain_Example" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="add_chain" id="7RN-o0-9Ku" customClass="AddChainViewController" customModule="infnote" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="r7n-qV-XUh">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -368,7 +368,7 @@
                         <sections>
                             <tableViewSection headerTitle="Public Key" id="PkY-Ed-KSh">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="XHv-eG-6AZ" customClass="CommonInfoCell" customModule="InfnoteChain_Example" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="XHv-eG-6AZ" customClass="CommonInfoCell" customModule="infnote" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="55.333333333333343" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="XHv-eG-6AZ" id="r8h-gi-XOp">
@@ -443,7 +443,7 @@
         <!--Create Chain-->
         <scene sceneID="ABb-zd-v11">
             <objects>
-                <tableViewController storyboardIdentifier="create_chain" id="YMK-Zf-NZC" customClass="NewChainViewController" customModule="InfnoteChain_Example" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="create_chain" id="YMK-Zf-NZC" customClass="NewChainViewController" customModule="infnote" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="static" style="grouped" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="D23-de-83z">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -695,7 +695,7 @@
         <!--Add Peer-->
         <scene sceneID="yhk-Xe-Nw1">
             <objects>
-                <tableViewController title="Add Peer" id="3tH-PF-v4w" customClass="AddPeerViewController" customModule="InfnoteChain_Example" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="Add Peer" id="3tH-PF-v4w" customClass="AddPeerViewController" customModule="infnote" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="static" style="grouped" separatorStyle="default" allowsSelection="NO" rowHeight="44" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="lRj-hS-SZb">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

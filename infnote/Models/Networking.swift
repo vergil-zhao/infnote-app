@@ -10,6 +10,7 @@ import Foundation
 import Alamofire
 import AlamofireObjectMapper
 import ObjectMapper
+import InfnoteChain
 
 let HOST = "http://127.0.0.1:8000"
 
@@ -52,9 +53,12 @@ class Networking {
     }
     
     func fetchNoteList(page: Int, complete: (([Note]) -> Void)?) {
-        request(HOST + "/post/list/").responseObject { (response: DataResponse<NoteListResponse>) in
+        request(HOST + "/post/list/?page=\(page)").responseObject { (response: DataResponse<NoteListResponse>) in
             if let list = response.result.value {
                 complete?(list.notes)
+            }
+            else {
+                complete?([])
             }
         }
     }
@@ -70,6 +74,7 @@ class Networking {
     func create(user: User, complete: @escaping (User) -> Void, failed: @escaping (Error) -> Void) {
         request(HOST + "/user/create/", method: .post, parameters: user.toJSON(), encoding: JSONEncoding.default).validate().responseObject { (response: DataResponse<User>) in
             if let user = response.value {
+                user.key = Key.loadDefaultKey()
                 complete(user)
             } else {
                 failed(response.error!)

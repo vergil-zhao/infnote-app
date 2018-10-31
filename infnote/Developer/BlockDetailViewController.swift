@@ -67,10 +67,9 @@ class BlockDetailViewController: UITableViewController {
             cell.prepareViews(content: formatter.string(from: block.time))
         }
         else if indexPath.section == 7 {
-            if let json = try? JSONSerialization.jsonObject(with: block.payload, options: []) {
-                let data = try! JSONSerialization.data(withJSONObject: json, options: [.sortedKeys, .prettyPrinted])
-                let str = String(data: data, encoding: .utf8)!
-                cell.prepareViews(content: str)
+            if let json = try? JSONSerialization.jsonObject(with: block.payload, options: []),
+                let dict = json as? [String: Any] {
+                cell.prepareViews(content: dict.flatten())
             }
             else if let str = String(data: block.payload, encoding: .utf8) {
                 cell.prepareViews(content: str)

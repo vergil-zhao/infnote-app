@@ -101,7 +101,7 @@ class LoginViewController: UIViewController, UIImagePickerControllerDelegate, UI
     @IBAction func loginButtonTouched(_ sender: Any) {
         if let key = self.key {
             SVProgressHUD.show()
-            Networking.shared.fetchUser(publicKey: key.publicKey.base58, complete: { user in
+            Networking.shared.fetchUser(publicKey: key.compressedPublicKey.base58, complete: { user in
                 SVProgressHUD.dismiss()
                 user.key = key
                 user.save()

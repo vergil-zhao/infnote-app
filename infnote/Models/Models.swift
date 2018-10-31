@@ -50,7 +50,7 @@ class User: Mappable, CustomStringConvertible {
     }
     
     var description: String {
-        return flatModel(dict: toJSON())
+        return toJSON().flatten()
     }
     
     func save() {
@@ -59,13 +59,27 @@ class User: Mappable, CustomStringConvertible {
         try! key?.save()
     }
     
-    class func load() {
+    class func load() -> Bool {
         if let userID = UserDefaults.standard.object(forKey: "infnote.current.user_id") as? String {
             Networking.shared.fetchUser(id: userID, complete: { user in
                 User.current = user
                 User.current?.key = Key.loadDefaultKey()
-            }, failed: nil)
+            }, failed: { error in
+                Key.clean()
+            })
+            return true
         }
+        else if let key = Key.loadDefaultKey() {
+            Networking.shared.fetchUser(publicKey: key.compressedPublicKey.base58, complete: { user in
+                User.current = user
+                User.current?.key = key
+                user.save()
+            }, failed: { error in
+                Key.clean()
+            })
+            return true
+        }
+        return false
     }
 }
 
@@ -108,24 +122,6 @@ class Note: Mappable, CustomStringConvertible {
     }
     
     var description: String {
-        return flatModel(dict: toJSON())
-    }
-}
-
-func flatModel(dict: [String: Any], indent: Int = 0) -> String {
-    let maxWidth = dict.reduce(0) { result, item in
-        return max(result, item.key.count)
-    }
-    return dict.reduce("") { result, item in
-        var content = item.value
-        if let value = item.value as? [String: Any] {
-            content = flatModel(dict: value, indent: indent + 4)
-        }
-        if let value = item.value as? String, value.count > 200 {
-            content = value[..<String.Index(encodedOffset: 200)]
-        }
-        let spaces = String(repeating: " ", count: maxWidth - item.key.count)
-        let indent = String(repeating: " ", count: indent)
-        return result + "\n\(indent)[\(item.key)\(spaces)] \(content)"
+        return toJSON().flatten()
     }
 }

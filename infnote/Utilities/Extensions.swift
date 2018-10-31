@@ -45,3 +45,22 @@ extension Date {
         return formatter.string(from: self)
     }
 }
+
+
+extension Dictionary where Key == String {
+    func flatten(with indent: Int = 0) -> String {
+        let maxWidth = self.keys.reduce(0) { Swift.max($0, $1.count) }
+        return self.reduce("") { result, item in
+            var content = "\(item.value)"
+            if let value = item.value as? [String: Any] {
+                content = value.flatten(with: indent + 4)
+            }
+            if let value = item.value as? String, value.count > 200 {
+                content = String(value[..<String.Index(encodedOffset: 200)])
+            }
+            let spaces = String(repeating: " ", count: maxWidth - item.key.count)
+            let indent = String(repeating: " ", count: indent)
+            return result + "\n\(indent)[\(item.key)\(spaces)] \(content)"
+        }
+    }
+}

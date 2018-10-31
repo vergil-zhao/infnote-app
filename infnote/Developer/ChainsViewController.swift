@@ -67,7 +67,7 @@ class ChainsViewController: UITableViewController {
             cell.nameLabel.text = name
         }
         else {
-            cell.nameLabel.text = chain.key.publicKey.base58
+            cell.nameLabel.text = chain.key.compressedPublicKey.base58
         }
         cell.heightLabel.text = "\(chain.height) bks"
 

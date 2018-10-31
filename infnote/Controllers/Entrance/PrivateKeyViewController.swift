@@ -29,22 +29,7 @@ class PrivateKeyViewController: UIViewController {
         self.navigationController?.setNavigationBarHidden(false, animated: false)
         
         privateKeyLabel.text = key.privateKey!.base58
-        publicKeyLabel.text = key.publicKey.base58
-        
-        /* Test signature procedure
-        let dict = [
-            "id": "vergil",
-            "nickname": "Vergil",
-            "gender": 1,
-            "email": "gameboy0824@126.com",
-            "bio": "Be Cool"
-            ] as [String : Any]
-        let data = try! JSONSerialization.data(withJSONObject: dict, options: .sortedKeys)
-        let signatureData = try! key.sign(data: data)
-        print(String(data: data, encoding: .utf8)!)
-        print(key.publicKey.base58)
-        print(signatureData.base58)
-         */
+        publicKeyLabel.text = key.compressedPublicKey.base58
     }
     
     override func viewDidLayoutSubviews() {
@@ -75,7 +60,7 @@ class PrivateKeyViewController: UIViewController {
     }
     
     @IBAction func publicKeyLabelTouched(_ sender: Any) {
-        UIPasteboard.general.string = key.publicKey.base58
+        UIPasteboard.general.string = key.compressedPublicKey.base58
         SVProgressHUD.showInfo(withStatus: "已复制到剪贴板")
     }
     
@@ -99,16 +84,17 @@ class PrivateKeyViewController: UIViewController {
         let signatureData = try! key.sign(data: data)
         let user = User(JSON: info)!
         user.signature = signatureData.base58
-        user.publicKey = key.publicKey.base58
+        user.publicKey = key.compressedPublicKey.base58
         user.key = key
+        user.save()
         
         SVProgressHUD.show()
         Networking.shared.create(user: user, complete: { user in
             SVProgressHUD.dismiss()
-            user.save()
             AppDelegate.switchToMainStoryboard()
         }, failed: { error in
             SVProgressHUD.showError(withStatus: "注册用户失败")
+            Key.clean()
         })
     }
 }

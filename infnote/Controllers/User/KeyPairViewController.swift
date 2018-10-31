@@ -40,7 +40,7 @@ class KeyPairViewController: UIViewController, UITableViewDelegate, UITableViewD
             cell.prepareViews(title: "私钥", key: key!.privateKey!.base58)
         }
         else if indexPath.row == 1 {
-            cell.prepareViews(title: "公钥", key: key!.publicKey.base58)
+            cell.prepareViews(title: "公钥", key: key!.compressedPublicKey.base58)
         }
         return cell
     }

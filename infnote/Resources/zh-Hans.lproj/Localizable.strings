@@ -21,7 +21,7 @@
 "Me.logout.alert.message" = "将会清除本地保存的私钥，再次登录需要重新导入";
 "Me.logout.alert.sure" = "继续退出";
 
-"Note.comment.add" = "添加评论";
+"Note.comment.placeholder" = "添加评论";
 "Note.comment.add.succeed" = "发布成功";
 "Note.comment.add.failed" = "发布失败";
 

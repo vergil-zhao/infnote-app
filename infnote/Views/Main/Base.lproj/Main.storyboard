@@ -342,8 +342,8 @@
                         <viewLayoutGuide key="safeArea" id="SD1-bD-CQQ"/>
                     </view>
                     <connections>
-                        <outlet property="commentTextView" destination="vke-eW-DoQ" id="cV5-bk-ha0"/>
-                        <outlet property="commentTextViewHeightConstraint" destination="hcQ-Jo-qYX" id="uNr-2m-dnk"/>
+                        <outlet property="commentTextView" destination="vke-eW-DoQ" id="Ksf-qV-9kF"/>
+                        <outlet property="commentTextViewHeightConstraint" destination="hcQ-Jo-qYX" id="7AA-oU-RXL"/>
                         <outlet property="tableView" destination="W5F-DO-QnH" id="UYB-cx-KWt"/>
                     </connections>
                 </viewController>

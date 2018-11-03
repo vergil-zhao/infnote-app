@@ -76,6 +76,9 @@ class NoteViewController: UIViewController, UITableViewDelegate, UITableViewData
         tableViewContentOffsetObservation = tableView.observe(\UITableView.contentOffset) { _, _ in
             self.commentTextView.resignFirstResponder()
         }
+        
+        commentTextView.textColor = .lightGray
+        commentTextView.text = NSLocalizedString("Note.comment.placeholder", comment: "")
     }
     
     func reload() {
@@ -130,7 +133,7 @@ class NoteViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func textViewDidBeginEditing(_ textView: UITextView) {
-        if textView.text == NSLocalizedString("Note.comment.add", comment: "") {
+        if textView.textColor == .lightGray {
             textView.text = ""
             textView.textColor = .black
         }
@@ -138,7 +141,7 @@ class NoteViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func textViewDidEndEditing(_ textView: UITextView) {
         if textView.text == "" {
-            textView.text = NSLocalizedString("Note.comment.add", comment: "")
+            textView.text = NSLocalizedString("Note.comment.placeholder", comment: "")
             textView.textColor = .lightGray
         }
     }

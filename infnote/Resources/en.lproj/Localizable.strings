@@ -22,7 +22,7 @@
 "Me.logout.alert.message" = "It will request importing private key next login.";
 "Me.logout.alert.sure" = "Continue";
 
-"Note.comment.add" = "Leave a comment";
+"Note.comment.placeholder" = "Leave a comment";
 "Note.comment.add.succeed" = "Succeed";
 "Note.comment.add.failed" = "Failed";
 

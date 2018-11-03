@@ -47,8 +47,6 @@ class NewNoteViewController: UIViewController, UITableViewDelegate, UITableViewD
         }
     }
     
-    
-    
     @IBAction func sendButtonTouched(_ sender: Any) {
         guard textView.textColor != UIColor.lightGray else {
             SVProgressHUD.showError(withStatus: NSLocalizedString("Note.new.error.content", comment: ""))
@@ -103,6 +101,7 @@ class NewNoteTextCell: UITableViewCell, UITextViewDelegate {
         self.tableView = tableView
         textView.delegate = self
         textView.textColor = .lightGray
+        textView.text = NSLocalizedString("Note.new.content.placeholder", comment: "")
     }
     
     func textViewDidChange(_ textView: UITextView) {

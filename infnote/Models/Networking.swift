@@ -30,10 +30,10 @@ class Networking {
     
     private init() {}
     
-    func fetchUser(id: String, complete: @escaping (User) -> Void, failed: ((Error) -> Void)? = nil) {
+    func fetchUser(id: String, complete: ((User) -> Void)?, failed: ((Error) -> Void)? = nil) {
         request(host + "/user/id/\(id)/").validate().responseObject { (response: DataResponse<User>) in
             if let user = response.value {
-                complete(user)
+                complete?(user)
             }
             else {
                 failed?(response.error!)
@@ -42,10 +42,10 @@ class Networking {
         }
     }
     
-    func fetchUser(publicKey: String, complete: @escaping (User) -> Void, failed: ((Error) -> Void)? = nil) {
+    func fetchUser(publicKey: String, complete: ((User) -> Void)?, failed: ((Error) -> Void)? = nil) {
         request(host + "/user/pk/\(publicKey)").validate().responseObject { (response: DataResponse<User>) in
             if let user = response.value {
-                complete(user)
+                complete?(user)
             }
             else {
                 failed?(response.error!)

@@ -12,7 +12,10 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
     
+    override func viewWillAppear(_ animated: Bool) {
+        navigationItem.rightBarButtonItem?.isEnabled = User.current != nil
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

@@ -1,0 +1,132 @@
+
+/* Class = "UILabel"; text = "Haoqian 评论了你"; ObjectID = "08T-Zi-GDG"; */
+"08T-Zi-GDG.text" = "Haoqian 评论了你";
+
+/* Class = "UILabel"; text = "我的密钥"; ObjectID = "0Vz-Fa-wva"; */
+"0Vz-Fa-wva.text" = "我的密钥";
+
+/* Class = "UILabel"; text = "bio"; ObjectID = "1e6-T9-ZZn"; */
+"1e6-T9-ZZn.text" = "bio";
+
+/* Class = "UILabel"; text = "我的通知"; ObjectID = "1kJ-JB-Y0t"; */
+"1kJ-JB-Y0t.text" = "我的通知";
+
+/* Class = "UILabel"; text = "3天前"; ObjectID = "1lm-BP-LYs"; */
+"1lm-BP-LYs.text" = "3天前";
+
+/* Class = "UILabel"; text = "区块链是借由密码学串接并保护内容的串连交易记录（又称区块）。每一个区块包含了前一个区块的加密散列、相应时间戳记以及交易数据（通常用默克尔树算法计算的散列值表示），这样的设计使得区块内容具有难以窜改的特性。"; ObjectID = "343-7N-t7g"; */
+"343-7N-t7g.text" = "区块链是借由密码学串接并保护内容的串连交易记录（又称区块）。每一个区块包含了前一个区块的加密散列、相应时间戳记以及交易数据（通常用默克尔树算法计算的散列值表示），这样的设计使得区块内容具有难以窜改的特性。";
+
+/* Class = "UILabel"; text = "@"; ObjectID = "67J-7Q-xKz"; */
+"67J-7Q-xKz.text" = "@";
+
+/* Class = "UITextField"; placeholder = "https://api.infnote.com"; ObjectID = "7sI-Ah-DO9"; */
+"7sI-Ah-DO9.placeholder" = "https://api.infnote.com";
+
+/* Class = "UIButton"; normalTitle = "复制密钥"; ObjectID = "8Gt-bE-AeA"; */
+"8Gt-bE-AeA.normalTitle" = "复制密钥";
+
+/* Class = "UILabel"; text = "性别"; ObjectID = "AEZ-BT-l8n"; */
+"AEZ-BT-l8n.text" = "性别";
+
+/* Class = "UILabel"; text = "Vergil Choi"; ObjectID = "APw-2E-feN"; */
+"APw-2E-feN.text" = "Vergil Choi";
+
+/* Class = "UILabel"; text = "4-24个字符，30天内只能修改一次"; ObjectID = "BvU-Tg-gwl"; */
+"BvU-Tg-gwl.text" = "4-24个字符，30天内只能修改一次";
+
+/* Class = "UILabel"; text = "昵称"; ObjectID = "Cq8-C4-ZTS"; */
+"Cq8-C4-ZTS.text" = "昵称";
+
+/* Class = "UILabel"; text = "介绍一下你自己"; ObjectID = "DpJ-Vq-eCa"; */
+"DpJ-Vq-eCa.text" = "介绍一下你自己";
+
+/* Class = "UILabel"; text = "广东 - 深圳"; ObjectID = "EBY-pp-zED"; */
+"EBY-pp-zED.text" = "广东 - 深圳";
+
+/* Class = "UILabel"; text = "服务器设置"; ObjectID = "IJP-PT-Sgj"; */
+"IJP-PT-Sgj.text" = "服务器设置";
+
+/* Class = "UILabel"; text = "Vergil Choi"; ObjectID = "Iel-dI-ZVr"; */
+"Iel-dI-ZVr.text" = "Vergil Choi";
+
+/* Class = "UINavigationController"; title = "我"; ObjectID = "Jdz-CX-Iw2"; */
+"Jdz-CX-Iw2.title" = "我";
+
+/* Class = "UITabBarItem"; title = "我"; ObjectID = "JxU-vU-Qci"; */
+"JxU-vU-Qci.title" = "我";
+
+/* Class = "UILabel"; text = "Haoqian 关注了你"; ObjectID = "NOv-nR-FYf"; */
+"NOv-nR-FYf.text" = "Haoqian 关注了你";
+
+/* Class = "UILabel"; text = "为你保密，只显示星座"; ObjectID = "NgM-jz-hhz"; */
+"NgM-jz-hhz.text" = "为你保密，只显示星座";
+
+/* Class = "UITableViewSection"; headerTitle = "服务器地址"; ObjectID = "OZZ-2P-q1a"; */
+"OZZ-2P-q1a.headerTitle" = "服务器地址";
+
+/* Class = "UILabel"; text = "1991-08-24 处女座"; ObjectID = "QLB-1o-fmE"; */
+"QLB-1o-fmE.text" = "1991-08-24 处女座";
+
+/* Class = "UIViewController"; title = "我的通知"; ObjectID = "RBI-gP-afI"; */
+"RBI-gP-afI.title" = "我的通知";
+
+/* Class = "UIButton"; normalTitle = "保存二维码"; ObjectID = "TgZ-5n-K9I"; */
+"TgZ-5n-K9I.normalTitle" = "保存二维码";
+
+/* Class = "UILabel"; text = "Haoqian, Vergil 等 14632 个用户赞了你"; ObjectID = "Wpy-22-MNw"; */
+"Wpy-22-MNw.text" = "Haoqian, Vergil 等 14632 个用户赞了你";
+
+/* Class = "UILabel"; text = "男"; ObjectID = "X5C-Yr-WGd"; */
+"X5C-Yr-WGd.text" = "男";
+
+/* Class = "UINavigationItem"; title = "我"; ObjectID = "Zb3-46-TqI"; */
+"Zb3-46-TqI.title" = "我";
+
+/* Class = "UILabel"; text = "3天前"; ObjectID = "d9P-2H-ks9"; */
+"d9P-2H-ks9.text" = "3天前";
+
+/* Class = "UILabel"; text = "更换"; ObjectID = "f29-Mb-Q83"; */
+"f29-Mb-Q83.text" = "更换";
+
+/* Class = "UIViewController"; title = "密钥"; ObjectID = "fOd-O0-HVn"; */
+"fOd-O0-HVn.title" = "密钥";
+
+/* Class = "UITableViewController"; title = "我"; ObjectID = "gp1-l2-sdR"; */
+"gp1-l2-sdR.title" = "我";
+
+/* Class = "UILabel"; text = "1A6csP8jrpyruyW4a9tX9Nonv4R8AviB1y"; ObjectID = "hC6-Pn-y0Q"; */
+"hC6-Pn-y0Q.text" = "1A6csP8jrpyruyW4a9tX9Nonv4R8AviB1y";
+
+/* Class = "UILabel"; text = "保存"; ObjectID = "l8n-7y-lO5"; */
+"l8n-7y-lO5.text" = "保存";
+
+/* Class = "UILabel"; text = "区块链是借由密码学串接并保护内容的串连交易记录（又称区块）。每一个区块包含了前一个区块的加密散列、相应时间戳记以及交易数据（通常用默克尔树算法计算的散列值表示），这样的设计使得区块内容具有难以窜改的特性。"; ObjectID = "nl0-jd-fPn"; */
+"nl0-jd-fPn.text" = "区块链是借由密码学串接并保护内容的串连交易记录（又称区块）。每一个区块包含了前一个区块的加密散列、相应时间戳记以及交易数据（通常用默克尔树算法计算的散列值表示），这样的设计使得区块内容具有难以窜改的特性。";
+
+/* Class = "UILabel"; text = "生日"; ObjectID = "oNI-On-9zq"; */
+"oNI-On-9zq.text" = "生日";
+
+/* Class = "UILabel"; text = "3天前"; ObjectID = "q1v-tC-1hd"; */
+"q1v-tC-1hd.text" = "3天前";
+
+/* Class = "UIButton"; normalTitle = "关注"; ObjectID = "qPz-qM-zlj"; */
+"qPz-qM-zlj.normalTitle" = "关注";
+
+/* Class = "UITableViewController"; title = "编辑个人信息"; ObjectID = "t2W-xl-vne"; */
+"t2W-xl-vne.title" = "编辑个人信息";
+
+/* Class = "UILabel"; text = "公钥"; ObjectID = "vdf-PR-sz4"; */
+"vdf-PR-sz4.text" = "公钥";
+
+/* Class = "UILabel"; text = "签名"; ObjectID = "wPc-NV-Iba"; */
+"wPc-NV-Iba.text" = "签名";
+
+/* Class = "UILabel"; text = "高级"; ObjectID = "xk7-wv-XxH"; */
+"xk7-wv-XxH.text" = "高级";
+
+/* Class = "UILabel"; text = "退出登录"; ObjectID = "xwh-JS-Dqx"; */
+"xwh-JS-Dqx.text" = "退出登录";
+
+/* Class = "UILabel"; text = "所在地"; ObjectID = "y4S-0a-Sqr"; */
+"y4S-0a-Sqr.text" = "所在地";

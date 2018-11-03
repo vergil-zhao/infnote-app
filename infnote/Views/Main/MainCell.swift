@@ -105,7 +105,7 @@ class MainCell: UITableViewCell {
             make.top.equalTo(contentLabel.snp.bottom).offset(ViewConst.verticalMargin)
         }
         
-        commentLabel.text = "\(note.replies!) 条评论"
+        commentLabel.text = String.localizedStringWithFormat(NSLocalizedString("comment", comment: ""), note.replies!)
         commentLabel.font = UIFont(name: DEFAULT_FONT_REGULAR, size: 14)
         commentLabel.textColor = .darkGray
         commentLabel.snp.remakeConstraints { make in

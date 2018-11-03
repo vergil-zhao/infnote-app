@@ -1,0 +1,75 @@
+
+/* Class = "UIBarButtonItem"; title = "发送"; ObjectID = "56d-uN-sFH"; */
+"56d-uN-sFH.title" = "发送";
+
+/* Class = "UINavigationItem"; title = "首页"; ObjectID = "63I-zO-lq9"; */
+"63I-zO-lq9.title" = "首页";
+
+/* Class = "UILabel"; text = "Technology"; ObjectID = "8m6-gt-sjH"; */
+"8m6-gt-sjH.text" = "Technology";
+
+/* Class = "UINavigationItem"; title = "发布 Note"; ObjectID = "ECJ-Ex-aek"; */
+"ECJ-Ex-aek.title" = "发布 Note";
+
+/* Class = "UINavigationItem"; title = "关注"; ObjectID = "GEh-uf-oMY"; */
+"GEh-uf-oMY.title" = "关注";
+
+/* Class = "UIButton"; normalTitle = "  链接"; ObjectID = "I59-DE-G6d"; */
+"I59-DE-G6d.normalTitle" = "  链接";
+
+/* Class = "UIViewController"; title = "发布 Note"; ObjectID = "KHm-tJ-UnM"; */
+"KHm-tJ-UnM.title" = "发布 Note";
+
+/* Class = "UIViewController"; title = "首页"; ObjectID = "LAY-VZ-7aP"; */
+"LAY-VZ-7aP.title" = "首页";
+
+/* Class = "UILabel"; text = "123 个关注"; ObjectID = "P3D-8Q-TnA"; */
+"P3D-8Q-TnA.text" = "123 个关注";
+
+/* Class = "UITextField"; placeholder = "标题"; ObjectID = "QS2-Ac-c5q"; */
+"QS2-Ac-c5q.placeholder" = "标题";
+
+/* Class = "UIBarButtonItem"; title = "取消"; ObjectID = "T6F-q6-J5Y"; */
+"T6F-q6-J5Y.title" = "取消";
+
+/* Class = "UIButton"; normalTitle = "  图片"; ObjectID = "Y2J-lh-inn"; */
+"Y2J-lh-inn.normalTitle" = "  图片";
+
+/* Class = "UILabel"; text = "Blockchain"; ObjectID = "ZSp-bc-zZi"; */
+"ZSp-bc-zZi.text" = "Blockchain";
+
+/* Class = "UITabBarItem"; title = "Item"; ObjectID = "ci4-PP-ne7"; */
+"ci4-PP-ne7.title" = "Item";
+
+/* Class = "UITextView"; text = "发表自己的看法"; ObjectID = "e02-f0-AbD"; */
+"e02-f0-AbD.text" = "发表自己的看法";
+
+/* Class = "UITabBarItem"; title = "首页"; ObjectID = "eyR-Wb-Dbs"; */
+"eyR-Wb-Dbs.title" = "首页";
+
+/* Class = "UIButton"; normalTitle = " 粗体"; ObjectID = "gMa-fA-sbb"; */
+"gMa-fA-sbb.normalTitle" = " 粗体";
+
+/* Class = "UIViewController"; title = "关注"; ObjectID = "kE0-Gw-I8Y"; */
+"kE0-Gw-I8Y.title" = "关注";
+
+/* Class = "UITabBarItem"; title = "关注"; ObjectID = "lDk-a3-9Lp"; */
+"lDk-a3-9Lp.title" = "关注";
+
+/* Class = "UIViewController"; title = "发现"; ObjectID = "lca-YP-eeY"; */
+"lca-YP-eeY.title" = "发现";
+
+/* Class = "UIViewController"; title = "详情"; ObjectID = "pDE-N0-Gc4"; */
+"pDE-N0-Gc4.title" = "详情";
+
+/* Class = "UITabBarItem"; title = "发现"; ObjectID = "tZw-Qy-veE"; */
+"tZw-Qy-veE.title" = "发现";
+
+/* Class = "UINavigationItem"; title = "发现"; ObjectID = "u9a-vg-IVV"; */
+"u9a-vg-IVV.title" = "发现";
+
+/* Class = "UITextView"; text = "添加评论"; ObjectID = "vke-eW-DoQ"; */
+"vke-eW-DoQ.text" = "添加评论";
+
+/* Class = "UIButton"; normalTitle = "发送到主题 >"; ObjectID = "wle-Cd-lzz"; */
+"wle-Cd-lzz.normalTitle" = "发送到主题 >";

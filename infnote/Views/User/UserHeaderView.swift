@@ -76,7 +76,7 @@ class UserHeaderView: UIView {
             make.right.equalToSuperview().offset(-ViewConst.horizontalMargin)
         }
         
-        postLabel.text = "发表的文章"
+        postLabel.text = NSLocalizedString("UserHeaderView.postLabel", comment: "")
         postLabel.font = UIFont(name: DEFAULT_FONT_REGULAR, size: 14)
         postLabel.textColor = .darkGray
         postLabel.snp.makeConstraints { make in

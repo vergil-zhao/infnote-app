@@ -1,0 +1,84 @@
+
+/* Class = "UIButton"; normalTitle = "跳过 >"; ObjectID = "1T9-Nn-TgX"; */
+"1T9-Nn-TgX.normalTitle" = "跳过 >";
+
+/* Class = "UILabel"; text = "扫描或者从图库中选取私钥二维码"; ObjectID = "82U-iM-6A1"; */
+"82U-iM-6A1.text" = "扫描或者从图库中选取私钥二维码";
+
+/* Class = "UIButton"; normalTitle = "登录"; ObjectID = "86k-Re-SBZ"; */
+"86k-Re-SBZ.normalTitle" = "登录";
+
+/* Class = "UIButton"; normalTitle = "下一步"; ObjectID = "8N5-Ci-qOw"; */
+"8N5-Ci-qOw.normalTitle" = "下一步";
+
+/* Class = "UILabel"; text = "个人简介"; ObjectID = "C6P-HS-Exy"; */
+"C6P-HS-Exy.text" = "个人简介";
+
+/* Class = "UITextField"; placeholder = "昵称"; ObjectID = "DUE-mx-5Vf"; */
+"DUE-mx-5Vf.placeholder" = "昵称";
+
+/* Class = "UILabel"; text = "私钥验证"; ObjectID = "E6e-n7-Njo"; */
+"E6e-n7-Njo.text" = "私钥验证";
+
+/* Class = "UILabel"; text = "公钥"; ObjectID = "FQf-AZ-pT6"; */
+"FQf-AZ-pT6.text" = "公钥";
+
+/* Class = "UILabel"; text = "同步到 iCloud"; ObjectID = "I3I-R3-Q64"; */
+"I3I-R3-Q64.text" = "同步到 iCloud";
+
+/* Class = "UIViewController"; title = "登录"; ObjectID = "Jrw-bJ-4DG"; */
+"Jrw-bJ-4DG.title" = "登录";
+
+/* Class = "UIViewController"; title = "秘钥"; ObjectID = "OKw-0g-Kjq"; */
+"OKw-0g-Kjq.title" = "秘钥";
+
+/* Class = "UILabel"; text = "点击从剪贴板粘贴私钥"; ObjectID = "Rjk-a8-agE"; */
+"Rjk-a8-agE.text" = "点击从剪贴板粘贴私钥";
+
+/* Class = "UISegmentedControl"; SD6-1I-YBc.segmentTitles[0] = "二维码导入"; ObjectID = "SD6-1I-YBc"; */
+"SD6-1I-YBc.segmentTitles[0]" = "二维码导入";
+
+/* Class = "UISegmentedControl"; SD6-1I-YBc.segmentTitles[1] = "文字导入"; ObjectID = "SD6-1I-YBc"; */
+"SD6-1I-YBc.segmentTitles[1]" = "文字导入";
+
+/* Class = "UIButton"; normalTitle = "完成"; ObjectID = "SUb-zN-uaL"; */
+"SUb-zN-uaL.normalTitle" = "完成";
+
+/* Class = "UILabel"; text = "同步到 iCloud"; ObjectID = "SYH-Se-xzd"; */
+"SYH-Se-xzd.text" = "同步到 iCloud";
+
+/* Class = "UILabel"; text = "INFNOTE"; ObjectID = "U1k-Z2-5TQ"; */
+"U1k-Z2-5TQ.text" = "INFNOTE";
+
+/* Class = "UILabel"; text = "私钥"; ObjectID = "V8d-cP-PFI"; */
+"V8d-cP-PFI.text" = "私钥";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "XLB-ve-cPy"; */
+"XLB-ve-cPy.text" = "Label";
+
+/* Class = "UILabel"; text = "存储私钥到 iCloud 防止丢失，请注意这个操作可能有秘钥泄露风险"; ObjectID = "dHU-Ml-ORH"; */
+"dHU-Ml-ORH.text" = "存储私钥到 iCloud 防止丢失，请注意这个操作可能有秘钥泄露风险";
+
+/* Class = "UITextField"; placeholder = "用户 ID"; ObjectID = "lD0-Ir-Xth"; */
+"lD0-Ir-Xth.placeholder" = "用户 ID";
+
+/* Class = "UIViewController"; title = "二维码"; ObjectID = "nAH-8h-Jq3"; */
+"nAH-8h-Jq3.title" = "二维码";
+
+/* Class = "UILabel"; text = "私钥验证"; ObjectID = "pbu-pW-NLN"; */
+"pbu-pW-NLN.text" = "私钥验证";
+
+/* Class = "UILabel"; text = "存储私钥到 iCloud 防止丢失，请注意这个操作可能有秘钥泄露风险"; ObjectID = "reo-kB-agd"; */
+"reo-kB-agd.text" = "存储私钥到 iCloud 防止丢失，请注意这个操作可能有秘钥泄露风险";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "t9u-DB-BRl"; */
+"t9u-DB-BRl.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "注册"; ObjectID = "uzY-l1-fCC"; */
+"uzY-l1-fCC.normalTitle" = "注册";
+
+/* Class = "UIViewController"; title = "注册"; ObjectID = "xN1-Tx-kFk"; */
+"xN1-Tx-kFk.title" = "注册";
+
+/* Class = "UIButton"; normalTitle = "登录"; ObjectID = "zCZ-wP-pEa"; */
+"zCZ-wP-pEa.normalTitle" = "登录";

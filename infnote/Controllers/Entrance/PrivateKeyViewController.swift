@@ -56,19 +56,19 @@ class PrivateKeyViewController: UIViewController {
     
     @IBAction func privateKeyLabelTouched(_ sender: Any) {
         UIPasteboard.general.string = key.privateKey!.base58
-        SVProgressHUD.showInfo(withStatus: "已复制到剪贴板")
+        SVProgressHUD.showInfo(withStatus: NSLocalizedString("Key.alert.pasted", comment: ""))
     }
     
     @IBAction func publicKeyLabelTouched(_ sender: Any) {
         UIPasteboard.general.string = key.compressedPublicKey.base58
-        SVProgressHUD.showInfo(withStatus: "已复制到剪贴板")
+        SVProgressHUD.showInfo(withStatus: NSLocalizedString("Key.alert.pasted", comment: ""))
     }
     
     @objc func image(_ image: UIImage, didFinishSavingWithError error: NSError?, contextInfo: UnsafeRawPointer) {
         if let _ = error {
-            SVProgressHUD.showError(withStatus: "保存失败")
+            SVProgressHUD.showError(withStatus: NSLocalizedString("Key.alert.save.failed", comment: ""))
         } else {
-            SVProgressHUD.showInfo(withStatus: "已保存至手机相册")
+            SVProgressHUD.showInfo(withStatus: NSLocalizedString("Key.alert.saved", comment: ""))
         }
     }
     
@@ -93,7 +93,7 @@ class PrivateKeyViewController: UIViewController {
             SVProgressHUD.dismiss()
             AppDelegate.switchToMainStoryboard()
         }, failed: { error in
-            SVProgressHUD.showError(withStatus: "注册用户失败")
+            SVProgressHUD.showError(withStatus: NSLocalizedString("Key.user.create.failed", comment: ""))
             Key.clean()
         })
     }

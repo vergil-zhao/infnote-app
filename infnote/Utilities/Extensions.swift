@@ -24,22 +24,22 @@ extension Date {
             formatter.dateFormat = "YYYY-MM-dd"
         }
         else if diff.month! > 0 {
-            return "\(diff.month!) 个月前"
+            return String.localizedStringWithFormat(NSLocalizedString("month.ago", comment: ""), diff.month!)
         }
         else if diff.day! >= 8 {
             formatter.dateFormat = "MM-dd"
         }
         else if diff.day! > 0 && diff.day! < 8 {
-            return "\(diff.day!) 天前"
+            return String.localizedStringWithFormat(NSLocalizedString("day.ago", comment: ""), diff.day!)
         }
         else if diff.hour! > 0 {
-            return "\(diff.hour!) 小时前"
+            return String.localizedStringWithFormat(NSLocalizedString("hour.ago", comment: ""), diff.hour!)
         }
         else if diff.minute! > 0 {
-            return "\(diff.minute!) 分钟前"
+            return String.localizedStringWithFormat(NSLocalizedString("minute.ago", comment: ""), diff.minute!)
         }
         else if diff.second! > 0 {
-            return "\(diff.second!) 秒前"
+            return String.localizedStringWithFormat(NSLocalizedString("second.ago", comment: ""), diff.second!)
         }
         
         return formatter.string(from: self)

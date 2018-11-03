@@ -65,7 +65,7 @@ class QRCodeScannerViewController: UIViewController {
         foregroundView.addSubview(scanRectImageView)
         
         let hintLabel = UILabel()
-        hintLabel.text = "请对准二维码以扫描"
+        hintLabel.text = NSLocalizedString("QRCode.hintLabel", comment: "")
         hintLabel.font = UIFont(name: DEFAULT_FONT_REGULAR, size: 16)
         hintLabel.textColor = .white
         hintLabel.sizeToFit()

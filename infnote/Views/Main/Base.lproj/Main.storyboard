@@ -66,7 +66,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="196"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" bouncesZoom="NO" text="发表自己的看法" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="e02-f0-AbD">
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" bouncesZoom="NO" text="Post your thoughts" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="e02-f0-AbD">
                                                     <rect key="frame" x="20" y="11" width="374" height="174"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
@@ -197,7 +197,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gs0-kn-92V">
                                 <rect key="frame" x="0.0" y="88" width="414" height="55"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="标题" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QS2-Ac-c5q">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QS2-Ac-c5q">
                                         <rect key="frame" x="18" y="0.0" width="381" height="55"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
@@ -239,14 +239,14 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="sSn-BZ-rFm"/>
                     </view>
-                    <navigationItem key="navigationItem" title="发布 Note" id="ECJ-Ex-aek">
-                        <barButtonItem key="leftBarButtonItem" title="取消" id="T6F-q6-J5Y">
+                    <navigationItem key="navigationItem" title="New Note" id="ECJ-Ex-aek">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="T6F-q6-J5Y">
                             <color key="tintColor" red="0.36862745099999999" green="0.43137254899999999" blue="0.93333333330000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="cancelButtonTouched:" destination="KHm-tJ-UnM" id="7dJ-jZ-X8I"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="发送" id="56d-uN-sFH">
+                        <barButtonItem key="rightBarButtonItem" title="Send" id="56d-uN-sFH">
                             <color key="tintColor" red="0.36862745099999999" green="0.43137254899999999" blue="0.93333333330000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="sendButtonTouched:" destination="KHm-tJ-UnM" id="6AU-fy-Q2Q"/>
@@ -285,7 +285,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TTV-IY-KGU">
                                         <rect key="frame" x="15" y="12" width="384" height="40"/>
                                         <subviews>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" text="添加评论" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="vke-eW-DoQ">
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" text="Leave a comment" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="vke-eW-DoQ">
                                                 <rect key="frame" x="12" y="5" width="360" height="30"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
@@ -372,11 +372,11 @@
             </objects>
             <point key="canvasLocation" x="-84" y="145.27736131934034"/>
         </scene>
-        <!--首页-->
+        <!--Home-->
         <scene sceneID="cOf-zX-Myn">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="xJI-bq-5mu" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="首页" image="home-icon" id="eyR-Wb-Dbs"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="home-icon" id="eyR-Wb-Dbs"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="lUz-oO-cVY">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -391,17 +391,17 @@
             </objects>
             <point key="canvasLocation" x="855.20000000000005" y="145.27736131934034"/>
         </scene>
-        <!--关注-->
+        <!--Following-->
         <scene sceneID="Dqv-dp-Ks0">
             <objects>
-                <viewController title="关注" id="kE0-Gw-I8Y" customClass="FollowingViewController" customModule="infnote" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Following" id="kE0-Gw-I8Y" customClass="FollowingViewController" customModule="infnote" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="WEo-8r-GO0">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="NTP-IZ-8ZZ"/>
                     </view>
-                    <navigationItem key="navigationItem" title="关注" id="GEh-uf-oMY"/>
+                    <navigationItem key="navigationItem" title="Following" id="GEh-uf-oMY"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="prb-5x-mtu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -451,11 +451,11 @@
             </objects>
             <point key="canvasLocation" x="2744.9275362318845" y="939.50892857142856"/>
         </scene>
-        <!--关注-->
+        <!--Following-->
         <scene sceneID="BEw-2K-Rs9">
             <objects>
                 <navigationController storyboardIdentifier="following" automaticallyAdjustsScrollViewInsets="NO" id="7gC-pp-Eca" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="关注" image="following-icon" id="lDk-a3-9Lp"/>
+                    <tabBarItem key="tabBarItem" title="Following" image="following-icon" id="lDk-a3-9Lp"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="jEB-Sb-sIj">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -609,7 +609,8 @@
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="8m6-gt-sjH" firstAttribute="centerY" secondItem="EQh-ng-g53" secondAttribute="centerY" id="7Lw-Up-K6r"/>
-                                        <constraint firstItem="8m6-gt-sjH" firstAttribute="leading" secondItem="EQh-ng-g53" secondAttribute="leadingMargin" constant="10" id="nTR-6D-u01"/>
+                                        <constraint firstAttribute="trailing" secondItem="8m6-gt-sjH" secondAttribute="trailing" constant="310" id="QM2-4l-iWm"/>
+                                        <constraint firstItem="8m6-gt-sjH" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="EQh-ng-g53" secondAttribute="leadingMargin" id="nTR-6D-u01"/>
                                     </constraints>
                                 </collectionReusableView>
                                 <connections>
@@ -637,7 +638,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="VeJ-RG-7pW"/>
                     </view>
-                    <navigationItem key="navigationItem" title="发现" id="u9a-vg-IVV"/>
+                    <navigationItem key="navigationItem" title="Discover" id="u9a-vg-IVV"/>
                     <connections>
                         <outlet property="collectionView" destination="nY5-05-Jsn" id="eVZ-cL-xX2"/>
                     </connections>
@@ -656,11 +657,11 @@
             </objects>
             <point key="canvasLocation" x="-343" y="628"/>
         </scene>
-        <!--发现-->
+        <!--Discover-->
         <scene sceneID="zbo-Sz-ZhO">
             <objects>
                 <navigationController storyboardIdentifier="dicovery" automaticallyAdjustsScrollViewInsets="NO" id="vMh-ke-Chv" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="发现" image="discovery-icon" id="tZw-Qy-veE"/>
+                    <tabBarItem key="tabBarItem" title="Discover" image="discovery-icon" id="tZw-Qy-veE"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="hAu-f3-JG7">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>

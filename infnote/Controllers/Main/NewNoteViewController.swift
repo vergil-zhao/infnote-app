@@ -51,11 +51,11 @@ class NewNoteViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     @IBAction func sendButtonTouched(_ sender: Any) {
         guard textView.textColor != UIColor.lightGray else {
-            SVProgressHUD.showError(withStatus: "请输入内容")
+            SVProgressHUD.showError(withStatus: NSLocalizedString("Note.new.error.content", comment: ""))
             return
         }
         guard let title = titleTextField.text, !title.isEmpty else {
-            SVProgressHUD.showError(withStatus: "请输入标题")
+            SVProgressHUD.showError(withStatus: NSLocalizedString("Note.new.error.title", comment: ""))
             return
         }
         
@@ -69,10 +69,10 @@ class NewNoteViewController: UIViewController, UITableViewDelegate, UITableViewD
         data["signature"] = signature.base58
         print(data)
         Networking.shared.create(note: data, complete: { note in
-            SVProgressHUD.showInfo(withStatus: "发布成功")
+            SVProgressHUD.showInfo(withStatus: NSLocalizedString("Note.new.succeed", comment: ""))
             self.dismiss(animated: true)
         }, failed: { error in
-            SVProgressHUD.showError(withStatus: "发布失败")
+            SVProgressHUD.showError(withStatus: NSLocalizedString("Note.new.failed", comment: ""))
         })
     }
     
@@ -123,7 +123,7 @@ class NewNoteTextCell: UITableViewCell, UITextViewDelegate {
     
     func textViewDidEndEditing(_ textView: UITextView) {
         if textView.text.isEmpty {
-            textView.text = "发表自己的想法"
+            textView.text = NSLocalizedString("Note.new.content.placeholder", comment: "")
             textView.textColor = .lightGray
         }
     }

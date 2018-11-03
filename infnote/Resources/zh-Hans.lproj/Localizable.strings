@@ -1,0 +1,45 @@
+/* 
+  Localizable.strings
+  infnote
+
+  Created by Vergil Choi on 2018/11/3.
+  Copyright © 2018 Vergil Choi. All rights reserved.
+*/
+
+"ok" = "好";
+"cancel" = "取消";
+
+"key.private" = "公钥";
+"key.public" = "私钥";
+
+"UserHeaderView.postLabel" = "发表的文章";
+
+"Me.logout.alert.title" = "退出登录";
+"Me.logout.alert.message" = "将会清除本地保存的私钥，再次登录需要重新导入";
+"Me.logout.alert.sure" = "继续退出";
+
+"Note.comment.add" = "添加评论";
+"Note.comment.add.succeed" = "发布成功";
+"Note.comment.add.failed" = "发布失败";
+"Note.comment.add.error.login" = "请先登录";
+
+"Note.new.error.content" = "请输入内容";
+"Note.new.error.title" = "请输入标题";
+"Note.new.succeed" = "发布成功";
+"Note.new.failed" = "发布失败";
+"Note.new.content.placeholder" = "发表自己的想法";
+
+"Login.sheet.qrcode.title" = "扫描二维码";
+"Login.sheet.library.title" = "从图库中选取";
+
+"Login.alert.paste.title" = "提示";
+"Login.alert.paste.message" = "剪贴板中无内容，请复制后再次尝试";
+"Login.alert.failed.title" = "登录失败";
+"Login.alert.key.title" = "登录需要先导入私钥";
+
+"Key.alert.pasted" = "已复制到剪贴板";
+"Key.alert.save.failed" = "保存失败";
+"Key.alert.saved" = "已保存至手机相册";
+"Key.user.create.failed" = "注册用户失败";
+
+"QRCode.hintLabel" = "请对准二维码以扫描";

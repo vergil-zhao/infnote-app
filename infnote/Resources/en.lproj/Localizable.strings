@@ -1,0 +1,45 @@
+/* 
+  Localizable.strings
+  infnote
+
+  Created by Vergil Choi on 2018/11/3.
+  Copyright © 2018 Vergil Choi. All rights reserved.
+*/
+
+"ok" = "OK";
+"cancel" = "Cancel";
+
+"key.private" = "Private Key";
+"key.public" = "Public Key";
+
+"UserHeaderView.postLabel" = "Topics";
+
+"Me.logout.alert.title" = "Logout";
+"Me.logout.alert.message" = "It will request importing private key next login.";
+"Me.logout.alert.sure" = "Continue";
+
+"Note.comment.add" = "Leave a comment";
+"Note.comment.add.succeed" = "Succeed";
+"Note.comment.add.failed" = "Failed";
+"Note.comment.add.error.login" = "Please login first";
+
+"Note.new.error.content" = "Please write down the content";
+"Note.new.error.title" = "Please write down the title";
+"Note.new.succeed" = "Succeed";
+"Note.new.failed" = "Failed";
+"Note.new.content.placeholder" = "Post your thoughts";
+
+"Login.sheet.qrcode.title" = "Scan QRCode";
+"Login.sheet.library.title" = "From Library";
+
+"Login.alert.paste.title" = "Oops";
+"Login.alert.paste.message" = "There is nothing in pasteboard, please try again after copying.";
+"Login.alert.failed.title" = "Login failed";
+"Login.alert.key.title" = "Private key is vital to be import first.";
+
+"Key.alert.pasted" = "Copied to pasteboard";
+"Key.alert.save.failed" = "Failed to save";
+"Key.alert.saved" = "Saved to Library";
+"Key.user.create.failed" = "Failed to sign up";
+
+"QRCode.hintLabel" = "Please aim to QRCode";

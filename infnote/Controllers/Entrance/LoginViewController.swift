@@ -55,17 +55,17 @@ class LoginViewController: UIViewController, UIImagePickerControllerDelegate, UI
     
     @IBAction func uploadTouched(_ sender: UITapGestureRecognizer) {
         let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
-        actionSheet.addAction(UIAlertAction(title: "扫描二维码", style: .default, handler: { _ in
+        actionSheet.addAction(UIAlertAction(title: NSLocalizedString("Login.sheet.qrcode.title", comment: ""), style: .default, handler: { _ in
             let controller = self.storyboard?.instantiateViewController(withIdentifier: NSStringFromClass(QRCodeScannerViewController.self))
             self.navigationController?.pushViewController(controller!, animated: true)
         }))
-        actionSheet.addAction(UIAlertAction(title: "从图库中选取", style: .default, handler: { _ in
+        actionSheet.addAction(UIAlertAction(title: NSLocalizedString("Login.sheet.library.title", comment: ""), style: .default, handler: { _ in
             let controller = UIImagePickerController()
             controller.delegate = self
             controller.sourceType = .savedPhotosAlbum
             self.present(controller, animated: true)
         }))
-        actionSheet.addAction(UIAlertAction(title: "取消", style: .cancel, handler: nil))
+        actionSheet.addAction(UIAlertAction(title: NSLocalizedString("cancel", comment: ""), style: .cancel, handler: nil))
         self.present(actionSheet, animated: true)
     }
     
@@ -76,8 +76,8 @@ class LoginViewController: UIViewController, UIImagePickerControllerDelegate, UI
             }
         }
         else {
-            let alert = UIAlertController(title: "提示", message: "剪贴板中无内容，请复制后再次尝试", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "好", style: .cancel, handler: nil))
+            let alert = UIAlertController(title: NSLocalizedString("Login.alert.paste.title", comment: ""), message: NSLocalizedString("Login.alert.paste.message", comment: ""), preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: NSLocalizedString("ok", comment: ""), style: .cancel, handler: nil))
             self.present(alert, animated: true)
         }
     }
@@ -107,11 +107,11 @@ class LoginViewController: UIViewController, UIImagePickerControllerDelegate, UI
                 user.save()
                 AppDelegate.switchToMainStoryboard()
             }, failed: { _ in
-                SVProgressHUD.showError(withStatus: "登录失败")
+                SVProgressHUD.showError(withStatus: NSLocalizedString("Login.alert.failed.title", comment: ""))
             })
         }
         else {
-            SVProgressHUD.showError(withStatus: "登录需要先导入私钥")
+            SVProgressHUD.showError(withStatus: NSLocalizedString("Login.alert.key.title", comment: ""))
         }
     }
     

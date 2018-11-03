@@ -130,7 +130,7 @@ class NoteViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func textViewDidBeginEditing(_ textView: UITextView) {
-        if textView.text == "添加评论" {
+        if textView.text == NSLocalizedString("Note.comment.add", comment: "") {
             textView.text = ""
             textView.textColor = .black
         }
@@ -138,7 +138,7 @@ class NoteViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func textViewDidEndEditing(_ textView: UITextView) {
         if textView.text == "" {
-            textView.text = "添加评论"
+            textView.text = NSLocalizedString("Note.comment.add", comment: "")
             textView.textColor = .lightGray
         }
     }
@@ -148,7 +148,11 @@ class NoteViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
-        if text == "\n" {
+        if text == "\n" && textView.text.count > 0 {
+            if User.current == nil {
+                SVProgressHUD.showError(withStatus: NSLocalizedString("Note.comment.add.error.login", comment: ""))
+                return false
+            }
             var data = [
                 "content": textView.text,
                 "date_submitted": Int(Date().timeIntervalSince1970),
@@ -161,10 +165,10 @@ class NoteViewController: UIViewController, UITableViewDelegate, UITableViewData
             Networking.shared.create(note: data, complete: { note in
                 textView.text = ""
                 textView.resignFirstResponder()
-                SVProgressHUD.showInfo(withStatus: "发布成功")
+                SVProgressHUD.showInfo(withStatus: NSLocalizedString("Note.comment.add.succeed", comment: ""))
                 self.tableView.cr.beginHeaderRefresh()
             }, failed: { error in
-                SVProgressHUD.showError(withStatus: "发布失败")
+                SVProgressHUD.showError(withStatus: NSLocalizedString("Note.comment.add.failed", comment: ""))
             })
             return false
         }

@@ -21,11 +21,7 @@ class Networking {
             if let addr = UserDefaults.standard.string(forKey: "com.infnote.defaults.server.addr"), addr.count > 0 {
                 return addr
             }
-            #if DEBUG
-            return "http://127.0.0.1:8080"
-            #else
             return "https://api.infnote.com"
-            #endif
         }
         set {
             UserDefaults.standard.set(newValue, forKey: "com.infnote.defaults.server.addr")

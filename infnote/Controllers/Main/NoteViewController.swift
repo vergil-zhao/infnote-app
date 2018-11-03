@@ -47,6 +47,13 @@ class NoteViewController: UIViewController, UITableViewDelegate, UITableViewData
         tableView.estimatedRowHeight = 100
         textViewDidChange(commentTextView)
         
+        Networking.shared.fetchNote(id: note.id, complete: { note in
+            self.note = note
+            self.tableView.reloadData()
+        }) { error in
+            print(error)
+        }
+        
         tableView.cr.addHeadRefresh { [unowned self] in
             self.reload()
         }

@@ -8,6 +8,9 @@
 
 "ok" = "好";
 "cancel" = "取消";
+"login.first" = "请先登录";
+"logout" = "退出登录";
+"back.to.login" = "返回登录画面";
 
 "key.private" = "公钥";
 "key.public" = "私钥";
@@ -21,7 +24,6 @@
 "Note.comment.add" = "添加评论";
 "Note.comment.add.succeed" = "发布成功";
 "Note.comment.add.failed" = "发布失败";
-"Note.comment.add.error.login" = "请先登录";
 
 "Note.new.error.content" = "请输入内容";
 "Note.new.error.title" = "请输入标题";
@@ -43,3 +45,7 @@
 "Key.user.create.failed" = "注册用户失败";
 
 "QRCode.hintLabel" = "请对准二维码以扫描";
+
+"KeyPair.saving.private.title" = "保存私钥";
+"KeyPair.saving.private.copy" = "复制到剪贴板";
+"KeyPair.saving.private.library" = "保存二维码到图库";

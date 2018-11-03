@@ -14,6 +14,7 @@ class ServerViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        addressTextField.text = Networking.shared.host
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

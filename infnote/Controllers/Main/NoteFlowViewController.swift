@@ -37,6 +37,8 @@ class NoteFlowViewController: UIViewController, UITableViewDataSource, UITableVi
                 }
                 self.notes.append(contentsOf: notes)
                 self.tableView.reloadData()
+                }, failed: { error in
+                    self.tableView.cr.endLoadingMore()
             })
         }
         self.reload()
@@ -48,6 +50,8 @@ class NoteFlowViewController: UIViewController, UITableViewDataSource, UITableVi
         Networking.shared.fetchNoteList(page: 1, complete: { notes in
             self.notes = notes
             self.tableView.reloadData()
+            self.tableView.cr.endHeaderRefresh()
+        }, failed: { error in
             self.tableView.cr.endHeaderRefresh()
         })
     }

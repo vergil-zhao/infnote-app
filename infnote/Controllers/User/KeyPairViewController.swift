@@ -9,58 +9,56 @@
 import UIKit
 import QRCode
 import InfnoteChain
+import SVProgressHUD
 
-class KeyPairViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-
-    @IBOutlet weak var tableView: UITableView!
+class KeyPairViewController: UITableViewController {
     
-    let key = Key.loadDefaultKey()
+    let key = Key.loadDefaultKey()!
+    
+    @IBOutlet weak var publicKeyLabel: UILabel!
+    @IBOutlet weak var privateKeyLabel: UILabel!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.rowHeight = UIScreen.main.bounds.height / 2
-
-    }
-    
-    @IBAction func copyButtonTouched(_ sender: Any) {
         
+        publicKeyLabel.text = key.compressedPublicKey.base58
+        privateKeyLabel.text = key.privateKey?.base58
     }
     
-    @IBAction func saveButtonTouched(_ sender: Any) {
+    @IBAction func showButtonTouched(_ sender: UIButton) {
+        privateKeyLabel.isHidden = false
+        sender.isHidden = true
     }
     
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return key == nil ? 0 : 2
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! KeyPairCell
-        if indexPath.row == 0 {
-            cell.prepareViews(title: NSLocalizedString("key.private", comment: ""), key: key!.privateKey!.base58)
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.section == 0 {
+            UIPasteboard.general.string = key.compressedPublicKey.base58
+            SVProgressHUD.showInfo(withStatus: NSLocalizedString("Key.alert.pasted", comment: ""))
         }
-        else if indexPath.row == 1 {
-            cell.prepareViews(title: NSLocalizedString("key.public", comment: ""), key: key!.compressedPublicKey.base58)
+        else if indexPath.section == 1 {
+            let sheet = UIAlertController(title: NSLocalizedString("KeyPair.saving.private.title", comment: ""), message: nil, preferredStyle: .actionSheet)
+            sheet.addAction(UIAlertAction(title: NSLocalizedString("KeyPair.saving.private.copy", comment: ""), style: .default, handler: { _ in
+                UIPasteboard.general.string = self.key.privateKey!.base58
+                SVProgressHUD.showInfo(withStatus: NSLocalizedString("Key.alert.pasted", comment: ""))
+            }))
+            sheet.addAction(UIAlertAction(title: NSLocalizedString("KeyPair.saving.private.library", comment: ""), style: .default, handler: { _ in
+                var code = QRCode(self.key.privateKey!.base58)!
+                code.size = CGSize(width: 500, height: 500)
+                UIImageWriteToSavedPhotosAlbum(code.image!, self, #selector(self.image(_:didFinishSavingWithError:contextInfo:)), nil)
+            }))
+            sheet.addAction(UIAlertAction(title: NSLocalizedString("cancel", comment: ""), style: .cancel, handler: nil))
+            present(sheet, animated: true)
         }
-        return cell
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     
-}
-
-class KeyPairCell: UITableViewCell {
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var qrcodeView: UIImageView!
-    @IBOutlet weak var keyLabel: UILabel!
-    
-    func prepareViews(title: String, key: String) {
-        titleLabel.text = title
-        keyLabel.text = key
-        
-        var code = QRCode(key)!
-        let width = qrcodeView.bounds.width > qrcodeView.bounds.height ? qrcodeView.bounds.height : qrcodeView.bounds.width
-        code.size = CGSize(width: width, height: width)
-        qrcodeView.image = code.image
-        qrcodeView.contentMode = .scaleAspectFit
+    @objc func image(_ image: UIImage, didFinishSavingWithError error: NSError?, contextInfo: UnsafeRawPointer) {
+        if let _ = error {
+            SVProgressHUD.showError(withStatus: NSLocalizedString("Key.alert.save.failed", comment: ""))
+        } else {
+            SVProgressHUD.showInfo(withStatus: NSLocalizedString("Key.alert.saved", comment: ""))
+        }
     }
 }
 

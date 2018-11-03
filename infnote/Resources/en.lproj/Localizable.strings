@@ -8,6 +8,10 @@
 
 "ok" = "OK";
 "cancel" = "Cancel";
+"login.first" = "Please login first";
+"logout" = "LOG OUT";
+"back.to.login" = "BACK TO LOGIN SCENE";
+
 
 "key.private" = "Private Key";
 "key.public" = "Public Key";
@@ -21,7 +25,6 @@
 "Note.comment.add" = "Leave a comment";
 "Note.comment.add.succeed" = "Succeed";
 "Note.comment.add.failed" = "Failed";
-"Note.comment.add.error.login" = "Please login first";
 
 "Note.new.error.content" = "Please write down the content";
 "Note.new.error.title" = "Please write down the title";
@@ -43,3 +46,7 @@
 "Key.user.create.failed" = "Failed to sign up";
 
 "QRCode.hintLabel" = "Please aim to QRCode";
+
+"KeyPair.saving.private.title" = "Saving Private Key";
+"KeyPair.saving.private.copy" = "Copy to pasteboard";
+"KeyPair.saving.private.library" = "Save QRCode to Library";

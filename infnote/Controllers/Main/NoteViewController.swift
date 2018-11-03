@@ -150,7 +150,7 @@ class NoteViewController: UIViewController, UITableViewDelegate, UITableViewData
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
         if text == "\n" && textView.text.count > 0 {
             if User.current == nil {
-                SVProgressHUD.showError(withStatus: NSLocalizedString("Note.comment.add.error.login", comment: ""))
+                SVProgressHUD.showError(withStatus: NSLocalizedString("login.first", comment: ""))
                 return false
             }
             var data = [

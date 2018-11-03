@@ -22,7 +22,7 @@ class UserHeaderView: UIView {
     let editButton          = UIButton()
     let bottomLine          = UIView()
     
-    func prepareViews() {
+    func prepareViews(with user: User) {
         self.frame.size.height = 180 + UIScreen.main.bounds.height * 0.35
         self.frame.size.width = UIScreen.main.bounds.width
         self.backgroundColor = .white
@@ -58,7 +58,7 @@ class UserHeaderView: UIView {
             make.height.equalTo(80)
         }
         
-        nicknameLabel.text = "Vergil Choi"
+        nicknameLabel.text = user.nickname
         nicknameLabel.font = UIFont(name: DEFAULT_FONT_DEMI_BOLD, size: 16)
         nicknameLabel.snp.makeConstraints { make in
             make.left.equalTo(avatarView.snp.right).offset(10)
@@ -66,7 +66,7 @@ class UserHeaderView: UIView {
             make.right.equalToSuperview().offset(-ViewConst.horizontalMargin)
         }
         
-        bioLabel.text = "Be superior to your former self. Be superior to your former self. Be superior to your former self. Be superior to your former self. Be superior to your former self. Be superior to your former self. Be superior to your former self."
+        bioLabel.text = user.bio
         bioLabel.font = UIFont(name: DEFAULT_FONT_REGULAR, size: 14)
         bioLabel.textColor = .darkGray
         bioLabel.numberOfLines = 3
@@ -84,39 +84,39 @@ class UserHeaderView: UIView {
             make.bottom.equalToSuperview().offset(-ViewConst.verticalMargin)
         }
         
-        postCountLabel.text = "12"
+        postCountLabel.text = "\(user.topics ?? 0)"
         postCountLabel.font = UIFont(name: DEFAULT_FONT_DEMI_BOLD, size: 14)
         postCountLabel.snp.makeConstraints { make in
             make.left.equalToSuperview().offset(ViewConst.horizontalMargin)
             make.bottom.equalTo(postLabel.snp.top)
         }
         
-        likeLabel.text = "收到的赞"
-        likeLabel.font = UIFont(name: DEFAULT_FONT_REGULAR, size: 14)
-        likeLabel.textColor = .darkGray
-        likeLabel.snp.makeConstraints { make in
-            make.left.equalTo(postLabel.snp.right).offset(50)
-            make.bottom.equalToSuperview().offset(-ViewConst.verticalMargin)
-        }
-        
-        likeCountLabel.text = "200"
-        likeCountLabel.font = UIFont(name: DEFAULT_FONT_DEMI_BOLD, size: 14)
-        likeCountLabel.snp.makeConstraints { make in
-            make.left.equalTo(postLabel.snp.right).offset(50)
-            make.bottom.equalTo(postLabel.snp.top)
-        }
-        
-        editButton.setTitle("编辑", for: .normal)
-        editButton.setTitleColor(.white, for: .normal)
-        editButton.titleLabel?.font = UIFont(name: DEFAULT_FONT_REGULAR, size: 14)
-        editButton.backgroundColor = MAIN_COLOR
-        editButton.layer.cornerRadius = 5
-        editButton.snp.makeConstraints { make in
-            make.right.equalToSuperview().offset(-ViewConst.horizontalMargin)
-            make.bottom.equalToSuperview().offset(-ViewConst.verticalMargin)
-            make.width.equalTo(80)
-            make.height.equalTo(40)
-        }
+//        likeLabel.text = "收到的赞"
+//        likeLabel.font = UIFont(name: DEFAULT_FONT_REGULAR, size: 14)
+//        likeLabel.textColor = .darkGray
+//        likeLabel.snp.makeConstraints { make in
+//            make.left.equalTo(postLabel.snp.right).offset(50)
+//            make.bottom.equalToSuperview().offset(-ViewConst.verticalMargin)
+//        }
+//
+//        likeCountLabel.text = "0"
+//        likeCountLabel.font = UIFont(name: DEFAULT_FONT_DEMI_BOLD, size: 14)
+//        likeCountLabel.snp.makeConstraints { make in
+//            make.left.equalTo(postLabel.snp.right).offset(50)
+//            make.bottom.equalTo(postLabel.snp.top)
+//        }
+//
+//        editButton.setTitle("编辑", for: .normal)
+//        editButton.setTitleColor(.white, for: .normal)
+//        editButton.titleLabel?.font = UIFont(name: DEFAULT_FONT_REGULAR, size: 14)
+//        editButton.backgroundColor = MAIN_COLOR
+//        editButton.layer.cornerRadius = 5
+//        editButton.snp.makeConstraints { make in
+//            make.right.equalToSuperview().offset(-ViewConst.horizontalMargin)
+//            make.bottom.equalToSuperview().offset(-ViewConst.verticalMargin)
+//            make.width.equalTo(80)
+//            make.height.equalTo(40)
+//        }
         
         bottomLine.backgroundColor = UIColor(white: 0.85, alpha: 1)
         bottomLine.snp.makeConstraints { make in

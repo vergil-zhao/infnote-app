@@ -25,17 +25,11 @@ class NoteFlowViewController: UIViewController, UITableViewDataSource, UITableVi
         tableView.estimatedRowHeight = 365
         tableView.tableFooterView = UIView()
         tableView.cr.addHeadRefresh { [unowned self] in
-            self.tableView.cr.resetNoMore()
-            self.page = 1
-            Networking.shared.fetchNoteList(page: 1) { notes in
-                self.notes = notes
-                self.tableView.reloadData()
-                self.tableView.cr.endHeaderRefresh()
-            }
+            self.reload()
         }
         tableView.cr.addFootRefresh {
             self.page += 1
-            Networking.shared.fetchNoteList(page: self.page) { [unowned self] notes in
+            Networking.shared.fetchNoteList(page: self.page, complete: { [unowned self] notes in
                 self.tableView.cr.endLoadingMore()
                 if notes.count <= 0 {
                     self.tableView.cr.noticeNoMoreData()
@@ -43,9 +37,19 @@ class NoteFlowViewController: UIViewController, UITableViewDataSource, UITableVi
                 }
                 self.notes.append(contentsOf: notes)
                 self.tableView.reloadData()
-            }
+            })
         }
-        tableView.cr.beginHeaderRefresh()
+        self.reload()
+    }
+    
+    func reload() {
+        tableView.cr.resetNoMore()
+        page = 1
+        Networking.shared.fetchNoteList(page: 1, complete: { notes in
+            self.notes = notes
+            self.tableView.reloadData()
+            self.tableView.cr.endHeaderRefresh()
+        })
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

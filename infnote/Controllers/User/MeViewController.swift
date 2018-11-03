@@ -38,4 +38,11 @@ class MeViewController: UITableViewController {
         }
         tableView.deselectRow(at: indexPath, animated: true)
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "UserView" {
+            let controller = segue.destination as! UserViewController
+            controller.user = User.current!
+        }
+    }
 }

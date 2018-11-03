@@ -14,6 +14,9 @@ class UserViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBOutlet weak var tableView: UITableView!
     
     let topbar = UIView()
+    var page = 1
+    var notes: [Note] = []
+    var user: User!
     
     var tableViewOffsetObservation: NSKeyValueObservation!
     
@@ -23,8 +26,39 @@ class UserViewController: UIViewController, UITableViewDelegate, UITableViewData
         tableView.contentInset = UIEdgeInsets.zero
         tableView.register(MainCell.self, forCellReuseIdentifier: "cell")
         tableView.estimatedRowHeight = 365
+        tableView.tableFooterView = UIView()
         
         prepareViews()
+        
+        tableView.cr.addHeadRefresh {
+            self.reload()
+        }
+        tableView.cr.addFootRefresh {
+            self.page += 1
+            Networking.shared.fetchNoteList(user: self.user, page: self.page, complete: { notes in
+                self.notes += notes
+                self.tableView.reloadData()
+                if notes.count == 0 {
+                    self.tableView.cr.noticeNoMoreData()
+                }
+                self.tableView.cr.endLoadingMore()
+            }, failed: { error in
+                self.tableView.cr.endLoadingMore()
+            })
+        }
+        self.reload()
+    }
+    
+    func reload() {
+        page = 1
+        tableView.cr.resetNoMore()
+        Networking.shared.fetchNoteList(user: user, complete: { notes in
+            self.notes = notes
+            self.tableView.reloadData()
+            self.tableView.cr.endHeaderRefresh()
+        }, failed: { error in
+            self.tableView.cr.endHeaderRefresh()
+        })
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -44,12 +78,12 @@ class UserViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return notes.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! MainCell
-//        cell.prepareViews(note: <#T##Note#>)
+        cell.prepareViews(note: notes[indexPath.row])
         
         return cell
     }
@@ -57,7 +91,7 @@ class UserViewController: UIViewController, UITableViewDelegate, UITableViewData
     func prepareViews() {
         
         let view = UserHeaderView()
-        view.prepareViews()
+        view.prepareViews(with: user)
         view.editButton.addTarget(self, action: #selector(editButtonTouched), for: .touchUpInside)
         tableView.tableHeaderView = view
         
@@ -86,7 +120,7 @@ class UserViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
         
         let nameLabel = UILabel()
-        nameLabel.text = "Vergil Choi"
+        nameLabel.text = user.nickname
         nameLabel.font = UIFont(name: DEFAULT_FONT_BOLD, size: 14)
         nameLabel.textAlignment = .center
         nameLabel.lineBreakMode = .byTruncatingMiddle

@@ -95,12 +95,11 @@ class Note: Mappable, CustomStringConvertible {
     var replyTo: String?
     var signature: String?
     var payloadID: String!
-    var dateConfirmed: Date?
-    var isConfirmed: Bool!
+    var blockTime: Date?
     var blockHeight: Int?
     
     var date: Date {
-        return dateConfirmed ?? dateSubmitted
+        return blockTime ?? dateSubmitted
     }
     
     
@@ -115,10 +114,9 @@ class Note: Mappable, CustomStringConvertible {
         content         <- map["content"]
         replyTo         <- map["reply_to"]
         signature       <- map["signature"]
-        isConfirmed     <- map["is_confirmed"]
         blockHeight     <- map["block_height"]
         dateSubmitted   <- (map["date_submitted"], Model.DateToInt)
-        dateConfirmed   <- (map["date_confirmed"], Model.DateToInt)
+        blockTime       <- (map["block_time"], Model.DateToInt)
     }
     
     var description: String {

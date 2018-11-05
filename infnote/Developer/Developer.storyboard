@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="aho-zE-ksc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="aho-zE-ksc">
     <device id="retina6_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -134,7 +134,7 @@
         <scene sceneID="Lbw-nd-fqY">
             <objects>
                 <navigationController id="Q2v-F9-waj" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Peers" id="fhr-QE-ljL"/>
+                    <tabBarItem key="tabBarItem" title="Peers" image="peers-icon" id="fhr-QE-ljL"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="xlO-Re-8DW">
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -677,7 +677,7 @@
         <scene sceneID="9SX-Wt-Dac">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="RhG-RR-Cvm" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Chains" id="rcR-aN-qon"/>
+                    <tabBarItem key="tabBarItem" title="Chains" image="chains-icon" id="rcR-aN-qon"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="wos-5B-Uyv">
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>
@@ -865,4 +865,8 @@
             <point key="canvasLocation" x="-383" y="-210"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="chains-icon" width="100" height="100"/>
+        <image name="peers-icon" width="100" height="100"/>
+    </resources>
 </document>

@@ -19,6 +19,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
+        window?.backgroundColor = .white
+        
         IQKeyboardManager.shared.enable = true
         
         if let _ = Key.loadDefaultKey(), User.load() {
@@ -28,7 +30,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             switchToEntranceStoryboard()
         }
         
-        SVProgressHUD.setMinimumDismissTimeInterval(3.0)
+        SVProgressHUD.setMinimumDismissTimeInterval(2.0)
         SVProgressHUD.setDefaultStyle(.dark)
         
         return true

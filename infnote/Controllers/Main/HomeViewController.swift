@@ -7,15 +7,15 @@
 //
 
 import UIKit
+import RxCocoa
 
 class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        _ = User.status.takeUntil(rx.deallocated).subscribe(onNext: { [unowned self] user in
+            self.navigationItem.rightBarButtonItem?.isEnabled = user != nil
+        })
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        navigationItem.rightBarButtonItem?.isEnabled = User.current != nil
-    }
-    
 }

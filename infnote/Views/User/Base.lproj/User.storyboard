@@ -106,7 +106,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="RBI-gP-afI" kind="show" id="1W4-d6-JdH"/>
+                                            <segue destination="RBI-gP-afI" kind="show" identifier="Notifications" id="1W4-d6-JdH"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>

@@ -9,6 +9,7 @@
 import Foundation
 import ObjectMapper
 import InfnoteChain
+import RxSwift
 
 class Model {
     static let DateToInt = TransformOf<Date, Int>(
@@ -17,8 +18,23 @@ class Model {
 }
 
 class User: Mappable, CustomStringConvertible {
+    
+    static private var observers: [AnyObserver<User?>] = []
+    
+    static var status = Observable<User?>.create { observer in
+        let index = observers.count
+        observers.append(observer)
+        observer.onNext(current)
+        return Disposables.create {
+            observers.remove(at: index)
+        }
+    }
+    
     static var current: User? {
         didSet {
+            observers.forEach { observer in
+                observer.onNext(current)
+            }
             if current == nil {
                 UserDefaults.standard.set(nil, forKey: "infnote.current.user_id")
                 Key.clean()

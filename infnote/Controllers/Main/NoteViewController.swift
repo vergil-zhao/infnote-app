@@ -78,7 +78,7 @@ class NoteViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
         
         commentTextView.textColor = .lightGray
-        commentTextView.text = NSLocalizedString("Note.comment.placeholder", comment: "")
+        commentTextView.text = __("Note.comment.placeholder")
     }
     
     func reload() {
@@ -141,7 +141,7 @@ class NoteViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func textViewDidEndEditing(_ textView: UITextView) {
         if textView.text == "" {
-            textView.text = NSLocalizedString("Note.comment.placeholder", comment: "")
+            textView.text = __("Note.comment.placeholder")
             textView.textColor = .lightGray
         }
     }
@@ -153,7 +153,7 @@ class NoteViewController: UIViewController, UITableViewDelegate, UITableViewData
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
         if text == "\n" && textView.text.count > 0 {
             if User.current == nil {
-                SVProgressHUD.showError(withStatus: NSLocalizedString("login.first", comment: ""))
+                SVProgressHUD.showError(withStatus: __("login.first"))
                 return false
             }
             var data = [
@@ -168,10 +168,10 @@ class NoteViewController: UIViewController, UITableViewDelegate, UITableViewData
             Networking.shared.create(note: data, complete: { note in
                 textView.text = ""
                 textView.resignFirstResponder()
-                SVProgressHUD.showInfo(withStatus: NSLocalizedString("Note.comment.add.succeed", comment: ""))
+                SVProgressHUD.showInfo(withStatus: __("Note.comment.add.succeed"))
                 self.tableView.cr.beginHeaderRefresh()
             }, failed: { error in
-                SVProgressHUD.showError(withStatus: NSLocalizedString("Note.comment.add.failed", comment: ""))
+                SVProgressHUD.showError(withStatus: __("Note.comment.add.failed"))
             })
             return false
         }

@@ -55,17 +55,17 @@ class LoginViewController: UIViewController, UIImagePickerControllerDelegate, UI
     
     @IBAction func uploadTouched(_ sender: UITapGestureRecognizer) {
         let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
-        actionSheet.addAction(UIAlertAction(title: NSLocalizedString("Login.sheet.qrcode.title", comment: ""), style: .default, handler: { _ in
+        actionSheet.addAction(UIAlertAction(title: __("Login.sheet.qrcode.title"), style: .default, handler: { _ in
             let controller = self.storyboard?.instantiateViewController(withIdentifier: NSStringFromClass(QRCodeScannerViewController.self))
             self.navigationController?.pushViewController(controller!, animated: true)
         }))
-        actionSheet.addAction(UIAlertAction(title: NSLocalizedString("Login.sheet.library.title", comment: ""), style: .default, handler: { _ in
+        actionSheet.addAction(UIAlertAction(title: __("Login.sheet.library.title"), style: .default, handler: { _ in
             let controller = UIImagePickerController()
             controller.delegate = self
             controller.sourceType = .savedPhotosAlbum
             self.present(controller, animated: true)
         }))
-        actionSheet.addAction(UIAlertAction(title: NSLocalizedString("cancel", comment: ""), style: .cancel, handler: nil))
+        actionSheet.addAction(UIAlertAction(title: __("cancel"), style: .cancel, handler: nil))
         self.present(actionSheet, animated: true)
     }
     
@@ -76,8 +76,8 @@ class LoginViewController: UIViewController, UIImagePickerControllerDelegate, UI
             }
         }
         else {
-            let alert = UIAlertController(title: NSLocalizedString("Login.alert.paste.title", comment: ""), message: NSLocalizedString("Login.alert.paste.message", comment: ""), preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: NSLocalizedString("ok", comment: ""), style: .cancel, handler: nil))
+            let alert = UIAlertController(title: __("Login.alert.paste.title"), message: __("Login.alert.paste.message"), preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: __("ok"), style: .cancel, handler: nil))
             self.present(alert, animated: true)
         }
     }
@@ -107,11 +107,11 @@ class LoginViewController: UIViewController, UIImagePickerControllerDelegate, UI
                 user.save()
                 AppDelegate.switchToMainStoryboard()
             }, failed: { _ in
-                SVProgressHUD.showError(withStatus: NSLocalizedString("Login.alert.failed.title", comment: ""))
+                SVProgressHUD.showError(withStatus: __("Login.alert.failed.title"))
             })
         }
         else {
-            SVProgressHUD.showError(withStatus: NSLocalizedString("Login.alert.key.title", comment: ""))
+            SVProgressHUD.showError(withStatus: __("Login.alert.key.title"))
         }
     }
     

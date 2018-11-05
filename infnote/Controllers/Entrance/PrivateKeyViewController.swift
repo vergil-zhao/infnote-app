@@ -56,19 +56,19 @@ class PrivateKeyViewController: UIViewController {
     
     @IBAction func privateKeyLabelTouched(_ sender: Any) {
         UIPasteboard.general.string = key.privateKey!.base58
-        SVProgressHUD.showInfo(withStatus: NSLocalizedString("Key.alert.pasted", comment: ""))
+        SVProgressHUD.showInfo(withStatus: __("Key.alert.pasted"))
     }
     
     @IBAction func publicKeyLabelTouched(_ sender: Any) {
         UIPasteboard.general.string = key.compressedPublicKey.base58
-        SVProgressHUD.showInfo(withStatus: NSLocalizedString("Key.alert.pasted", comment: ""))
+        SVProgressHUD.showInfo(withStatus: __("Key.alert.pasted"))
     }
     
     @objc func image(_ image: UIImage, didFinishSavingWithError error: NSError?, contextInfo: UnsafeRawPointer) {
         if let _ = error {
-            SVProgressHUD.showError(withStatus: NSLocalizedString("Key.alert.save.failed", comment: ""))
+            SVProgressHUD.showError(withStatus: __("Key.alert.save.failed"))
         } else {
-            SVProgressHUD.showInfo(withStatus: NSLocalizedString("Key.alert.saved", comment: ""))
+            SVProgressHUD.showInfo(withStatus: __("Key.alert.saved"))
         }
     }
     
@@ -93,7 +93,7 @@ class PrivateKeyViewController: UIViewController {
             SVProgressHUD.dismiss()
             AppDelegate.switchToMainStoryboard()
         }, failed: { error in
-            SVProgressHUD.showError(withStatus: NSLocalizedString("Key.user.create.failed", comment: ""))
+            SVProgressHUD.showError(withStatus: __("Key.user.create.failed"))
             Key.clean()
         })
     }

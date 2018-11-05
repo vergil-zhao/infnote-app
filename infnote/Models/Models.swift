@@ -17,7 +17,13 @@ class Model {
 }
 
 class User: Mappable, CustomStringConvertible {
-    static var current: User?
+    static var current: User? {
+        didSet {
+            if current == nil {
+                UserDefaults.standard.set(nil, forKey: "infnote.current.user_id")
+            }
+        }
+    }
     
     var id: String!
     var nickname: String!

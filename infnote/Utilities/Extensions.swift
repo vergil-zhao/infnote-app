@@ -24,22 +24,22 @@ extension Date {
             formatter.dateFormat = "YYYY-MM-dd"
         }
         else if diff.month! > 0 {
-            return String.localizedStringWithFormat(NSLocalizedString("month.ago", comment: ""), diff.month!)
+            return String.localizedStringWithFormat(__("month.ago"), diff.month!)
         }
         else if diff.day! >= 8 {
             formatter.dateFormat = "MM-dd"
         }
         else if diff.day! > 0 && diff.day! < 8 {
-            return String.localizedStringWithFormat(NSLocalizedString("day.ago", comment: ""), diff.day!)
+            return String.localizedStringWithFormat(__("day.ago"), diff.day!)
         }
         else if diff.hour! > 0 {
-            return String.localizedStringWithFormat(NSLocalizedString("hour.ago", comment: ""), diff.hour!)
+            return String.localizedStringWithFormat(__("hour.ago"), diff.hour!)
         }
         else if diff.minute! > 0 {
-            return String.localizedStringWithFormat(NSLocalizedString("minute.ago", comment: ""), diff.minute!)
+            return String.localizedStringWithFormat(__("minute.ago"), diff.minute!)
         }
         else if diff.second! > 0 {
-            return String.localizedStringWithFormat(NSLocalizedString("second.ago", comment: ""), diff.second!)
+            return String.localizedStringWithFormat(__("second.ago"), diff.second!)
         }
         
         return formatter.string(from: self)
@@ -63,4 +63,9 @@ extension Dictionary where Key == String {
             return result + "\n\(indent)[\(item.key)\(spaces)] \(content)"
         }
     }
+}
+
+
+func __(_ key: String, comment: String = "") -> String {
+    return NSLocalizedString(key, comment: comment)
 }

@@ -49,11 +49,11 @@ class NewNoteViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     @IBAction func sendButtonTouched(_ sender: Any) {
         guard textView.textColor != UIColor.lightGray else {
-            SVProgressHUD.showError(withStatus: NSLocalizedString("Note.new.error.content", comment: ""))
+            SVProgressHUD.showError(withStatus: __("Note.new.error.content"))
             return
         }
         guard let title = titleTextField.text, !title.isEmpty else {
-            SVProgressHUD.showError(withStatus: NSLocalizedString("Note.new.error.title", comment: ""))
+            SVProgressHUD.showError(withStatus: __("Note.new.error.title"))
             return
         }
         
@@ -67,10 +67,10 @@ class NewNoteViewController: UIViewController, UITableViewDelegate, UITableViewD
         data["signature"] = signature.base58
         print(data)
         Networking.shared.create(note: data, complete: { note in
-            SVProgressHUD.showInfo(withStatus: NSLocalizedString("Note.new.succeed", comment: ""))
+            SVProgressHUD.showInfo(withStatus: __("Note.new.succeed"))
             self.dismiss(animated: true)
         }, failed: { error in
-            SVProgressHUD.showError(withStatus: NSLocalizedString("Note.new.failed", comment: ""))
+            SVProgressHUD.showError(withStatus: __("Note.new.failed"))
         })
     }
     
@@ -101,7 +101,7 @@ class NewNoteTextCell: UITableViewCell, UITextViewDelegate {
         self.tableView = tableView
         textView.delegate = self
         textView.textColor = .lightGray
-        textView.text = NSLocalizedString("Note.new.content.placeholder", comment: "")
+        textView.text = __("Note.new.content.placeholder")
     }
     
     func textViewDidChange(_ textView: UITextView) {
@@ -122,7 +122,7 @@ class NewNoteTextCell: UITableViewCell, UITextViewDelegate {
     
     func textViewDidEndEditing(_ textView: UITextView) {
         if textView.text.isEmpty {
-            textView.text = NSLocalizedString("Note.new.content.placeholder", comment: "")
+            textView.text = __("Note.new.content.placeholder")
             textView.textColor = .lightGray
         }
     }

@@ -18,11 +18,7 @@ class PrivateKeyViewController: UIViewController {
     @IBOutlet weak var privateKeyLabel: UILabel!
     @IBOutlet weak var publicKeyLabel: UILabel!
     
-    var id: String!
-    var nickname: String!
-    var bio: String?
-    
-    let key = try! Key()
+    var key: Key!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,51 +47,18 @@ class PrivateKeyViewController: UIViewController {
     }
     
     @IBAction func saveButtonTouched(_ sender: Any) {
-        UIImageWriteToSavedPhotosAlbum(privateKeyQRCodeView.image!, self, #selector(image(_:didFinishSavingWithError:contextInfo:)), nil)
+        Export.shared.saveKeyToPhotoLibrary()
     }
     
     @IBAction func privateKeyLabelTouched(_ sender: Any) {
-        UIPasteboard.general.string = key.privateKey!.base58
-        SVProgressHUD.showInfo(withStatus: __("Key.alert.pasted"))
+        Export.copyToPastboard(key: key.privateKey!.base58)
     }
     
     @IBAction func publicKeyLabelTouched(_ sender: Any) {
-        UIPasteboard.general.string = key.compressedPublicKey.base58
-        SVProgressHUD.showInfo(withStatus: __("Key.alert.pasted"))
-    }
-    
-    @objc func image(_ image: UIImage, didFinishSavingWithError error: NSError?, contextInfo: UnsafeRawPointer) {
-        if let _ = error {
-            SVProgressHUD.showError(withStatus: __("Key.alert.save.failed"))
-        } else {
-            SVProgressHUD.showInfo(withStatus: __("Key.alert.saved"))
-        }
+        Export.copyToPastboard(key: key.compressedPublicKey.base58)
     }
     
     @IBAction func doneButtonTouched(_ sender: Any) {
-        var info = [
-            "id": id!,
-            "nickname": nickname!
-        ]
-        if let bio = self.bio {
-            info["bio"] = bio
-        }
-        let data = try! JSONSerialization.data(withJSONObject: info, options: .sortedKeys)
-        let signatureData = try! key.sign(data: data)
-        let user = User(JSON: info)!
-        user.signature = signatureData.base58
-        user.publicKey = key.compressedPublicKey.base58
-        user.key = key
-        try! key.save()
-        User.current = user
-        
-        SVProgressHUD.show()
-        Networking.shared.create(user: user, complete: { user in
-            SVProgressHUD.dismiss()
-            AppDelegate.switchToMainStoryboard()
-        }, failed: { error in
-            SVProgressHUD.showError(withStatus: __("Key.user.create.failed"))
-            Key.clean()
-        })
+        AppDelegate.switchToMainStoryboard()
     }
 }

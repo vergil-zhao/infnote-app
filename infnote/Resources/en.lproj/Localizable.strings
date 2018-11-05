@@ -12,9 +12,9 @@
 "logout" = "LOG OUT";
 "back.to.login" = "BACK TO LOGIN SCENE";
 
-
 "key.private" = "Private Key";
 "key.public" = "Public Key";
+"key.error" = "Not a valid key";
 
 "UserHeaderView.postLabel" = "Topics";
 
@@ -36,16 +36,22 @@
 "Login.sheet.library.title" = "From Library";
 
 "Login.alert.paste.title" = "Oops";
-"Login.alert.paste.message" = "There is nothing in pasteboard, please try again after copying.";
+"Login.alert.paste.message" = "There is no valid key in pasteboard, please try again after copying.";
 "Login.alert.failed.title" = "Login failed";
 "Login.alert.key.title" = "Private key is vital to be import first.";
+"Login.error.user.failed" = "Failed to fetch the user with this key";
+
+"SignUp.error.user.input" = "Information is not conform the format";
+"SignUp.user.create.failed" = "Failed to sign up";
 
 "Key.alert.pasted" = "Copied to pasteboard";
 "Key.alert.save.failed" = "Failed to save";
 "Key.alert.saved" = "Saved to Library";
-"Key.user.create.failed" = "Failed to sign up";
 
 "QRCode.hintLabel" = "Please aim to QRCode";
+"QRCode.scan.error.device" = "Failed to get the camera device";
+"QRCode.done" = "Done";
+"QRCode.retry" = "Retry";
 
 "KeyPair.saving.private.title" = "Saving Private Key";
 "KeyPair.saving.private.copy" = "Copy to pasteboard";

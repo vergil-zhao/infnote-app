@@ -6,13 +6,17 @@
 //  Copyright © 2018 Vergil Choi. All rights reserved.
 //
 
-import Foundation
+import UIKit
+import QRCode
 
+
+func __(_ key: String, comment: String = "") -> String {
+    return NSLocalizedString(key, comment: comment)
+}
 
 func - (lhs: Date, rhs: Date) -> DateComponents {
     return Calendar.current.dateComponents([.second, .minute, .hour, .day, .month], from: rhs, to: lhs)
 }
-
 
 extension Date {
     var formatted: String {
@@ -66,6 +70,10 @@ extension Dictionary where Key == String {
 }
 
 
-func __(_ key: String, comment: String = "") -> String {
-    return NSLocalizedString(key, comment: comment)
+extension SecKey {
+    var image: UIImage? {
+        var code = QRCode(self.base58)!
+        code.size = CGSize(width: 500, height: 500)
+        return code.image
+    }
 }

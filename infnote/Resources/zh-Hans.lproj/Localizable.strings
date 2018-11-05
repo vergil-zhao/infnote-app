@@ -12,8 +12,9 @@
 "logout" = "退出登录";
 "back.to.login" = "返回登录画面";
 
-"key.private" = "公钥";
-"key.public" = "私钥";
+"key.private" = "私钥";
+"key.public" = "公钥";
+"key.error" = "不可用的秘钥";
 
 "UserHeaderView.postLabel" = "发表的文章";
 
@@ -35,16 +36,22 @@
 "Login.sheet.library.title" = "从图库中选取";
 
 "Login.alert.paste.title" = "提示";
-"Login.alert.paste.message" = "剪贴板中无内容，请复制后再次尝试";
+"Login.alert.paste.message" = "剪贴板中无可用的私钥，请复制后再次尝试";
 "Login.alert.failed.title" = "登录失败";
 "Login.alert.key.title" = "登录需要先导入私钥";
+"Login.error.user.failed" = "未能获取到密钥对应的用户";
+
+"SignUp.error.user.input" = "注册信息不符合格式";
+"SignUp.user.create.failed" = "注册用户失败";
 
 "Key.alert.pasted" = "已复制到剪贴板";
 "Key.alert.save.failed" = "保存失败";
 "Key.alert.saved" = "已保存至手机相册";
-"Key.user.create.failed" = "注册用户失败";
 
 "QRCode.hintLabel" = "请对准二维码以扫描";
+"QRCode.scan.error.device" = "找不到可用相机";
+"QRCode.done" = "完成";
+"QRCode.retry" = "重试";
 
 "KeyPair.saving.private.title" = "保存私钥";
 "KeyPair.saving.private.copy" = "复制到剪贴板";

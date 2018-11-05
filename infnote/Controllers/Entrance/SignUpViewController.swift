@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import InfnoteChain
+import SVProgressHUD
 
 class SignUpViewController: UIViewController, UITextFieldDelegate {
     
@@ -35,10 +37,42 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let viewController = segue.destination as! PrivateKeyViewController
-        viewController.id = idField.text
-        viewController.nickname = nicknameField.text
-        viewController.bio = bioTextView.text.lengthOfBytes(using: .utf8) > 0 ? bioTextView.text : nil
+    @IBAction func nextButtonTouched(_ sender: Any) {
+        guard let id = idField.text, let nickname = nicknameField.text,
+            id.count > 0 && nickname.count > 0 else {
+            SVProgressHUD.showError(withStatus: __("SignUp.error.user.input"))
+            return
+        }
+        
+        let key = try! Key()
+        var info = [
+            "id": id,
+            "nickname": nickname
+        ]
+        if let bio = bioTextView.text.count > 0 ? bioTextView.text : nil {
+            info["bio"] = bio
+        }
+        let data = try! JSONSerialization.data(withJSONObject: info, options: .sortedKeys)
+        let signatureData = try! key.sign(data: data)
+        let user = User(JSON: info)!
+        user.signature = signatureData.base58
+        user.publicKey = key.compressedPublicKey.base58
+        user.key = key
+        
+        SVProgressHUD.show()
+        Networking.shared.create(user: user, complete: { _ in
+            SVProgressHUD.dismiss()
+            User.current = user
+            key.save()
+            guard let controller = self.storyboard?.instantiateViewController(withIdentifier: NSStringFromClass(PrivateKeyViewController.self)) as? PrivateKeyViewController else {
+                return
+            }
+            controller.key = key
+            self.navigationController?.pushViewController(controller, animated: true)
+        }) { error in
+            print(error)
+            SVProgressHUD.showError(withStatus: __("SignUp.user.create.failed"))
+        }
     }
+    
 }

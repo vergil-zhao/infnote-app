@@ -33,32 +33,20 @@ class KeyPairViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.section == 0 {
-            UIPasteboard.general.string = key.compressedPublicKey.base58
-            SVProgressHUD.showInfo(withStatus: __("Key.alert.pasted"))
+            Export.copyToPastboard(key: key.compressedPublicKey.base58)
         }
         else if indexPath.section == 1 {
             let sheet = UIAlertController(title: __("KeyPair.saving.private.title"), message: nil, preferredStyle: .actionSheet)
             sheet.addAction(UIAlertAction(title: __("KeyPair.saving.private.copy"), style: .default, handler: { _ in
-                UIPasteboard.general.string = self.key.privateKey!.base58
-                SVProgressHUD.showInfo(withStatus: __("Key.alert.pasted"))
+                Export.copyToPastboard(key: self.key.privateKey!.base58)
             }))
             sheet.addAction(UIAlertAction(title: __("KeyPair.saving.private.library"), style: .default, handler: { _ in
-                var code = QRCode(self.key.privateKey!.base58)!
-                code.size = CGSize(width: 500, height: 500)
-                UIImageWriteToSavedPhotosAlbum(code.image!, self, #selector(self.image(_:didFinishSavingWithError:contextInfo:)), nil)
+                Export.shared.saveKeyToPhotoLibrary()
             }))
             sheet.addAction(UIAlertAction(title: __("cancel"), style: .cancel, handler: nil))
             present(sheet, animated: true)
         }
         tableView.deselectRow(at: indexPath, animated: true)
-    }
-    
-    @objc func image(_ image: UIImage, didFinishSavingWithError error: NSError?, contextInfo: UnsafeRawPointer) {
-        if let _ = error {
-            SVProgressHUD.showError(withStatus: __("Key.alert.save.failed"))
-        } else {
-            SVProgressHUD.showInfo(withStatus: __("Key.alert.saved"))
-        }
     }
 }
 

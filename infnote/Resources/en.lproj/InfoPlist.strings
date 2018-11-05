@@ -1,0 +1,12 @@
+/* 
+  InfoPlist.strings
+  infnote
+
+  Created by Vergil Choi on 2018/11/5.
+  Copyright © 2018 Vergil Choi. All rights reserved.
+*/
+
+
+"NSCameraUsageDescription" = "Using Camera to scan QRCode for authentication";
+"NSPhotoLibraryAddUsageDescription" = "Saving authentications as QRCode image to Library";
+"NSPhotoLibraryUsageDescription" = "Picking QRCode image for authentication";

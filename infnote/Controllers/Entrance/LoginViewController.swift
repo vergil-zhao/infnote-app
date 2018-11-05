@@ -17,25 +17,45 @@ class LoginViewController: UIViewController, UIImagePickerControllerDelegate, UI
     @IBOutlet weak var imageSKView: UIView!
     @IBOutlet weak var textSKView: UIView!
     @IBOutlet weak var iCloudView: UIView!
-    @IBOutlet weak var skImageView: UIImageView!
+    
+    @IBOutlet weak var imageTitleLabel: UILabel!
+    @IBOutlet weak var imageSubtitleLabel: UILabel!
+    @IBOutlet weak var textTitleLabel: UILabel!
+    @IBOutlet weak var textSubtitleLabel: UILabel!
     
     var key: Key? {
         didSet {
             guard key != nil else {
+                SVProgressHUD.showError(withStatus: __("key.error"))
                 return
             }
-            var code = QRCode(key!.privateKey!.base58)!
-            let width = skImageView.bounds.width > skImageView.bounds.height ? skImageView.bounds.height : skImageView.bounds.width
-            code.size = CGSize(width: width, height: width)
-            skImageView.image = code.image
-            skImageView.isHidden = false
+            
+            SVProgressHUD.show()
+            Networking.shared.fetchUser(publicKey: key!.compressedPublicKey.base58, complete: { user in
+                SVProgressHUD.dismiss()
+                user.key = self.key
+                self.user = user
+            }) { error in
+                print(error)
+                SVProgressHUD.showError(withStatus: __("Login.error.user.failed"))
+            }
+        }
+    }
+    
+    var user: User? {
+        didSet {
+            guard user != nil else {
+                return
+            }
+            imageTitleLabel.text = user!.nickname
+            imageSubtitleLabel.text = "@\(user!.id!)"
+            textTitleLabel.text = user!.nickname
+            textSubtitleLabel.text = "@\(user!.id!)"
         }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -56,8 +76,9 @@ class LoginViewController: UIViewController, UIImagePickerControllerDelegate, UI
     @IBAction func uploadTouched(_ sender: UITapGestureRecognizer) {
         let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         actionSheet.addAction(UIAlertAction(title: __("Login.sheet.qrcode.title"), style: .default, handler: { _ in
-            let controller = self.storyboard?.instantiateViewController(withIdentifier: NSStringFromClass(QRCodeScannerViewController.self))
-            self.navigationController?.pushViewController(controller!, animated: true)
+            let controller = self.storyboard?.instantiateViewController(withIdentifier: NSStringFromClass(QRCodeScannerViewController.self)) as! QRCodeScannerViewController
+            controller.complete = { [unowned self] in self.key = Key(privateKey: $0) }
+            self.navigationController?.pushViewController(controller, animated: true)
         }))
         actionSheet.addAction(UIAlertAction(title: __("Login.sheet.library.title"), style: .default, handler: { _ in
             let controller = UIImagePickerController()
@@ -70,10 +91,8 @@ class LoginViewController: UIViewController, UIImagePickerControllerDelegate, UI
     }
     
     @IBAction func pasteTouched(_ sender: UITapGestureRecognizer) {
-        if UIPasteboard.general.hasStrings {
-            if let key = try? Key(privateKey: UIPasteboard.general.string!) {
-                self.key = key
-            }
+        if UIPasteboard.general.hasStrings, let key = Key(privateKey: UIPasteboard.general.string!) {
+            self.key = key
         }
         else {
             let alert = UIAlertController(title: __("Login.alert.paste.title"), message: __("Login.alert.paste.message"), preferredStyle: .alert)
@@ -89,7 +108,7 @@ class LoginViewController: UIViewController, UIImagePickerControllerDelegate, UI
             let detector = CIDetector(ofType: CIDetectorTypeQRCode, context: context, options: [CIDetectorAccuracy: CIDetectorAccuracyHigh])
             let features = detector?.features(in: image)
             if let feature = features?.first as? CIQRCodeFeature {
-                if let key = try? Key(privateKey: feature.messageString!) {
+                if let key = Key(privateKey: feature.messageString!) {
                     self.key = key
                 }
             }
@@ -99,17 +118,10 @@ class LoginViewController: UIViewController, UIImagePickerControllerDelegate, UI
     }
     
     @IBAction func loginButtonTouched(_ sender: Any) {
-        if let key = self.key {
-            SVProgressHUD.show()
-            Networking.shared.fetchUser(publicKey: key.compressedPublicKey.base58, complete: { user in
-                SVProgressHUD.dismiss()
-                user.key = key
-                try! key.save()
-                User.current = user
-                AppDelegate.switchToMainStoryboard()
-            }, failed: { _ in
-                SVProgressHUD.showError(withStatus: __("Login.alert.failed.title"))
-            })
+        if let user = self.user {
+            user.key?.save()
+            User.current = user
+            AppDelegate.switchToMainStoryboard()
         }
         else {
             SVProgressHUD.showError(withStatus: __("Login.alert.key.title"))
@@ -130,7 +142,3 @@ class LoginViewController: UIViewController, UIImagePickerControllerDelegate, UI
 
 }
 
-// Helper function inserted by Swift 4.2 migrator.
-fileprivate func convertFromUIImagePickerControllerInfoKeyDictionary(_ input: [UIImagePickerController.InfoKey: Any]) -> [String: Any] {
-	return Dictionary(uniqueKeysWithValues: input.map {key, value in (key.rawValue, value)})
-}

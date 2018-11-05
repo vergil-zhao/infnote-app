@@ -1,0 +1,12 @@
+/* 
+  InfoPlist.strings
+  infnote
+
+  Created by Vergil Choi on 2018/11/5.
+  Copyright © 2018 Vergil Choi. All rights reserved.
+*/
+
+
+"NSCameraUsageDescription" = "禁用相机将无法发表图片以及读取二维码";
+"NSPhotoLibraryAddUsageDescription" = "禁用图库写入将无法保存二维码";
+"NSPhotoLibraryUsageDescription" = "禁用图库将无法发表图片以及读取二维码";

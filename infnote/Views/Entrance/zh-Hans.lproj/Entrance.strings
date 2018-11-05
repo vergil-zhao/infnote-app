@@ -3,7 +3,7 @@
 "1T9-Nn-TgX.normalTitle" = "跳过 >";
 
 /* Class = "UILabel"; text = "扫描或者从图库中选取私钥二维码"; ObjectID = "82U-iM-6A1"; */
-"82U-iM-6A1.text" = "扫描或者从图库中选取私钥二维码";
+"82U-iM-6A1.text" = "轻点以扫描或从图库中选取私钥二维码";
 
 /* Class = "UIButton"; normalTitle = "登录"; ObjectID = "86k-Re-SBZ"; */
 "86k-Re-SBZ.normalTitle" = "登录";
@@ -33,7 +33,7 @@
 "OKw-0g-Kjq.title" = "秘钥";
 
 /* Class = "UILabel"; text = "点击从剪贴板粘贴私钥"; ObjectID = "Rjk-a8-agE"; */
-"Rjk-a8-agE.text" = "点击从剪贴板粘贴私钥";
+"Rjk-a8-agE.text" = "轻点以导入来自剪贴板的私钥";
 
 /* Class = "UISegmentedControl"; SD6-1I-YBc.segmentTitles[0] = "二维码导入"; ObjectID = "SD6-1I-YBc"; */
 "SD6-1I-YBc.segmentTitles[0]" = "二维码导入";

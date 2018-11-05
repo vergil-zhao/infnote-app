@@ -17,10 +17,5 @@ class HomeViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         navigationItem.rightBarButtonItem?.isEnabled = User.current != nil
     }
-
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "content" {
-            
-        }
-    }
+    
 }

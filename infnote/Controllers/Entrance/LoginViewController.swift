@@ -104,7 +104,8 @@ class LoginViewController: UIViewController, UIImagePickerControllerDelegate, UI
             Networking.shared.fetchUser(publicKey: key.compressedPublicKey.base58, complete: { user in
                 SVProgressHUD.dismiss()
                 user.key = key
-                user.save()
+                try! key.save()
+                User.current = user
                 AppDelegate.switchToMainStoryboard()
             }, failed: { _ in
                 SVProgressHUD.showError(withStatus: __("Login.alert.failed.title"))

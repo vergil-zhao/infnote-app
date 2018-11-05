@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--我-->
+        <!--Me-->
         <scene sceneID="dpp-g6-nQG">
             <objects>
-                <navigationController title="我" automaticallyAdjustsScrollViewInsets="NO" id="Jdz-CX-Iw2" sceneMemberID="viewController">
+                <navigationController title="Me" automaticallyAdjustsScrollViewInsets="NO" id="Jdz-CX-Iw2" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Me" image="me-icon" id="JxU-vU-Qci"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
@@ -303,10 +303,10 @@
             </objects>
             <point key="canvasLocation" x="1717" y="3202"/>
         </scene>
-        <!--我的通知-->
+        <!--Notifications-->
         <scene sceneID="ITo-ZY-Gjb">
             <objects>
-                <viewController title="我的通知" id="RBI-gP-afI" customClass="UserNotificationViewController" customModule="infnote" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Notifications" id="RBI-gP-afI" customClass="UserNotificationViewController" customModule="infnote" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eap-jG-vI6">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -566,10 +566,10 @@
             </objects>
             <point key="canvasLocation" x="2546" y="2406"/>
         </scene>
-        <!--编辑个人信息-->
+        <!--Edit Profile-->
         <scene sceneID="AbD-nP-LmX">
             <objects>
-                <tableViewController storyboardIdentifier="infnote.ProfileEditViewController" title="编辑个人信息" id="t2W-xl-vne" customClass="ProfileEditViewController" customModule="infnote" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="infnote.ProfileEditViewController" title="Edit Profile" id="t2W-xl-vne" customClass="ProfileEditViewController" customModule="infnote" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="6yO-8A-eaB">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

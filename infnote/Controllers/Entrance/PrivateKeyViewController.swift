@@ -86,7 +86,8 @@ class PrivateKeyViewController: UIViewController {
         user.signature = signatureData.base58
         user.publicKey = key.compressedPublicKey.base58
         user.key = key
-        user.save()
+        try! key.save()
+        User.current = user
         
         SVProgressHUD.show()
         Networking.shared.create(user: user, complete: { user in

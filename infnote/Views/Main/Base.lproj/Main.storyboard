@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--首页-->
+        <!--Home-->
         <scene sceneID="BVj-hT-vqI">
             <objects>
-                <viewController title="首页" id="LAY-VZ-7aP" customClass="HomeViewController" customModule="infnote" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Home" id="LAY-VZ-7aP" customClass="HomeViewController" customModule="infnote" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6qS-sH-oRb">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -34,7 +34,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="LV9-sS-gex"/>
                     </view>
-                    <navigationItem key="navigationItem" title="首页" id="63I-zO-lq9">
+                    <navigationItem key="navigationItem" title="Home" id="63I-zO-lq9">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="KbB-nC-7SF">
                             <color key="tintColor" red="0.36862745099999999" green="0.43137254899999999" blue="0.93333333330000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
@@ -47,10 +47,10 @@
             </objects>
             <point key="canvasLocation" x="1794.4000000000001" y="145.27736131934034"/>
         </scene>
-        <!--发布 Note-->
+        <!--New Note-->
         <scene sceneID="OfM-3w-lVG">
             <objects>
-                <viewController title="发布 Note" id="KHm-tJ-UnM" customClass="NewNoteViewController" customModule="infnote" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="New Note" id="KHm-tJ-UnM" customClass="NewNoteViewController" customModule="infnote" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hh6-xT-v2A">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -263,10 +263,10 @@
             </objects>
             <point key="canvasLocation" x="3684" y="-609.44527736131943"/>
         </scene>
-        <!--详情-->
+        <!--Detail-->
         <scene sceneID="ngr-6j-Nkf">
             <objects>
-                <viewController storyboardIdentifier="infnote.NoteViewController" title="详情" hidesBottomBarWhenPushed="YES" id="pDE-N0-Gc4" customClass="NoteViewController" customModule="infnote" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="infnote.NoteViewController" title="Detail" hidesBottomBarWhenPushed="YES" id="pDE-N0-Gc4" customClass="NoteViewController" customModule="infnote" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eD8-Bk-DNu">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -511,10 +511,10 @@
             </objects>
             <point key="canvasLocation" x="1792.8" y="1671.8140929535234"/>
         </scene>
-        <!--发现-->
+        <!--Discover-->
         <scene sceneID="Qx0-7i-UZ4">
             <objects>
-                <viewController storyboardIdentifier="infnote.TopicCollectionViewController" title="发现" id="lca-YP-eeY" customClass="TopicCollectionViewController" customModule="infnote" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="infnote.TopicCollectionViewController" title="Discover" id="lca-YP-eeY" customClass="TopicCollectionViewController" customModule="infnote" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="szZ-iV-3n5">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

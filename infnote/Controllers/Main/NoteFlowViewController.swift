@@ -19,7 +19,6 @@ class NoteFlowViewController: UIViewController, UITableViewDataSource, UITableVi
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //        self.present(UIStoryboard.init(name: "Entrance", bundle: Bundle.main).instantiateViewController(withIdentifier: NSStringFromClass(LaunchViewController.self)), animated: false)
         
         tableView.register(MainCell.self, forCellReuseIdentifier: "cell")
         tableView.estimatedRowHeight = 365

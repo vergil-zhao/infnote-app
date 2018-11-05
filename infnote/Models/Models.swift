@@ -21,6 +21,11 @@ class User: Mappable, CustomStringConvertible {
         didSet {
             if current == nil {
                 UserDefaults.standard.set(nil, forKey: "infnote.current.user_id")
+                Key.clean()
+            }
+            else {
+                current?.key = Key.loadDefaultKey()
+                UserDefaults.standard.set(current!.id, forKey: "infnote.current.user_id")
             }
         }
     }
@@ -59,29 +64,20 @@ class User: Mappable, CustomStringConvertible {
         return toJSON().flatten()
     }
     
-    func save() {
-        UserDefaults.standard.set(id, forKey: "infnote.current.user_id")
-        User.current = self
-        try! key?.save()
-    }
-    
     class func load() -> Bool {
         if let userID = UserDefaults.standard.object(forKey: "infnote.current.user_id") as? String {
             Networking.shared.fetchUser(id: userID, complete: { user in
                 User.current = user
-                User.current?.key = Key.loadDefaultKey()
             }, failed: { error in
-                Key.clean()
+                User.current = nil
             })
             return true
         }
         else if let key = Key.loadDefaultKey() {
             Networking.shared.fetchUser(publicKey: key.compressedPublicKey.base58, complete: { user in
                 User.current = user
-                User.current?.key = key
-                user.save()
             }, failed: { error in
-                Key.clean()
+                User.current = nil
             })
             return true
         }

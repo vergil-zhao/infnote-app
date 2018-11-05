@@ -64,7 +64,7 @@ class MeViewController: UITableViewController {
     }
     
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
-        if identifier == "KeyPair" {
+        if identifier == "KeyPair" || identifier == "UserView" {
             if User.current == nil {
                 SVProgressHUD.showError(withStatus: __("login.first"))
                 return false

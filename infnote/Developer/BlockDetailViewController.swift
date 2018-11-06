@@ -54,6 +54,8 @@ class BlockDetailViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! CommonInfoCell
+        
+        cell.textView.textColor = .black
         if indexPath.section == 0 {
             cell.prepareViews(content: block!.isValid ? "Valid" : "Invalid")
             cell.textView.textColor = block!.isValid ? .green : .red

@@ -303,7 +303,7 @@
         <!--Block Detail-->
         <scene sceneID="1OV-dy-WIV">
             <objects>
-                <tableViewController storyboardIdentifier="BlockDetail" id="DGT-Uw-v9X" customClass="BlockDetailViewController" customModule="infnote" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="BlockDetail" hidesBottomBarWhenPushed="YES" id="DGT-Uw-v9X" customClass="BlockDetailViewController" customModule="infnote" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="h8I-LK-04I">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

@@ -40,7 +40,9 @@ class User: Mappable, CustomStringConvertible {
                 Key.clean()
             }
             else {
-                current?.key = Key.loadDefaultKey()
+                if current?.key == nil {
+                    current?.key = Key.loadDefaultKey()
+                }
                 UserDefaults.standard.set(current!.id, forKey: "infnote.current.user_id")
             }
         }

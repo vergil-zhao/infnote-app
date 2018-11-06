@@ -65,7 +65,6 @@ class NewNoteViewController: UIViewController, UITableViewDelegate, UITableViewD
         ] as [String: Any]
         let signature = try! User.current!.key!.sign(data: JSONSerialization.data(withJSONObject: data, options: .sortedKeys))
         data["signature"] = signature.base58
-        print(data)
         Networking.shared.create(note: data, complete: { note in
             SVProgressHUD.showInfo(withStatus: __("Note.new.succeed"))
             self.dismiss(animated: true)

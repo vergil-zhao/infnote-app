@@ -62,8 +62,8 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         SVProgressHUD.show()
         Networking.shared.create(user: user, complete: { _ in
             SVProgressHUD.dismiss()
-            User.current = user
             key.save()
+            User.current = user
             guard let controller = self.storyboard?.instantiateViewController(withIdentifier: NSStringFromClass(PrivateKeyViewController.self)) as? PrivateKeyViewController else {
                 return
             }

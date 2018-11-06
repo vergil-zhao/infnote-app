@@ -51,6 +51,7 @@ class NoteFlowViewController: UIViewController, UITableViewDataSource, UITableVi
             self.tableView.reloadData()
             self.tableView.cr.endHeaderRefresh()
         }, failed: { error in
+            print(error)
             self.tableView.cr.endHeaderRefresh()
         })
     }

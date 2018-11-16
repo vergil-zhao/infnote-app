@@ -88,6 +88,12 @@ class UserViewController: UIViewController, UITableViewDelegate, UITableViewData
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let controller = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: NSStringFromClass(NoteViewController.self)) as! NoteViewController
+        controller.note = notes[indexPath.row]
+        navigationController?.pushViewController(controller, animated: true)
+    }
+    
     func prepareViews() {
         
         let view = UserHeaderView()

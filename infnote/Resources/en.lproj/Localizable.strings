@@ -56,3 +56,5 @@
 "KeyPair.saving.private.title" = "Saving Private Key";
 "KeyPair.saving.private.copy" = "Copy to pasteboard";
 "KeyPair.saving.private.library" = "Save QRCode to Library";
+
+"Report.submit.succeed" = "Reported";

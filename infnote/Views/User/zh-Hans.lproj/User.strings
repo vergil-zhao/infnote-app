@@ -93,3 +93,6 @@
 
 /* Class = "UILabel"; text = "所在地"; ObjectID = "y4S-0a-Sqr"; */
 "y4S-0a-Sqr.text" = "所在地";
+
+/* Class = "UILabel"; text = "Safe Mode"; ObjectID = "r2X-zE-mIa"; */
+"r2X-zE-mIa.text" = "安全模式";

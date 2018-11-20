@@ -56,3 +56,5 @@
 "KeyPair.saving.private.title" = "保存私钥";
 "KeyPair.saving.private.copy" = "复制到剪贴板";
 "KeyPair.saving.private.library" = "保存二维码到图库";
+
+"Report.submit.succeed" = "提交成功";

@@ -73,3 +73,10 @@
 
 /* Class = "UIButton"; normalTitle = "发送到主题 >"; ObjectID = "wle-Cd-lzz"; */
 "wle-Cd-lzz.normalTitle" = "发送到主题 >";
+
+/* Class = "UILabel"; text = "NSFW"; ObjectID = "nfJ-8E-ZaP"; */
+"nfJ-8E-ZaP.text" = "标记为敏感内容"; 
+
+/* Class = "UITabBarItem"; title = "Report"; ObjectID = "hLH-UA-XSR"; */
+"hLH-UA-XSR.title" = "举报";
+

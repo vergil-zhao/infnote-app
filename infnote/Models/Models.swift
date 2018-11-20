@@ -111,6 +111,7 @@ class Note: Mappable, CustomStringConvertible {
     var user: User!
     var title: String?
     var content: String!
+    var nsfw: Bool! = true
     var dateSubmitted: Date!
     var replyTo: String?
     var signature: String?
@@ -132,6 +133,7 @@ class Note: Mappable, CustomStringConvertible {
         user            <- map["user"]
         title           <- map["title"]
         content         <- map["content"]
+        nsfw            <- map["nsfw"]
         replyTo         <- map["reply_to"]
         signature       <- map["signature"]
         blockHeight     <- map["block_height"]

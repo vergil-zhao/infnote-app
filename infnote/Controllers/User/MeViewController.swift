@@ -15,6 +15,7 @@ class MeViewController: UITableViewController {
     @IBOutlet weak var nicknameLabel: UILabel!
     @IBOutlet weak var idLabel: UILabel!
     @IBOutlet weak var logoutLabel: UILabel!
+    @IBOutlet weak var safeModeSwitch: UISwitch!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,7 +34,16 @@ class MeViewController: UITableViewController {
         else {
             logoutLabel.text = __("back.to.login")
         }
+        
+        if let safeMode = UserDefaults.standard.value(forKey: "infnote.user.safe_mode") as? Bool {
+            safeModeSwitch.isOn = safeMode
+        }
     }
+    
+    @IBAction func safeModeSwitchChanged(_ sender: UISwitch) {
+        UserDefaults.standard.set(sender.isOn, forKey: "infnote.user.safe_mode")
+    }
+    
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.section == 3 {

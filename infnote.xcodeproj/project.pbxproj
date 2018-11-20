@@ -38,6 +38,7 @@
 		44561656211D885B002BE1B7 /* DiscoveryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44561655211D885B002BE1B7 /* DiscoveryViewController.swift */; };
 		44636972215B533F00373FB8 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44636971215B533F00373FB8 /* Networking.swift */; };
 		44636974215B568A00373FB8 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44636973215B568A00373FB8 /* Models.swift */; };
+		44AE5CC921A433320070F842 /* ReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AE5CC821A433320070F842 /* ReportViewController.swift */; };
 		44D517E5211185E100ED8477 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D517E4211185E100ED8477 /* AppDelegate.swift */; };
 		44D517EA211185E100ED8477 /* Entrance.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44D517E8211185E100ED8477 /* Entrance.storyboard */; };
 		44D517EC211185E300ED8477 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 44D517EB211185E300ED8477 /* Assets.xcassets */; };
@@ -54,6 +55,7 @@
 		44EC42A92115AB480054584C /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EC42A82115AB480054584C /* SignUpViewController.swift */; };
 		44EC42AB2115ABF60054584C /* PrivateKeyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EC42AA2115ABF60054584C /* PrivateKeyViewController.swift */; };
 		44EC42AE2115DE880054584C /* QRCodeScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EC42AD2115DE880054584C /* QRCodeScannerViewController.swift */; };
+		44FFE49721A449BA00D87D15 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44FFE49621A449BA00D87D15 /* WebViewController.swift */; };
 		CB28578FA927EF01405C4655 /* Pods_infnote.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC75CBF2D9A3C98468DD9BC9 /* Pods_infnote.framework */; };
 /* End PBXBuildFile section */
 
@@ -96,6 +98,7 @@
 		44561655211D885B002BE1B7 /* DiscoveryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryViewController.swift; sourceTree = "<group>"; };
 		44636971215B533F00373FB8 /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
 		44636973215B568A00373FB8 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		44AE5CC821A433320070F842 /* ReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportViewController.swift; sourceTree = "<group>"; };
 		44D517E1211185E100ED8477 /* infnote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = infnote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		44D517E4211185E100ED8477 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		44D517E9211185E100ED8477 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Entrance.storyboard; sourceTree = "<group>"; };
@@ -115,6 +118,7 @@
 		44EC42A82115AB480054584C /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		44EC42AA2115ABF60054584C /* PrivateKeyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivateKeyViewController.swift; sourceTree = "<group>"; };
 		44EC42AD2115DE880054584C /* QRCodeScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeScannerViewController.swift; sourceTree = "<group>"; };
+		44FFE49621A449BA00D87D15 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		7446F1B1BF617A51F2456C3F /* Pods-infnote.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-infnote.debug.xcconfig"; path = "Pods/Target Support Files/Pods-infnote/Pods-infnote.debug.xcconfig"; sourceTree = "<group>"; };
 		EC75CBF2D9A3C98468DD9BC9 /* Pods_infnote.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_infnote.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -180,6 +184,7 @@
 				443F68F2211DA48100ADF657 /* NoteFlowViewController.swift */,
 				4456164F211AFD37002BE1B7 /* NoteViewController.swift */,
 				443F68F62122F0E100ADF657 /* NewNoteViewController.swift */,
+				44AE5CC821A433320070F842 /* ReportViewController.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -322,6 +327,7 @@
 				44EC42A82115AB480054584C /* SignUpViewController.swift */,
 				44EC42AA2115ABF60054584C /* PrivateKeyViewController.swift */,
 				44EC42AD2115DE880054584C /* QRCodeScannerViewController.swift */,
+				44FFE49621A449BA00D87D15 /* WebViewController.swift */,
 			);
 			path = Entrance;
 			sourceTree = "<group>";
@@ -510,6 +516,7 @@
 				44561652211B1B9E002BE1B7 /* CommentCell.swift in Sources */,
 				44EC428C211196210054584C /* LoginViewController.swift in Sources */,
 				44EC429F21131C0C0054584C /* UserViewController.swift in Sources */,
+				44AE5CC921A433320070F842 /* ReportViewController.swift in Sources */,
 				443138B521849337000C7742 /* Extensions.swift in Sources */,
 				443F68F1211DA3FD00ADF657 /* FollowingViewController.swift in Sources */,
 				443E76CE218D9A1A00AB8234 /* ServerViewController.swift in Sources */,
@@ -518,6 +525,7 @@
 				44EC428A211196170054584C /* LaunchViewController.swift in Sources */,
 				443138B121845947000C7742 /* NewChainViewController.swift in Sources */,
 				44561654211C3075002BE1B7 /* KeyPairViewController.swift in Sources */,
+				44FFE49721A449BA00D87D15 /* WebViewController.swift in Sources */,
 				443138B021845947000C7742 /* BlockDetailViewController.swift in Sources */,
 				44EC429D21131BF90054584C /* UserHeaderView.swift in Sources */,
 				44EC42972112B0F60054584C /* MainCell.swift in Sources */,

@@ -177,4 +177,8 @@ class NoteViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
         return true
     }
+    
+    @IBAction func reportButtonTouched(_ sender: Any) {
+        
+    }
 }

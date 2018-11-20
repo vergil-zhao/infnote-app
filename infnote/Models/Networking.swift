@@ -66,7 +66,8 @@ class Networking {
     }
     
     func fetchNoteList(page: Int = 1, complete: (([Note]) -> Void)?, failed: ((Error) -> Void)? = nil) {
-        request(host + "/post/list/?page=\(page)").responseObject { (response: DataResponse<NoteListResponse>) in
+        let safe = UserDefaults.standard.value(forKey: "infnote.user.safe_mode") as? Bool ?? true
+        request(host + "/post/list/?page=\(page)&safe=\(safe ? 1 : 0)").responseObject { (response: DataResponse<NoteListResponse>) in
             if let list = response.result.value {
                 complete?(list.notes)
             }
@@ -77,7 +78,8 @@ class Networking {
     }
     
     func fetchNoteList(user: User, page: Int = 1, complete: (([Note]) -> Void)?, failed: ((Error) -> Void)? = nil) {
-        request(host + "/post/list/?page=\(page)&user=\(user.id!)").responseObject { (response: DataResponse<NoteListResponse>) in
+        let safe = UserDefaults.standard.value(forKey: "infnote.user.safe_mode") as? Bool ?? true
+        request(host + "/post/list/?page=\(page)&user=\(user.id!)&safe=\(safe ? 1 : 0)").responseObject { (response: DataResponse<NoteListResponse>) in
             if let list = response.result.value {
                 complete?(list.notes)
             }

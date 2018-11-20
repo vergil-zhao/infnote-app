@@ -75,4 +75,15 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "term" {
+            let controller = segue.destination as! WebViewController
+            controller.url = URL(string: "http://infnote.com/term.html")
+        }
+        else if segue.identifier == "privacy" {
+            let controller = segue.destination as! WebViewController
+            controller.url = URL(string: "http://infnote.com/privacy.html")
+        }
+    }
 }

@@ -61,7 +61,8 @@ class NewNoteViewController: UIViewController, UITableViewDelegate, UITableViewD
             "title": title,
             "content": textView.text,
             "date_submitted": Int(Date().timeIntervalSince1970),
-            "user_id": User.current!.id
+            "user_id": User.current!.id,
+            "nsfw": (tableView.cellForRow(at: IndexPath(row: 1, section: 0)) as! NSFWCell).nsfwSwitch.isOn
         ] as [String: Any]
         let signature = try! User.current!.key!.sign(data: JSONSerialization.data(withJSONObject: data, options: .sortedKeys))
         data["signature"] = signature.base58
@@ -78,14 +79,19 @@ class NewNoteViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return 2
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "content", for: indexPath) as! NewNoteTextCell
-        cell.prepareViews(tableView)
-        textView = cell.textView
-        return cell
+        if indexPath.row == 0 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "content", for: indexPath) as! NewNoteTextCell
+            cell.prepareViews(tableView)
+            textView = cell.textView
+            return cell
+        }
+        else {
+            return tableView.dequeueReusableCell(withIdentifier: "nsfw", for: indexPath)
+        }
     }
 
 }
@@ -135,4 +141,10 @@ class TopicButtonCell: UITableViewCell {
         topicButton.layer.borderColor = MAIN_COLOR.cgColor
         topicButton.layer.borderWidth = 0.5
     }
+}
+
+class NSFWCell: UITableViewCell {
+    
+    @IBOutlet weak var nsfwSwitch: UISwitch!
+    
 }

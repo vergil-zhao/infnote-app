@@ -24,8 +24,8 @@ class PrivateKeyViewController: UIViewController {
         super.viewDidLoad()
         self.navigationController?.setNavigationBarHidden(false, animated: false)
         
-        privateKeyLabel.text = key.privateKey!.base58
-        publicKeyLabel.text = key.compressedPublicKey.base58
+        privateKeyLabel.text = key.wif
+        publicKeyLabel.text = key.address
     }
     
     override func viewDidLayoutSubviews() {
@@ -40,7 +40,7 @@ class PrivateKeyViewController: UIViewController {
         iCloudView.layer.insertSublayer(gradientLayer, at: 0)
         iCloudView.layer.masksToBounds = true
         
-        var code = QRCode(key.privateKey!.base58)!
+        var code = QRCode(key.wif)!
         let width = privateKeyQRCodeView.bounds.width > privateKeyQRCodeView.bounds.height ? privateKeyQRCodeView.bounds.height : privateKeyQRCodeView.bounds.width
         code.size = CGSize(width: width, height: width)
         privateKeyQRCodeView.image = code.image
@@ -51,11 +51,11 @@ class PrivateKeyViewController: UIViewController {
     }
     
     @IBAction func privateKeyLabelTouched(_ sender: Any) {
-        Export.copyToPastboard(key: key.privateKey!.base58)
+        Export.copyToPastboard(key: key.wif)
     }
     
     @IBAction func publicKeyLabelTouched(_ sender: Any) {
-        Export.copyToPastboard(key: key.compressedPublicKey.base58)
+        Export.copyToPastboard(key: key.address)
     }
     
     @IBAction func doneButtonTouched(_ sender: Any) {

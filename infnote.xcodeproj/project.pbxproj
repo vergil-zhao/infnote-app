@@ -12,9 +12,7 @@
 		443138AC21845947000C7742 /* ChainsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443138A421845946000C7742 /* ChainsViewController.swift */; };
 		443138AD21845947000C7742 /* PeersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443138A521845946000C7742 /* PeersViewController.swift */; };
 		443138AE21845947000C7742 /* BlocksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443138A621845946000C7742 /* BlocksViewController.swift */; };
-		443138AF21845947000C7742 /* NewBlockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443138A721845946000C7742 /* NewBlockViewController.swift */; };
 		443138B021845947000C7742 /* BlockDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443138A821845947000C7742 /* BlockDetailViewController.swift */; };
-		443138B121845947000C7742 /* NewChainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443138A921845947000C7742 /* NewChainViewController.swift */; };
 		443138B32184597C000C7742 /* Developer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 443138B22184597C000C7742 /* Developer.storyboard */; };
 		443138B521849337000C7742 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443138B421849337000C7742 /* Extensions.swift */; };
 		443425732125592D00A5F738 /* ProfileEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 443425722125592D00A5F738 /* ProfileEditViewController.swift */; };
@@ -66,9 +64,7 @@
 		443138A421845946000C7742 /* ChainsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChainsViewController.swift; sourceTree = "<group>"; };
 		443138A521845946000C7742 /* PeersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeersViewController.swift; sourceTree = "<group>"; };
 		443138A621845946000C7742 /* BlocksViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlocksViewController.swift; sourceTree = "<group>"; };
-		443138A721845946000C7742 /* NewBlockViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewBlockViewController.swift; sourceTree = "<group>"; };
 		443138A821845947000C7742 /* BlockDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlockDetailViewController.swift; sourceTree = "<group>"; };
-		443138A921845947000C7742 /* NewChainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewChainViewController.swift; sourceTree = "<group>"; };
 		443138B22184597C000C7742 /* Developer.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Developer.storyboard; sourceTree = "<group>"; };
 		443138B421849337000C7742 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		443425722125592D00A5F738 /* ProfileEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditViewController.swift; sourceTree = "<group>"; };
@@ -152,8 +148,6 @@
 				443138A821845947000C7742 /* BlockDetailViewController.swift */,
 				443138A621845946000C7742 /* BlocksViewController.swift */,
 				443138A421845946000C7742 /* ChainsViewController.swift */,
-				443138A721845946000C7742 /* NewBlockViewController.swift */,
-				443138A921845947000C7742 /* NewChainViewController.swift */,
 				443138A521845946000C7742 /* PeersViewController.swift */,
 				443138B22184597C000C7742 /* Developer.storyboard */,
 			);
@@ -444,7 +438,6 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-infnote/Pods-infnote-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireObjectMapper/AlamofireObjectMapper.framework",
-				"${BUILT_PRODUCTS_DIR}/BigInt/BigInt.framework",
 				"${BUILT_PRODUCTS_DIR}/CRRefresh/CRRefresh.framework",
 				"${BUILT_PRODUCTS_DIR}/Down/Down.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
@@ -459,17 +452,14 @@
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
-				"${BUILT_PRODUCTS_DIR}/SipHash/SipHash.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/Starscream/Starscream.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftProtobuf/SwiftProtobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/XLPagerTabStrip/XLPagerTabStrip.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireObjectMapper.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BigInt.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CRRefresh.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Down.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
@@ -484,10 +474,8 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SipHash.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Starscream.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftProtobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/XLPagerTabStrip.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -508,7 +496,6 @@
 				44EC42A92115AB480054584C /* SignUpViewController.swift in Sources */,
 				44561650211AFD37002BE1B7 /* NoteViewController.swift in Sources */,
 				443138AA21845947000C7742 /* AddChainViewController.swift in Sources */,
-				443138AF21845947000C7742 /* NewBlockViewController.swift in Sources */,
 				44EC42AE2115DE880054584C /* QRCodeScannerViewController.swift in Sources */,
 				44561656211D885B002BE1B7 /* DiscoveryViewController.swift in Sources */,
 				44EC42902111DF2C0054584C /* UIView+Tools.swift in Sources */,
@@ -523,7 +510,6 @@
 				443E76F921903CB500AB8234 /* Export.swift in Sources */,
 				44D517E5211185E100ED8477 /* AppDelegate.swift in Sources */,
 				44EC428A211196170054584C /* LaunchViewController.swift in Sources */,
-				443138B121845947000C7742 /* NewChainViewController.swift in Sources */,
 				44561654211C3075002BE1B7 /* KeyPairViewController.swift in Sources */,
 				44FFE49721A449BA00D87D15 /* WebViewController.swift in Sources */,
 				443138B021845947000C7742 /* BlockDetailViewController.swift in Sources */,

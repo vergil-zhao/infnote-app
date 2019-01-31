@@ -8,6 +8,7 @@
 
 import UIKit
 import SVProgressHUD
+import QRCode
 
 class Export: NSObject {
     static var shared = Export()
@@ -27,7 +28,9 @@ class Export: NSObject {
         let view = UIView(frame: CGRect(x: 0, y: 0, width: 1200, height: 1400))
         view.backgroundColor = .white
         
-        let codeView = UIImageView(image: user.key?.privateKey?.image)
+        var qrcode = QRCode(user.key!.wif)
+        qrcode?.size = CGSize(width: 500, height: 500)
+        let codeView = UIImageView(image: qrcode?.image)
         codeView.frame = CGRect(x: 100, y: view.frame.height - 1100, width: 1000, height: 1000)
         view.addSubview(codeView)
         

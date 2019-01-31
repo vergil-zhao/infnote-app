@@ -60,7 +60,7 @@
 "dHU-Ml-ORH.text" = "存储私钥到 iCloud 防止丢失，请注意这个操作可能有秘钥泄露风险";
 
 /* Class = "UITextField"; placeholder = "用户 ID"; ObjectID = "lD0-Ir-Xth"; */
-"lD0-Ir-Xth.placeholder" = "用户 ID";
+"lD0-Ir-Xth.placeholder" = "邮箱";
 
 /* Class = "UIViewController"; title = "二维码"; ObjectID = "nAH-8h-Jq3"; */
 "nAH-8h-Jq3.title" = "二维码";

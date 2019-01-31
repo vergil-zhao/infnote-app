@@ -61,11 +61,11 @@ class NewNoteViewController: UIViewController, UITableViewDelegate, UITableViewD
             "title": title,
             "content": textView.text,
             "date_submitted": Int(Date().timeIntervalSince1970),
-            "user_id": User.current!.id,
             "nsfw": (tableView.cellForRow(at: IndexPath(row: 1, section: 0)) as! NSFWCell).nsfwSwitch.isOn
         ] as [String: Any]
-        let signature = try! User.current!.key!.sign(data: JSONSerialization.data(withJSONObject: data, options: .sortedKeys))
+        let signature = try! User.current!.key!.sign(message: JSONSerialization.data(withJSONObject: data, options: .sortedKeys))
         data["signature"] = signature.base58
+        data["user_id"] = User.current!.id  
         Networking.shared.create(note: data, complete: { note in
             SVProgressHUD.showInfo(withStatus: __("Note.new.succeed"))
             self.dismiss(animated: true)

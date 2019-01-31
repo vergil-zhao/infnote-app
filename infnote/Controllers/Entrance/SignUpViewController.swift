@@ -12,7 +12,7 @@ import SVProgressHUD
 
 class SignUpViewController: UIViewController, UITextFieldDelegate {
     
-    @IBOutlet weak var idField: UITextField!
+    @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var nicknameField: UITextField!
     @IBOutlet weak var bioTextView: UITextView!
     @IBOutlet weak var nextButton: UIButton!
@@ -26,7 +26,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func textFieldChanged(_ sender: UITextField) {
-        if let _ = idField.text?.range(of: "^[a-zA-Z0-9_-]{1,30}$", options: .regularExpression, range: nil, locale: nil),
+        if let _ = emailField.text?.range(of: "^[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}$", options: .regularExpression, range: nil, locale: nil),
             let _ = nicknameField.text?.range(of: ".{1,30}", options: .regularExpression, range: nil, locale: nil) {
             nextButton.isEnabled = true
             nextButton.backgroundColor = MAIN_COLOR
@@ -38,25 +38,25 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func nextButtonTouched(_ sender: Any) {
-        guard let id = idField.text, let nickname = nicknameField.text,
-            id.count > 0 && nickname.count > 0 else {
+        guard let email = emailField.text, let nickname = nicknameField.text,
+            email.count > 0 && nickname.count > 0 else {
             SVProgressHUD.showError(withStatus: __("SignUp.error.user.input"))
             return
         }
         
-        let key = try! Key()
+        let key = Key()
         var info = [
-            "id": id,
+            "email": email,
             "nickname": nickname
         ]
         if let bio = bioTextView.text.count > 0 ? bioTextView.text : nil {
             info["bio"] = bio
         }
         let data = try! JSONSerialization.data(withJSONObject: info, options: .sortedKeys)
-        let signatureData = try! key.sign(data: data)
+        let signatureData = key.sign(message: data)
         let user = User(JSON: info)!
         user.signature = signatureData.base58
-        user.publicKey = key.compressedPublicKey.base58
+        user.id = key.address
         user.key = key
         
         SVProgressHUD.show()

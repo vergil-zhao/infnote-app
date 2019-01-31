@@ -54,7 +54,6 @@ class User: Mappable, CustomStringConvertible {
     var avatar: String?
     var gender: Int?
     var bio: String?
-    var publicKey: String?
     var signature: String?
     var topics: Int?
     var replies: Int?
@@ -65,13 +64,12 @@ class User: Mappable, CustomStringConvertible {
     required init?(map: Map) {}
     
     func mapping(map: Map) {
-        id          <- map["id"]
+        id          <- map["user_id"]
         nickname    <- map["nickname"]
         email       <- map["email"]
         avatar      <- map["avatar"]
         gender      <- map["gender"]
         bio         <- map["bio"]
-        publicKey   <- map["public_key"]
         signature   <- map["signature"]
         topics      <- map["topics"]
         replies     <- map["replies"]
@@ -85,14 +83,6 @@ class User: Mappable, CustomStringConvertible {
     class func load() -> Bool {
         if let userID = UserDefaults.standard.object(forKey: "infnote.current.user_id") as? String {
             Networking.shared.fetchUser(id: userID, complete: { user in
-                User.current = user
-            }, failed: { error in
-                User.current = nil
-            })
-            return true
-        }
-        else if let key = Key.loadDefaultKey() {
-            Networking.shared.fetchUser(publicKey: key.compressedPublicKey.base58, complete: { user in
                 User.current = user
             }, failed: { error in
                 User.current = nil
@@ -115,12 +105,14 @@ class Note: Mappable, CustomStringConvertible {
     var dateSubmitted: Date!
     var replyTo: String?
     var signature: String?
-    var payloadID: String!
     var blockTime: Date?
     var blockHeight: Int?
     
     var date: Date {
-        return blockTime ?? dateSubmitted
+        if blockTime != nil && blockTime!.timeIntervalSince1970 > 1 {
+            return blockTime!
+        }
+        return dateSubmitted
     }
     
     

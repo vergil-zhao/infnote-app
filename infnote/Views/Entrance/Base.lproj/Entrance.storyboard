@@ -376,14 +376,14 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xyK-hw-LLe">
                                 <rect key="frame" x="30" y="128" width="354" height="50"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="id-icon" translatesAutoresizingMaskIntoConstraints="NO" id="Vtw-em-ynS">
-                                        <rect key="frame" x="17" y="17.666666666666657" width="18" height="15"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="email-icon" translatesAutoresizingMaskIntoConstraints="NO" id="Vtw-em-ynS">
+                                        <rect key="frame" x="17" y="16" width="18" height="18"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" secondItem="Vtw-em-ynS" secondAttribute="height" multiplier="6:5" id="aMX-rA-0XP"/>
+                                            <constraint firstAttribute="width" secondItem="Vtw-em-ynS" secondAttribute="height" id="aMX-rA-0XP"/>
                                             <constraint firstAttribute="width" constant="18" id="ycX-yV-EBx"/>
                                         </constraints>
                                     </imageView>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="User ID" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lD0-Ir-Xth">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lD0-Ir-Xth">
                                         <rect key="frame" x="46" y="0.0" width="300" height="50"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
@@ -550,7 +550,7 @@
                     </view>
                     <connections>
                         <outlet property="bioTextView" destination="y4A-OF-YKX" id="wUb-iz-SDo"/>
-                        <outlet property="idField" destination="lD0-Ir-Xth" id="TmX-gD-ICB"/>
+                        <outlet property="emailField" destination="lD0-Ir-Xth" id="v9A-ez-kt9"/>
                         <outlet property="nextButton" destination="8N5-Ci-qOw" id="0hw-O7-g4K"/>
                         <outlet property="nicknameField" destination="DUE-mx-5Vf" id="g3n-VQ-pZx"/>
                     </connections>
@@ -780,7 +780,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="id-icon" width="18" height="15"/>
+        <image name="email-icon" width="18" height="18"/>
         <image name="key-icon" width="90" height="88"/>
         <image name="launch-background" width="375" height="667"/>
         <image name="login-icon" width="588" height="306"/>

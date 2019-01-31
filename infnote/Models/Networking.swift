@@ -42,18 +42,6 @@ class Networking {
         }
     }
     
-    func fetchUser(publicKey: String, complete: ((User) -> Void)?, failed: ((Error) -> Void)? = nil) {
-        request(host + "/user/pk/\(publicKey)").validate().responseObject { (response: DataResponse<User>) in
-            if let user = response.value {
-                complete?(user)
-            }
-            else {
-                failed?(response.error!)
-                print(response.data!.utf8!)
-            }
-        }
-    }
-    
     func fetchNote(id: String, complete: ((Note) -> Void)?, failed: ((Error) -> Void)? = nil) {
         request(host + "/post/\(id)/").responseObject { (response: DataResponse<Note>) in
             if let note = response.result.value {

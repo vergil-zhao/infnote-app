@@ -159,11 +159,11 @@ class NoteViewController: UIViewController, UITableViewDelegate, UITableViewData
             var data = [
                 "content": textView.text,
                 "date_submitted": Int(Date().timeIntervalSince1970),
-                "user_id": User.current!.id,
                 "reply_to": note!.id
                 ] as [String: Any]
-            let signature = try! User.current!.key!.sign(data: JSONSerialization.data(withJSONObject: data, options: .sortedKeys))
+            let signature = try! User.current!.key!.sign(message: JSONSerialization.data(withJSONObject: data, options: .sortedKeys))
             data["signature"] = signature.base58
+            data["user_id"] = User.current!.id  
             SVProgressHUD.show()
             Networking.shared.create(note: data, complete: { note in
                 textView.text = ""

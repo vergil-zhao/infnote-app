@@ -22,8 +22,8 @@ class KeyPairViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        publicKeyLabel.text = key.compressedPublicKey.base58
-        privateKeyLabel.text = key.privateKey?.base58
+        publicKeyLabel.text = key.address
+        privateKeyLabel.text = key.wif
     }
     
     @IBAction func showButtonTouched(_ sender: UIButton) {
@@ -33,12 +33,12 @@ class KeyPairViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.section == 0 {
-            Export.copyToPastboard(key: key.compressedPublicKey.base58)
+            Export.copyToPastboard(key: key.address)
         }
         else if indexPath.section == 1 {
             let sheet = UIAlertController(title: __("KeyPair.saving.private.title"), message: nil, preferredStyle: .actionSheet)
             sheet.addAction(UIAlertAction(title: __("KeyPair.saving.private.copy"), style: .default, handler: { _ in
-                Export.copyToPastboard(key: self.key.privateKey!.base58)
+                Export.copyToPastboard(key: self.key.wif)
             }))
             sheet.addAction(UIAlertAction(title: __("KeyPair.saving.private.library"), style: .default, handler: { _ in
                 Export.shared.saveKeyToPhotoLibrary()

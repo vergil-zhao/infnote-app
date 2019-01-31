@@ -68,12 +68,3 @@ extension Dictionary where Key == String {
         }
     }
 }
-
-
-extension SecKey {
-    var image: UIImage? {
-        var code = QRCode(self.base58)!
-        code.size = CGSize(width: 500, height: 500)
-        return code.image
-    }
-}

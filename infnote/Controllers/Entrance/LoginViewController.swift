@@ -31,7 +31,7 @@ class LoginViewController: UIViewController, UIImagePickerControllerDelegate, UI
             }
             
             SVProgressHUD.show()
-            Networking.shared.fetchUser(publicKey: key!.compressedPublicKey.base58, complete: { user in
+            Networking.shared.fetchUser(id: key!.address, complete: { user in
                 SVProgressHUD.dismiss()
                 user.key = self.key
                 self.user = user
@@ -77,7 +77,7 @@ class LoginViewController: UIViewController, UIImagePickerControllerDelegate, UI
         let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         actionSheet.addAction(UIAlertAction(title: __("Login.sheet.qrcode.title"), style: .default, handler: { _ in
             let controller = self.storyboard?.instantiateViewController(withIdentifier: NSStringFromClass(QRCodeScannerViewController.self)) as! QRCodeScannerViewController
-            controller.complete = { [unowned self] in self.key = Key(privateKey: $0) }
+            controller.complete = { [unowned self] in self.key = Key(wif: $0) }
             self.navigationController?.pushViewController(controller, animated: true)
         }))
         actionSheet.addAction(UIAlertAction(title: __("Login.sheet.library.title"), style: .default, handler: { _ in
@@ -91,7 +91,7 @@ class LoginViewController: UIViewController, UIImagePickerControllerDelegate, UI
     }
     
     @IBAction func pasteTouched(_ sender: UITapGestureRecognizer) {
-        if UIPasteboard.general.hasStrings, let key = Key(privateKey: UIPasteboard.general.string!) {
+        if UIPasteboard.general.hasStrings, let key = Key(wif: UIPasteboard.general.string!) {
             self.key = key
         }
         else {
@@ -108,7 +108,7 @@ class LoginViewController: UIViewController, UIImagePickerControllerDelegate, UI
             let detector = CIDetector(ofType: CIDetectorTypeQRCode, context: context, options: [CIDetectorAccuracy: CIDetectorAccuracyHigh])
             let features = detector?.features(in: image)
             if let feature = features?.first as? CIQRCodeFeature {
-                if let key = Key(privateKey: feature.messageString!) {
+                if let key = Key(wif: feature.messageString!) {
                     self.key = key
                 }
             }

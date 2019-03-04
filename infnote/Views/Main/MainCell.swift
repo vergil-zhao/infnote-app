@@ -7,8 +7,10 @@
 //
 
 import UIKit
+import WebKit
+import Down
 
-class MainCell: UITableViewCell {
+class MainCell: UITableViewCell, WKNavigationDelegate {
 
     let avatarView = UIImageView()
     let nicknameLabel = UILabel()
@@ -18,7 +20,7 @@ class MainCell: UITableViewCell {
     let imageStackView = ImageStackView()
     let timeLabel = UILabel()
     let commentLabel = UILabel()
-    
+
     var reusing = false
     
     func prepareViews(note: Note) {
@@ -44,7 +46,7 @@ class MainCell: UITableViewCell {
             make.width.equalTo(40)
         }
         
-        nicknameLabel.text = note.user.nickname
+        nicknameLabel.text = note.user.nickname == "anonymous" ? __("anonymous") : note.user.nickname
         nicknameLabel.font = UIFont(name: DEFAULT_FONT_REGULAR, size: 14)
         nicknameLabel.snp.remakeConstraints { make in
             make.left.equalTo(avatarView.snp.right).offset(ViewConst.lineSpace)
@@ -70,22 +72,20 @@ class MainCell: UITableViewCell {
         }
          */
         
-        titleLabel.text = note.title
-        titleLabel.font = UIFont(name: DEFAULT_FONT_DEMI_BOLD, size: 18)
-        titleLabel.lineBreakMode = .byTruncatingMiddle
-        titleLabel.snp.remakeConstraints { make in
-            make.left.equalToSuperview().offset(ViewConst.horizontalMargin)
-            make.right.equalToSuperview().offset(-ViewConst.horizontalMargin)
-            make.top.equalTo(avatarView.snp.bottom).offset(ViewConst.verticalMargin)
-        }
-        
-        contentLabel.text = note.content
-        contentLabel.font = UIFont(name: DEFAULT_FONT_REGULAR, size: 15)
-        contentLabel.numberOfLines = 5
+//        titleLabel.text = note.title
+//        titleLabel.font = UIFont(name: DEFAULT_FONT_DEMI_BOLD, size: 18)
+//        titleLabel.lineBreakMode = .byTruncatingMiddle
+//        titleLabel.snp.remakeConstraints { make in
+//            make.left.equalToSuperview().offset(ViewConst.horizontalMargin)
+//            make.right.equalToSuperview().offset(-ViewConst.horizontalMargin)
+//            make.top.equalTo(avatarView.snp.bottom).offset(ViewConst.verticalMargin)
+//        }
+        contentLabel.attributedText = note.attrubutedContent
+        contentLabel.numberOfLines = 0
         contentLabel.snp.remakeConstraints { make in
             make.left.equalToSuperview().offset(ViewConst.horizontalMargin)
             make.right.equalToSuperview().offset(-ViewConst.horizontalMargin)
-            make.top.equalTo(titleLabel.snp.bottom).offset(ViewConst.lineSpace)
+            make.top.equalTo(nicknameLabel.snp.bottom).offset(ViewConst.verticalMargin * 4)
         }
         
 //        imageStackView.backgroundColor = MAIN_COLOR
@@ -102,7 +102,7 @@ class MainCell: UITableViewCell {
         timeLabel.snp.remakeConstraints { make in
             make.left.equalToSuperview().offset(ViewConst.horizontalMargin)
             make.bottom.equalToSuperview().offset(-ViewConst.verticalMargin)
-            make.top.equalTo(contentLabel.snp.bottom).offset(ViewConst.verticalMargin)
+            make.top.equalTo(contentLabel.snp.bottom)
         }
         
         commentLabel.text = String.localizedStringWithFormat(__("comment"), note.replies!)

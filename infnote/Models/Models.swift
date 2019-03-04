@@ -10,6 +10,10 @@ import Foundation
 import ObjectMapper
 import InfnoteChain
 import RxSwift
+import Down
+
+let ANONYMOUS_ID = "1HwMRa7tyK5ikhK7YyX76mVCZb6NEYC7Ld"
+let ANONYMOUS_KEY = "Ky5DFuCVeiZ62gMcMMhedyHAo7VQDomX7JgMRp8xJ1HdtwqJJoq9"
 
 class Model {
     static let DateToInt = TransformOf<Date, Int>(
@@ -30,23 +34,40 @@ class User: Mappable, CustomStringConvertible {
         }
     }
     
+    static var _current: User?
     static var current: User? {
-        didSet {
-            observers.forEach { observer in
-                observer.onNext(current)
+        get {
+            if _current == nil {
+                let user = User(JSON: [
+                    "user_id": ANONYMOUS_ID,
+                    "nickname": __("anonymous"),
+                    "email": __("anonymous@infnote.com"),
+                ])
+                user?.isAnonymous = true
+                user?.key = Key(wif: ANONYMOUS_KEY)
+                return user
             }
-            if current == nil {
+            return _current
+        }
+        set {
+            _current = newValue
+            observers.forEach { observer in
+                observer.onNext(newValue)
+            }
+            if newValue == nil {
                 UserDefaults.standard.set(nil, forKey: "infnote.current.user_id")
                 Key.clean()
             }
             else {
-                if current?.key == nil {
-                    current?.key = Key.loadDefaultKey()
+                if newValue?.key == nil {
+                    newValue?.key = Key.loadDefaultKey()
                 }
-                UserDefaults.standard.set(current!.id, forKey: "infnote.current.user_id")
+                UserDefaults.standard.set(newValue!.id, forKey: "infnote.current.user_id")
             }
         }
     }
+    
+    var isAnonymous = false
     
     var id: String!
     var nickname: String!
@@ -107,6 +128,9 @@ class Note: Mappable, CustomStringConvertible {
     var signature: String?
     var blockTime: Date?
     var blockHeight: Int?
+    var truncated: Bool?
+    
+    var attrubutedContent: NSAttributedString!
     
     var date: Date {
         if blockTime != nil && blockTime!.timeIntervalSince1970 > 1 {
@@ -115,6 +139,20 @@ class Note: Mappable, CustomStringConvertible {
         return dateSubmitted
     }
     
+    func cacheMarkdownResult() {
+        let maxWidth = Int(UIScreen.main.bounds.width - ViewConst.horizontalMargin * 2)
+        var more = ""
+        if truncated == true {
+            more = "..."
+        }
+        attrubutedContent = try! Down(markdownString: content + more)
+            .toAttributedString(stylesheet:"""
+                body { font-size: 125%; font-family: 'Avenir Next', Helvetica; }
+                code, pre { font-family: Menlo }
+                img { max-width: \(maxWidth)px }
+                """
+        )
+    }
     
     required init?(map: Map) {}
     
@@ -131,6 +169,7 @@ class Note: Mappable, CustomStringConvertible {
         blockHeight     <- map["block_height"]
         dateSubmitted   <- (map["date_submitted"], Model.DateToInt)
         blockTime       <- (map["block_time"], Model.DateToInt)
+        truncated       <- map["truncated"]
     }
     
     var description: String {

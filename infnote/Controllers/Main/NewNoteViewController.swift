@@ -52,13 +52,13 @@ class NewNoteViewController: UIViewController, UITableViewDelegate, UITableViewD
             SVProgressHUD.showError(withStatus: __("Note.new.error.content"))
             return
         }
-        guard let title = titleTextField.text, !title.isEmpty else {
-            SVProgressHUD.showError(withStatus: __("Note.new.error.title"))
-            return
-        }
+//        guard let title = titleTextField.text, !title.isEmpty else {
+//            SVProgressHUD.showError(withStatus: __("Note.new.error.title"))
+//            return
+//        }
         
         var data = [
-            "title": title,
+//            "title": title,
             "content": textView.text,
             "date_submitted": Int(Date().timeIntervalSince1970),
             "nsfw": (tableView.cellForRow(at: IndexPath(row: 1, section: 0)) as! NSFWCell).nsfwSwitch.isOn

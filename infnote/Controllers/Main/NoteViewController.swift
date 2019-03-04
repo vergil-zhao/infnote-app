@@ -71,7 +71,7 @@ class NoteViewController: UIViewController, UITableViewDelegate, UITableViewData
                 print(error)
             })
         }
-        self.reload()
+        tableView.cr.beginHeaderRefresh()
         
         tableViewContentOffsetObservation = tableView.observe(\UITableView.contentOffset) { _, _ in
             self.commentTextView.resignFirstResponder()
@@ -123,7 +123,6 @@ class NoteViewController: UIViewController, UITableViewDelegate, UITableViewData
         if indexPath.section == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "note", for: indexPath) as! MainCell
             cell.prepareViews(note: note!)
-            cell.contentLabel.numberOfLines = 0
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "comment", for: indexPath) as! CommentCell
@@ -163,7 +162,7 @@ class NoteViewController: UIViewController, UITableViewDelegate, UITableViewData
                 ] as [String: Any]
             let signature = try! User.current!.key!.sign(message: JSONSerialization.data(withJSONObject: data, options: .sortedKeys))
             data["signature"] = signature.base58
-            data["user_id"] = User.current!.id  
+            data["user_id"] = User.current!.id
             SVProgressHUD.show()
             Networking.shared.create(note: data, complete: { note in
                 textView.text = ""

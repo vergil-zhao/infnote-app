@@ -16,5 +16,6 @@ target 'infnote' do
     pod 'AlamofireObjectMapper'
     pod 'RxSwift'
     pod 'RxCocoa'
+    pod 'Down'
     pod 'InfnoteChain', :path => '../InfnoteChain/'
 end

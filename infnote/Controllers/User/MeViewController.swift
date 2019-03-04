@@ -26,13 +26,14 @@ class MeViewController: UITableViewController {
         navigationController?.setNavigationBarHidden(false, animated: true)
         
         nicknameLabel.text = User.current?.nickname ?? "INFNOTE"
-        idLabel.text = "@\(User.current?.id ?? "infnote")"
+//        idLabel.text = "@\(User.current?.id ?? "infnote")"
+        idLabel.text = ""
         
-        if User.current != nil {
-            logoutLabel.text = __("logout")
+        if User.current!.isAnonymous {
+            logoutLabel.text = __("back.to.login")
         }
         else {
-            logoutLabel.text = __("back.to.login")
+            logoutLabel.text = __("logout")
         }
         
         if let safeMode = UserDefaults.standard.value(forKey: "infnote.user.safe_mode") as? Bool {
@@ -47,7 +48,7 @@ class MeViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.section == 3 {
-            if User.current == nil {
+            if User.current!.isAnonymous {
                 Key.clean()
                 User.current = nil
                 AppDelegate.switchToEntranceStoryboard()
@@ -75,7 +76,7 @@ class MeViewController: UITableViewController {
     
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         if ["KeyPair", "UserView", "Notifications"].contains(identifier) {
-            if User.current == nil {
+            if User.current!.isAnonymous {
                 SVProgressHUD.showError(withStatus: __("login.first"))
                 return false
             }

@@ -133,7 +133,7 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="100" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="nnF-GJ-3VQ">
-                                <rect key="frame" x="0.0" y="143" width="414" height="659"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="714"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="content" rowHeight="196" id="e21-1m-jHb" customClass="NewNoteTextCell" customModule="infnote" customModuleProvider="target">
@@ -266,17 +266,19 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="LHZ-zt-xcQ" firstAttribute="trailing" secondItem="sSn-BZ-rFm" secondAttribute="trailing" id="5x8-q8-VPE"/>
-                            <constraint firstItem="nnF-GJ-3VQ" firstAttribute="top" secondItem="Gs0-kn-92V" secondAttribute="bottom" id="BDX-UM-wnY"/>
-                            <constraint firstItem="Gs0-kn-92V" firstAttribute="top" secondItem="sSn-BZ-rFm" secondAttribute="top" id="Bc2-Lv-Kin"/>
                             <constraint firstItem="LHZ-zt-xcQ" firstAttribute="top" secondItem="nnF-GJ-3VQ" secondAttribute="bottom" id="J4M-J4-tbq"/>
-                            <constraint firstItem="Gs0-kn-92V" firstAttribute="trailing" secondItem="sSn-BZ-rFm" secondAttribute="trailing" id="aSI-JE-isY"/>
-                            <constraint firstItem="Gs0-kn-92V" firstAttribute="leading" secondItem="sSn-BZ-rFm" secondAttribute="leading" id="gFd-xK-Uh6"/>
+                            <constraint firstItem="nnF-GJ-3VQ" firstAttribute="top" secondItem="sSn-BZ-rFm" secondAttribute="top" id="bJI-wZ-f6i"/>
                             <constraint firstItem="sSn-BZ-rFm" firstAttribute="trailing" secondItem="nnF-GJ-3VQ" secondAttribute="trailing" id="pge-9j-zCg"/>
                             <constraint firstItem="LHZ-zt-xcQ" firstAttribute="leading" secondItem="sSn-BZ-rFm" secondAttribute="leading" id="tdi-5n-QcP"/>
                             <constraint firstItem="nnF-GJ-3VQ" firstAttribute="leading" secondItem="sSn-BZ-rFm" secondAttribute="leading" id="vI0-NS-kF2"/>
                             <constraint firstItem="LHZ-zt-xcQ" firstAttribute="bottom" secondItem="sSn-BZ-rFm" secondAttribute="bottom" id="wpP-k1-26b"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="sSn-BZ-rFm"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="Gs0-kn-92V"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" title="New Note" id="ECJ-Ex-aek">
                         <barButtonItem key="leftBarButtonItem" title="Cancel" id="T6F-q6-J5Y">
@@ -300,7 +302,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hNy-3B-LWM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3684" y="-609.44527736131943"/>
+            <point key="canvasLocation" x="3682.608695652174" y="-610.04464285714278"/>
         </scene>
         <!--Detail-->
         <scene sceneID="ngr-6j-Nkf">

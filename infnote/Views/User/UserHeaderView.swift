@@ -8,6 +8,7 @@
 
 import UIKit
 import SnapKit
+import RxSwift
 
 class UserHeaderView: UIView {
     
@@ -23,7 +24,11 @@ class UserHeaderView: UIView {
     let bottomLine          = UIView()
     
     func prepareViews(with user: User) {
-        self.frame.size.height = 180 + UIScreen.main.bounds.height * 0.35
+        _ = User.status.takeUntil(self.rx.deallocated).subscribe(onNext: { [unowned self] user in
+            self.postCountLabel.text = "\(user?.topics ?? 0)"
+        })
+        
+        self.frame.size.height = 120 + UIScreen.main.bounds.height * 0.35
         self.frame.size.width = UIScreen.main.bounds.width
         self.backgroundColor = .white
         
@@ -66,15 +71,15 @@ class UserHeaderView: UIView {
             make.right.equalToSuperview().offset(-ViewConst.horizontalMargin)
         }
         
-        bioLabel.text = user.bio
-        bioLabel.font = UIFont(name: DEFAULT_FONT_REGULAR, size: 14)
-        bioLabel.textColor = .darkGray
-        bioLabel.numberOfLines = 3
-        bioLabel.snp.makeConstraints { make in
-            make.left.equalTo(nicknameLabel.snp.left)
-            make.top.equalTo(nicknameLabel.snp.bottom).offset(ViewConst.lineSpace)
-            make.right.equalToSuperview().offset(-ViewConst.horizontalMargin)
-        }
+//        bioLabel.text = user.bio
+//        bioLabel.font = UIFont(name: DEFAULT_FONT_REGULAR, size: 14)
+//        bioLabel.textColor = .darkGray
+//        bioLabel.numberOfLines = 2
+//        bioLabel.snp.makeConstraints { make in
+//            make.left.equalTo(nicknameLabel.snp.left)
+//            make.top.equalTo(nicknameLabel.snp.bottom).offset(ViewConst.lineSpace)
+//            make.right.equalToSuperview().offset(-ViewConst.horizontalMargin)
+//        }
         
         postLabel.text = __("UserHeaderView.postLabel")
         postLabel.font = UIFont(name: DEFAULT_FONT_REGULAR, size: 14)

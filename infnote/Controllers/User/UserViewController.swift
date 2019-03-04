@@ -23,6 +23,8 @@ class UserViewController: UIViewController, UITableViewDelegate, UITableViewData
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        _ = User.load()
+        
         tableView.contentInset = UIEdgeInsets.zero
         tableView.register(MainCell.self, forCellReuseIdentifier: "cell")
         tableView.estimatedRowHeight = 365
@@ -57,6 +59,9 @@ class UserViewController: UIViewController, UITableViewDelegate, UITableViewData
             self.tableView.reloadData()
             self.tableView.cr.endHeaderRefresh()
         }, failed: { error in
+            let alert = UIAlertController(title: __("network.error"), message: error.localizedDescription, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: __("ok"), style: .cancel, handler: nil))
+            self.present(alert, animated: true)
             self.tableView.cr.endHeaderRefresh()
         })
     }

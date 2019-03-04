@@ -12,6 +12,7 @@ import AlamofireObjectMapper
 import ObjectMapper
 import InfnoteChain
 
+
 class Networking {
     
     static let shared = Networking()
@@ -31,7 +32,7 @@ class Networking {
     private init() {}
     
     func fetchUser(id: String, complete: ((User) -> Void)?, failed: ((Error) -> Void)? = nil) {
-        request(host + "/user/id/\(id)/").validate().responseObject { (response: DataResponse<User>) in
+        AF.request(host + "/user/id/\(id)/").validate().responseObject { (response: DataResponse<User>) in
             if let user = response.value {
                 complete?(user)
             }
@@ -43,8 +44,9 @@ class Networking {
     }
     
     func fetchNote(id: String, complete: ((Note) -> Void)?, failed: ((Error) -> Void)? = nil) {
-        request(host + "/post/\(id)/").responseObject { (response: DataResponse<Note>) in
+        AF.request(host + "/post/\(id)/").responseObject { (response: DataResponse<Note>) in
             if let note = response.result.value {
+                note.cacheMarkdownResult()
                 complete?(note)
             }
             else {
@@ -55,8 +57,11 @@ class Networking {
     
     func fetchNoteList(page: Int = 1, complete: (([Note]) -> Void)?, failed: ((Error) -> Void)? = nil) {
         let safe = UserDefaults.standard.value(forKey: "infnote.user.safe_mode") as? Bool ?? true
-        request(host + "/post/list/?page=\(page)&safe=\(safe ? 1 : 0)").responseObject { (response: DataResponse<NoteListResponse>) in
+        AF.request(host + "/post/list/?page=\(page)&safe=\(safe ? 1 : 0)").responseObject { (response: DataResponse<NoteListResponse>) in
             if let list = response.result.value {
+                for note in list.notes {
+                    note.cacheMarkdownResult()
+                }
                 complete?(list.notes)
             }
             else {
@@ -67,8 +72,11 @@ class Networking {
     
     func fetchNoteList(user: User, page: Int = 1, complete: (([Note]) -> Void)?, failed: ((Error) -> Void)? = nil) {
         let safe = UserDefaults.standard.value(forKey: "infnote.user.safe_mode") as? Bool ?? true
-        request(host + "/post/list/?page=\(page)&user=\(user.id!)&safe=\(safe ? 1 : 0)").responseObject { (response: DataResponse<NoteListResponse>) in
+        AF.request(host + "/post/list/?page=\(page)&user=\(user.id!)&safe=\(safe ? 1 : 0)").responseObject { (response: DataResponse<NoteListResponse>) in
             if let list = response.result.value {
+                for note in list.notes {
+                    note.cacheMarkdownResult()
+                }
                 complete?(list.notes)
             }
             else {
@@ -78,7 +86,7 @@ class Networking {
     }
     
     func fetchReplyList(noteID: String, page: Int = 1, complete: (([Note]) -> Void)?, failed: ((Error) -> Void)? = nil) {
-        request(host + "/post/\(noteID)/replies/?page=\(page)").responseObject { (response: DataResponse<NoteListResponse>) in
+        AF.request(host + "/post/\(noteID)/replies/?page=\(page)").responseObject { (response: DataResponse<NoteListResponse>) in
             if let list = response.result.value {
                 complete?(list.notes)
             }
@@ -89,7 +97,7 @@ class Networking {
     }
     
     func create(user: User, complete: ((User) -> Void)?, failed: ((Error) -> Void)? = nil) {
-        request(host + "/user/create/", method: .post, parameters: user.toJSON(), encoding: JSONEncoding.default).validate().responseObject { (response: DataResponse<User>) in
+        AF.request(host + "/user/create/", method: .post, parameters: user.toJSON(), encoding: JSONEncoding.default).validate().responseObject { (response: DataResponse<User>) in
             if let user = response.value {
                 user.key = Key.loadDefaultKey()
                 complete?(user)
@@ -101,7 +109,7 @@ class Networking {
     }
     
     func create(note: [String: Any], complete: ((Note) -> Void)?, failed: ((Error) -> Void)? = nil) {
-        request(host + "/post/", method: .post, parameters: note, encoding: JSONEncoding.default).validate().responseObject { (response: DataResponse<Note>) in
+        AF.request(host + "/post/", method: .post, parameters: note, encoding: JSONEncoding.default).validate().responseObject { (response: DataResponse<Note>) in
             if let note = response.value {
                 complete?(note)
             }

@@ -10,11 +10,14 @@
 "cancel" = "取消";
 "login.first" = "请先登录";
 "logout" = "退出登录";
+"anonymous" = "匿名";
 "back.to.login" = "返回登录画面";
 
 "key.private" = "私钥";
 "key.public" = "公钥";
 "key.error" = "不可用的秘钥";
+
+"network.error" = "加载失败";
 
 "UserHeaderView.postLabel" = "发表的文章";
 

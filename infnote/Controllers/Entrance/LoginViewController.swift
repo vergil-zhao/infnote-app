@@ -48,9 +48,9 @@ class LoginViewController: UIViewController, UIImagePickerControllerDelegate, UI
                 return
             }
             imageTitleLabel.text = user!.nickname
-            imageSubtitleLabel.text = "@\(user!.id!)"
+            imageSubtitleLabel.text = "\(user!.id!)"
             textTitleLabel.text = user!.nickname
-            textSubtitleLabel.text = "@\(user!.id!)"
+            textSubtitleLabel.text = "\(user!.id!)"
         }
     }
     

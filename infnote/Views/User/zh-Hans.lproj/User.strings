@@ -68,7 +68,7 @@
 "l8n-7y-lO5.text" = "保存";
 
 /* Class = "UITableViewSection"; headerTitle = "Public Key"; ObjectID = "nfw-tm-IKz"; */
-"nfw-tm-IKz.headerTitle" = "公钥";
+"nfw-tm-IKz.headerTitle" = "用户 ID";
 
 /* Class = "UILabel"; text = "生日"; ObjectID = "oNI-On-9zq"; */
 "oNI-On-9zq.text" = "生日";

@@ -36,11 +36,11 @@ class NoteFlowViewController: UIViewController, UITableViewDataSource, UITableVi
                 }
                 self.notes.append(contentsOf: notes)
                 self.tableView.reloadData()
-                }, failed: { error in
+                }, failed: { [unowned self] error in
                     self.tableView.cr.endLoadingMore()
             })
         }
-        self.reload()
+        tableView.cr.beginHeaderRefresh()
     }
     
     func reload() {
@@ -51,7 +51,9 @@ class NoteFlowViewController: UIViewController, UITableViewDataSource, UITableVi
             self.tableView.reloadData()
             self.tableView.cr.endHeaderRefresh()
         }, failed: { error in
-            print(error)
+            let alert = UIAlertController(title: __("network.error"), message: error.localizedDescription, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: __("ok"), style: .cancel, handler: nil))
+            self.present(alert, animated: true)
             self.tableView.cr.endHeaderRefresh()
         })
     }

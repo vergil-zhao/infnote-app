@@ -35,7 +35,7 @@ class CommentCell: UITableViewCell {
             make.width.equalTo(40)
         }
         
-        nameLabel.text = note.user.nickname
+        nameLabel.text = note.user.nickname == "anonymous" ? __("anonymous") : note.user.nickname
         nameLabel.font = UIFont(name: DEFAULT_FONT_DEMI_BOLD, size: 14)
         nameLabel.snp.makeConstraints { make in
             make.left.equalTo(avatarView.snp.right).offset(ViewConst.horizontalMargin)

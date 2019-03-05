@@ -16,12 +16,17 @@ class LoginViewController: UIViewController, UIImagePickerControllerDelegate, UI
 
     @IBOutlet weak var imageSKView: UIView!
     @IBOutlet weak var textSKView: UIView!
+    @IBOutlet weak var iCloudSKView: UIView!
     @IBOutlet weak var iCloudView: UIView!
     
     @IBOutlet weak var imageTitleLabel: UILabel!
     @IBOutlet weak var imageSubtitleLabel: UILabel!
     @IBOutlet weak var textTitleLabel: UILabel!
     @IBOutlet weak var textSubtitleLabel: UILabel!
+    @IBOutlet weak var iCloudTitleLabel: UILabel!
+    @IBOutlet weak var iCloudSubtitleLabel: UILabel!
+    
+    @IBOutlet weak var iCloudSwitch: UISwitch!
     
     var key: Key? {
         didSet {
@@ -51,6 +56,8 @@ class LoginViewController: UIViewController, UIImagePickerControllerDelegate, UI
             imageSubtitleLabel.text = "\(user!.id!)"
             textTitleLabel.text = user!.nickname
             textSubtitleLabel.text = "\(user!.id!)"
+            iCloudTitleLabel.text = user!.nickname
+            iCloudSubtitleLabel.text = "\(user!.id!)"
         }
     }
     
@@ -69,8 +76,9 @@ class LoginViewController: UIViewController, UIImagePickerControllerDelegate, UI
     }
     
     @IBAction func segementedControlChanged(_ sender: UISegmentedControl) {
-        imageSKView.isHidden = sender.selectedSegmentIndex != 0
-        textSKView.isHidden = sender.selectedSegmentIndex == 0
+        imageSKView.isHidden   = sender.selectedSegmentIndex != 0
+        textSKView.isHidden    = sender.selectedSegmentIndex != 1
+        iCloudSKView.isHidden  = sender.selectedSegmentIndex != 2
     }
     
     @IBAction func uploadTouched(_ sender: UITapGestureRecognizer) {
@@ -93,9 +101,19 @@ class LoginViewController: UIViewController, UIImagePickerControllerDelegate, UI
     @IBAction func pasteTouched(_ sender: UITapGestureRecognizer) {
         if UIPasteboard.general.hasStrings, let key = Key(wif: UIPasteboard.general.string!) {
             self.key = key
-        }
-        else {
+        } else {
             let alert = UIAlertController(title: __("Login.alert.paste.title"), message: __("Login.alert.paste.message"), preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: __("ok"), style: .cancel, handler: nil))
+            self.present(alert, animated: true)
+        }
+    }
+    
+    @IBAction func iCoundImportTouched(_ sender: UITapGestureRecognizer) {
+        if let wif = NSUbiquitousKeyValueStore().string(forKey: "com.infnote.icloud.wif"),
+            let key = Key(wif: wif) {
+            self.key = key
+        } else {
+            let alert = UIAlertController(title: __("Login.alert.icloud.title"), message: __("Login.alert.icloud.message"), preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: __("ok"), style: .cancel, handler: nil))
             self.present(alert, animated: true)
         }
@@ -121,6 +139,11 @@ class LoginViewController: UIViewController, UIImagePickerControllerDelegate, UI
         if let user = self.user {
             user.key?.save()
             User.current = user
+            if iCloudSwitch.isOn {
+                let icloud = NSUbiquitousKeyValueStore()
+                icloud.set(key!.wif, forKey: "com.infnote.icloud.wif")
+                icloud.synchronize()
+            }
             AppDelegate.switchToMainStoryboard()
         }
         else {

@@ -12,6 +12,7 @@
 "logout" = "退出登录";
 "anonymous" = "匿名";
 "back.to.login" = "返回登录画面";
+"saved" = "已保存";
 
 "key.private" = "私钥";
 "key.public" = "公钥";
@@ -42,6 +43,8 @@
 "Login.alert.paste.message" = "剪贴板中无可用的私钥，请复制后再次尝试";
 "Login.alert.failed.title" = "登录失败";
 "Login.alert.key.title" = "登录需要先导入私钥";
+"Login.alert.icloud.title" = "iCloud";
+"Login.alert.icloud.message" = "未能在 iCloud 中找到可用的秘钥";
 "Login.error.user.failed" = "未能获取到密钥对应的用户";
 
 "SignUp.error.user.input" = "注册信息不符合格式";

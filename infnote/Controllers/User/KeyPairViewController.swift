@@ -18,6 +18,7 @@ class KeyPairViewController: UITableViewController {
     @IBOutlet weak var publicKeyLabel: UILabel!
     @IBOutlet weak var privateKeyLabel: UILabel!
     
+    @IBOutlet weak var iCloudLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,6 +46,12 @@ class KeyPairViewController: UITableViewController {
             }))
             sheet.addAction(UIAlertAction(title: __("cancel"), style: .cancel, handler: nil))
             present(sheet, animated: true)
+        }
+        else if indexPath.section == 2 {
+            let icloud = NSUbiquitousKeyValueStore()
+            icloud.set(key.wif, forKey: "com.infnote.icloud.wif")
+            icloud.synchronize()
+            iCloudLabel.text = __("saved")
         }
         tableView.deselectRow(at: indexPath, animated: true)
     }

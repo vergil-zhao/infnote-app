@@ -41,6 +41,9 @@
 /* Class = "UISegmentedControl"; SD6-1I-YBc.segmentTitles[1] = "文字导入"; ObjectID = "SD6-1I-YBc"; */
 "SD6-1I-YBc.segmentTitles[1]" = "文字导入";
 
+/* Class = "UISegmentedControl"; SD6-1I-YBc.segmentTitles[2] = "文字导入"; ObjectID = "SD6-1I-YBc"; */
+"SD6-1I-YBc.segmentTitles[2]" = "iCound 导入";
+
 /* Class = "UIButton"; normalTitle = "完成"; ObjectID = "SUb-zN-uaL"; */
 "SUb-zN-uaL.normalTitle" = "完成";
 
@@ -57,7 +60,7 @@
 "XLB-ve-cPy.text" = "Label";
 
 /* Class = "UILabel"; text = "存储私钥到 iCloud 防止丢失，请注意这个操作可能有秘钥泄露风险"; ObjectID = "dHU-Ml-ORH"; */
-"dHU-Ml-ORH.text" = "存储私钥到 iCloud 防止丢失，请注意这个操作可能有秘钥泄露风险";
+"dHU-Ml-ORH.text" = "注意：这个操作将覆盖上一次保存的秘钥";
 
 /* Class = "UITextField"; placeholder = "用户 ID"; ObjectID = "lD0-Ir-Xth"; */
 "lD0-Ir-Xth.placeholder" = "邮箱";
@@ -69,7 +72,7 @@
 "pbu-pW-NLN.text" = "私钥验证";
 
 /* Class = "UILabel"; text = "存储私钥到 iCloud 防止丢失，请注意这个操作可能有秘钥泄露风险"; ObjectID = "reo-kB-agd"; */
-"reo-kB-agd.text" = "存储私钥到 iCloud 防止丢失，请注意这个操作可能有秘钥泄露风险";
+"reo-kB-agd.text" = "注意：这个操作将覆盖上一次保存的秘钥";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "t9u-DB-BRl"; */
 "t9u-DB-BRl.text" = "Label";
@@ -82,3 +85,6 @@
 
 /* Class = "UIButton"; normalTitle = "登录"; ObjectID = "zCZ-wP-pEa"; */
 "zCZ-wP-pEa.normalTitle" = "登录";
+
+"QTC-hO-nTJ.text" = "私钥验证";
+"r0f-h1-w9l.text" = "轻点以导入来自 iCloud 的私钥";

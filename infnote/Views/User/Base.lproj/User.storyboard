@@ -921,6 +921,31 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
+                            <tableViewSection id="DJB-ok-Hxu">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="kY9-yv-ycf">
+                                        <rect key="frame" x="0.0" y="271.33333333333337" width="414" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="kY9-yv-ycf" id="kS0-a1-KJ9">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Save to iCloud" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="at2-88-LYX">
+                                                    <rect key="frame" x="153" y="11" width="108" height="22"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="16"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="at2-88-LYX" firstAttribute="centerY" secondItem="kS0-a1-KJ9" secondAttribute="centerY" id="MnI-Kc-2uf"/>
+                                                <constraint firstItem="at2-88-LYX" firstAttribute="centerX" secondItem="kS0-a1-KJ9" secondAttribute="centerX" id="Qof-fO-Fn5"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.36862745099999999" green="0.43137254899999999" blue="0.93333333330000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
                         </sections>
                         <connections>
                             <outlet property="dataSource" destination="mKY-8C-Pu2" id="LMn-ic-Dyw"/>
@@ -928,6 +953,7 @@
                         </connections>
                     </tableView>
                     <connections>
+                        <outlet property="iCloudLabel" destination="at2-88-LYX" id="G4y-JQ-9Fx"/>
                         <outlet property="privateKeyLabel" destination="anB-Xt-sBG" id="tGW-Xl-soj"/>
                         <outlet property="publicKeyLabel" destination="ZT3-g6-aJl" id="ZvQ-aq-vRT"/>
                     </connections>

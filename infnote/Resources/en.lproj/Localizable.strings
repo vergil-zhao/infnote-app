@@ -12,6 +12,7 @@
 "logout" = "LOG OUT";
 "anonymous" = "Anonymous";
 "back.to.login" = "BACK TO LOGIN SCENE";
+"saved" = "Saved";
 
 "key.private" = "Private Key";
 "key.public" = "Public Key";
@@ -42,6 +43,8 @@
 "Login.alert.paste.message" = "There is no valid key in pasteboard, please try again after copying.";
 "Login.alert.failed.title" = "Login failed";
 "Login.alert.key.title" = "Private key is vital to be import first.";
+"Login.alert.icloud.title" = "iCloud";
+"Login.alert.icloud.message" = "There is no valid key in iCloud.";
 "Login.error.user.failed" = "Failed to fetch the user with this key";
 
 "SignUp.error.user.input" = "Information is not conform the format";

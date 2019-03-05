@@ -18,6 +18,8 @@ class PrivateKeyViewController: UIViewController {
     @IBOutlet weak var privateKeyLabel: UILabel!
     @IBOutlet weak var publicKeyLabel: UILabel!
     
+    @IBOutlet weak var iCloudSwitch: UISwitch!
+    
     var key: Key!
     
     override func viewDidLoad() {
@@ -59,6 +61,11 @@ class PrivateKeyViewController: UIViewController {
     }
     
     @IBAction func doneButtonTouched(_ sender: Any) {
+        if iCloudSwitch.isOn {
+            let icloud = NSUbiquitousKeyValueStore()
+            icloud.set(key.wif, forKey: "com.infnote.icloud.wif")
+            icloud.synchronize()
+        }
         AppDelegate.switchToMainStoryboard()
     }
 }

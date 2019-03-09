@@ -223,7 +223,6 @@
 		44D517E3211185E100ED8477 /* infnote */ = {
 			isa = PBXGroup;
 			children = (
-				44C1CEDA222E5FBF0072BF01 /* infnote.entitlements */,
 				443138A121845927000C7742 /* Developer */,
 				44703796213017C50040ADFC /* Models */,
 				44EC4287211187140054584C /* Views */,
@@ -238,6 +237,7 @@
 		44EC4286211186CA0054584C /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				44C1CEDA222E5FBF0072BF01 /* infnote.entitlements */,
 				44D517EB211185E300ED8477 /* Assets.xcassets */,
 				44D517F0211185E300ED8477 /* Info.plist */,
 				443E76F6219034EB00AB8234 /* InfoPlist.strings */,
@@ -727,7 +727,7 @@
 			baseConfigurationReference = 7446F1B1BF617A51F2456C3F /* Pods-infnote.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = infnote/infnote.entitlements;
+				CODE_SIGN_ENTITLEMENTS = infnote/Resources/infnote.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 98GR38H82G;
 				INFOPLIST_FILE = "$(SRCROOT)/infnote/Resources/Info.plist";
@@ -749,7 +749,7 @@
 			baseConfigurationReference = 2C2CF4077FA2A36AB2BE111D /* Pods-infnote.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = infnote/infnote.entitlements;
+				CODE_SIGN_ENTITLEMENTS = infnote/Resources/infnote.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 98GR38H82G;
 				INFOPLIST_FILE = "$(SRCROOT)/infnote/Resources/Info.plist";
